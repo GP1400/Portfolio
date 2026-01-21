@@ -3405,13 +3405,3 @@ input[type="radio"]:checked + label:before {
   color: var(--accent-color);
   font-weight: 700;
 }
-
-/* Optional: subtle left accent bar */
-#header nav a.active:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 3px;
-  height: 100%;
-  background: var(--accent-color);
-}
