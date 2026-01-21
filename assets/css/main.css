@@ -3314,3 +3314,104 @@ input, select, textarea {
 			}
 
 	}
+/* ==================================================
+   USER COLOR OVERRIDES (Central Control)
+   ================================================== */
+
+/* 1) Define color variables */
+:root {
+  --accent-color: #f08000;   /* main highlight color */
+  --text-main: #444444;      /* headings + strong text */
+  --text-muted: #888888;     /* body text */
+  --border-light: #e4e4e4;   /* dividers */
+}
+
+/* 2) Global text */
+body, input, select, textarea {
+  color: var(--text-muted);
+}
+
+h1, h2, h3, h4, h5, h6,
+strong, b {
+  color: var(--text-main);
+}
+
+/* 3) Links */
+a {
+  color: var(--accent-color);
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* 4) Section headers (Read Only specific) */
+header.major h2 {
+  color: var(--accent-color);
+}
+
+/* 5) Icons */
+.icon:before {
+  color: var(--accent-color);
+}
+
+/* 6) Form focus + UI highlights */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent-color);
+}
+
+/* 7) Checkboxes & radio buttons */
+input[type="checkbox"]:checked + label:before,
+input[type="radio"]:checked + label:before {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
+/* ==================================================
+   SIDEBAR NAVIGATION (Read Only)
+   ================================================== */
+
+/* Sidebar container */
+#header {
+  background: #1f1f1f;          /* dark neutral */
+}
+
+/* Sidebar title (your name) */
+#header h1 {
+  color: #ffffff;
+}
+
+/* Navigation list */
+#header nav ul li {
+  border-bottom: none;
+}
+
+/* Navigation links */
+#header nav a {
+  color: #cccccc;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Hover state */
+#header nav a:hover {
+  color: var(--accent-color);
+}
+
+/* Active section (current page) */
+#header nav a.active {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+/* Optional: subtle left accent bar */
+#header nav a.active:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--accent-color);
+}
