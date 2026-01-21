@@ -3441,7 +3441,7 @@ input[type="radio"]:checked + label:before {
 /* Hover state – full background */
 #header nav ul li a:hover {
   background-color: rgba(240, 128, 0, 0.15); /* soft orange */
-  color: #9FFFCB;
+  color: #040926;
 }
 
 /* Active / current section */
