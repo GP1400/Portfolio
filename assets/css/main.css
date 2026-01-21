@@ -3371,12 +3371,12 @@ strong {
    ================================================== */
 
 :root {
-  --accent-color: #F08000;      /* main highlight color */
-  --text-main: #444444;         /* body + heading text */
-  --text-muted: #888888;        /* secondary text */
-  --border-light: #e4e4e4;      /* lines, dividers */
-  --sidebar-bg: #1b1f3b;        /* left sidebar */
-  --code-bg: #444444;
+  --accent-color: #1f4ed8;   /* deep blue */
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --border-light: #e5e7eb;
+  --sidebar-bg: #0f172a;
+  --code-bg: #111827;
 }
 /* ===== Global Text ===== */
 body, input, select, textarea {
