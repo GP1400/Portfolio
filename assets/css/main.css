@@ -3415,3 +3415,7 @@ input[type="radio"]:checked + label:before {
   height: 100%;
   background: var(--accent-color);
 }
+#header nav a.current {
+  color: var(--accent-color);
+  font-weight: 700;
+}
