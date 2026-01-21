@@ -3366,9 +3366,64 @@ input[type="button"] {
 strong {
   color: var(--color-accent);
 }
+/* ==================================================
+   USER COLOR CONTROLS (Centralized Theme)
+   ================================================== */
+
 :root {
-  --color-accent: #0f766e;
-  --color-bg-sidebar: #022c22;
-  --color-text-main: #111827;
-  --color-link: #0f766e;
+  --accent-color: #F08000;      /* main highlight color */
+  --text-main: #444444;         /* body + heading text */
+  --text-muted: #888888;        /* secondary text */
+  --border-light: #e4e4e4;      /* lines, dividers */
+  --sidebar-bg: #1b1f3b;        /* left sidebar */
+  --code-bg: #444444;
 }
+/* ===== Global Text ===== */
+body, input, select, textarea {
+  color: var(--text-muted);
+}
+
+h1, h2, h3, h4, h5, h6,
+strong, b {
+  color: var(--text-main);
+}
+
+/* ===== Links ===== */
+a {
+  color: var(--accent-color);
+  border-bottom-color: var(--border-light);
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* ===== Section Headers ===== */
+header.major h2 {
+  color: var(--accent-color);
+}
+
+/* ===== Forms & Focus ===== */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent-color);
+}
+
+/* ===== Checkboxes / Radio ===== */
+input[type="checkbox"]:checked + label:before,
+input[type="radio"]:checked + label:before {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/* ===== Icons ===== */
+.icon:before {
+  color: var(--accent-color);
+}
+
+/* ===== Code Blocks ===== */
+code {
+  background: var(--code-bg);
+}
+
