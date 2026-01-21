@@ -3314,58 +3314,7 @@ input, select, textarea {
 			}
 
 	}
-/* ==================================================
-   Custom Color System (User Overrides)
-   ================================================== */
 
-:root {
-  --color-accent: #1f4ed8;   /* primary accent */
-  --color-bg-sidebar: #1b1f3b;
-  --color-text-main: #222222;
-  --color-text-muted: #666666;
-  --color-link: #1f4ed8;
-}
-/* ===== Global overrides ===== */
-
-a {
-  color: var(--color-link);
-}
-
-a:hover {
-  color: var(--color-accent);
-}
-
-/* Sidebar */
-#header {
-  background: var(--color-bg-sidebar);
-}
-
-#header h1,
-#header nav a {
-  color: #ffffff;
-}
-
-/* Headings */
-h1, h2, h3 {
-  color: var(--color-text-main);
-}
-
-/* Buttons & accents */
-.button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-  background-color: var(--color-accent);
-  color: #ffffff;
-}
-.icon,
-.icon:before {
-  color: var(--color-accent);
-}
-
-strong {
-  color: var(--color-accent);
-}
 /* ==================================================
    USER COLOR CONTROLS (Centralized Theme)
    ================================================== */
