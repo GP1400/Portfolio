@@ -3419,3 +3419,36 @@ input[type="radio"]:checked + label:before {
   color: var(--accent-color);
   font-weight: 700;
 }
+/* ==================================================
+   SIDEBAR NAVIGATION – HOVER & ACTIVE FIX
+   ================================================== */
+
+/* Ensure nav links are position-aware */
+#header nav ul li a {
+  position: relative;
+  color: #cccccc;
+  transition: color 0.2s ease-in-out;
+}
+
+/* Hover state */
+#header nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+/* Active / current section */
+#header nav ul li a.active,
+#header nav ul li a.current {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+#header nav ul li a:hover:before,
+#header nav ul li a.active:before,
+#header nav ul li a.current:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--accent-color);
+}
