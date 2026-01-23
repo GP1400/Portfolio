@@ -3334,15 +3334,15 @@ input, select, textarea {
 
 /* Hover state – full background */
 #header nav ul li a:hover {
-  background-color: rgba(255, 255, 255); /* white */
-  color: #040926;
+  background-color: rgba(255, 255, 255, 0.25); /* light white */
+  color: #000000;
 }
 
 /* Active / current section */
 #header nav ul li a.active,
 #header nav ul li a.current {
-  background-color: rgba(240, 128, 0, 0.25);
-  color: #C19875;
+  background-color: rgba(255, 255, 255); /* white */
+  color: #F08000;
   font-weight: 600;
 }
 
