@@ -3334,7 +3334,7 @@ input, select, textarea {
 
 /* Hover state – full background */
 #header nav ul li a:hover {
-  background-color: rgba(240, 128, 0, 0.15); /* soft orange */
+  background-color: rgba(255, 255, 255); /* white */
   color: #040926;
 }
 
