@@ -3643,3 +3643,27 @@ input, select, textarea {
   max-width: 900px;
 }
 
+/* Project navigation */
+.project-nav {
+  border-left: 4px solid #f08000;
+  padding-left: 1em;
+  margin-bottom: 3em;
+}
+
+.project-nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-nav li {
+  margin-bottom: 0.5em;
+}
+
+.project-nav a {
+  color: #f08000;
+  text-decoration: none;
+}
+
+.project-nav a:hover {
+  text-decoration: underline;
+}
