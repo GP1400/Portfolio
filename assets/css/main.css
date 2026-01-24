@@ -3609,32 +3609,37 @@ input, select, textarea {
 				}
 
 		}
+
 /* Read Only compatibility */
 .tiles {
   margin-top: 2em;
 }
+
 /* Project page typography */
 .project-header h1 {
-	font-size 2.5em;
-	margin-bottom: 0.3em;
+  font-size: 2.5em;
+  margin-bottom: 0.3em;
 }
 
 .project-header .subtitle {
-	font-size:1.2em;
-	color: #888
-	margin-bottom: 2em;
+  font-size: 1.2em;
+  color: #888;
+  margin-bottom: 2em;
 }
+
+
 /* Project page spacing */
 .project-wrapper .inner {
-	padding-top: 2em;
-	padding-bottom: 2 me;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 .project-wrapper h2 {
-	margin-top: 2.5em;
+  margin-top: 2.5em;
 }
 
 .project-wrapper p,
 .project-wrapper ul {
-	max-width: 900px;
+  max-width: 900px;
 }
+
