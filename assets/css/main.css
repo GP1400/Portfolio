@@ -3627,22 +3627,6 @@ input, select, textarea {
   margin-bottom: 2em;
 }
 
-
-/* Project page spacing */
-.project-wrapper .inner {
-  padding-top: 2em;
-  padding-bottom: 2em;
-}
-
-.project-wrapper h2 {
-  margin-top: 2.5em;
-}
-
-.project-wrapper p,
-.project-wrapper ul {
-  max-width: 900px;
-}
-
 /* Project Page Overrides */
 .project-wrapper > .inner {
     padding: 2em 2em 2em 2em !important; /* smaller spacing */
