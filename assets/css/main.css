@@ -3673,12 +3673,3 @@ input, select, textarea {
     line-height: 1.75em;
     margin-bottom: 1.5em;
 }
-
-/* Force sidebar to collapsed state */
-body.is-project #sidebar {
-  transform: translateX(-100%);
-}
-
-body.is-project #wrapper {
-  padding-left: 0;
-}
