@@ -3667,3 +3667,33 @@ input, select, textarea {
 .project-nav a:hover {
   text-decoration: underline;
 }
+/* Project Page Overrides */
+.project-wrapper > .inner {
+    padding: 2em 2em 2em 2em !important; /* smaller spacing */
+    max-width: 900px; /* limit text width for readability */
+    margin: 0 auto; /* center content */
+}
+
+.project-wrapper h1 {
+    font-size: 2.5em !important;
+    line-height: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.project-wrapper .subtitle {
+    font-size: 1.25em !important;
+    margin-bottom: 2em;
+    color: #555;
+}
+.project-wrapper h2 {
+    font-size: 1.75em;
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+
+.project-wrapper p,
+.project-wrapper ul {
+    font-size: 1.05em;
+    line-height: 1.75em;
+    margin-bottom: 1.5em;
+}
