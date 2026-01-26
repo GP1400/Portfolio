@@ -3357,7 +3357,7 @@ input, select, textarea {
   overflow: hidden;
 }
 
-.project-card .image {
+.project-card .image img {
   display: block;
   width: 100%;
   height: auto;
