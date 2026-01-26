@@ -3636,7 +3636,6 @@ input, select, textarea {
   justify-content: center;
   align-items: center;
   text-align: center;
-padding: 1.5em;
 transition: all 0.35s ease;
 }
 
