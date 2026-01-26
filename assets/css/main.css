@@ -3366,9 +3366,16 @@ input, select, textarea {
 /* Overlay */
 .project-card .overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
   background: rgba(40, 40, 40, 0.55);
-  display: flex;
+}
+	/*
+	display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -3376,7 +3383,7 @@ input, select, textarea {
   text-align: center;
   transition: 0.35s ease;
   overflow: hidden;
-}
+
 
 /* Title (visible by default) */
 /*.project-card h3 {
@@ -3396,10 +3403,10 @@ input, select, textarea {
 }
 */
 /* Hover behavior (Phantom-like) */
-/*.project-card:hover .overlay {
-  background: transparent;
+.project-card:hover .overlay {
+  opacity: 1;
 }
-*/
+
 /* .project-card:hover h3 {
   transform: translateY(0);
   opacity: 1;
