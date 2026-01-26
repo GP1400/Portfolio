@@ -3360,7 +3360,7 @@ input, select, textarea {
 .project-card .image img {
   display: block;
   width: 100%;
-  height: 200px;
+  height: 100%;
 }
 
 /* Overlay */
