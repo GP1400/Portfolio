@@ -3662,11 +3662,6 @@ transition: all 0.35s ease;
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
-/* Hover behavior (Phantom-like) */
-.project-card:hover .overlay {
-  background: transparent;
-}
-
 .project-card:hover h3 {
   transform: translateY(-50%);
   opacity: 0;
