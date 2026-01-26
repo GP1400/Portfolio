@@ -3645,7 +3645,7 @@ transition: all 0.35s ease;
   margin: 0;
   font-size: 1.25em;
   color: #fff;
-  transform: translateY(-10px);
+  transform: translateY(20px);
   transition: transform 0.35s ease;
 }
 
@@ -3656,8 +3656,6 @@ transition: all 0.35s ease;
   opacity: 0;
   transform: translateY(10px);
   transition: transform 0.35s ease, opacity 0.35s ease;
-	white-space: normal;
-	max-width: 100%;
 }
 
 /* Hover behavior (Phantom-like) */
@@ -3665,11 +3663,15 @@ transition: all 0.35s ease;
   background: transparent;
 }
 .project-card:hover h3 {
-  transform: translateY(-0.75em);
+  transform: translateY(0em);
   opacity: 1;
 }
 
 .project-card:hover p {
   opacity: 1;
   transform: translateY(0);
+}
+.project-card article::before,
+.project-card article::after {
+  display: none !important;
 }
