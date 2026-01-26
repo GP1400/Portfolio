@@ -3630,7 +3630,7 @@ input, select, textarea {
 .project-card .overlay {
   position: absolute;
 	inset: 0;
-  background: transpartent
+  background: rgba( 40, 40, 40, 0.75)
   display: flex;
   flex-direction: column;
   justify-content: center;
