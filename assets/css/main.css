@@ -3350,11 +3350,8 @@ input, select, textarea {
 /* === Project cards (Phantom-style hover, Read Only layout) === */
 
 .project-card {
-  position: relative;
+  position: absolute;
   display: block;
-  text-decoration: none;
-  color: inherit;
-  overflow: hidden;
 }
 
 .project-card .overlay {
