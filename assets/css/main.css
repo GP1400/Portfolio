@@ -3352,6 +3352,15 @@ input, select, textarea {
 .project-card {
   position: absolute;
   display: block;
+	text-decoration: none;
+	color: inherit;
+	overflow: hidden;
+}
+
+.project-card .image img {
+  display: block;
+  width: 100%;
+  overflow: hidden;
 }
 
 .project-card .overlay {
@@ -3365,12 +3374,6 @@ input, select, textarea {
   align-items: center;
   text-align: center;
 transition: opacity 0.35s ease;
-}
-
-.project-card .image img {
-  display: block;
-  width: 100%;
-  overflow: hidden;
 }
 	
 .project-card:hover .overlay {
