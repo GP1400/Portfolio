@@ -3366,13 +3366,15 @@ input, select, textarea {
 /* Overlay */
 .project-card .overlay {
   position: absolute;
-  inset: 0;
+  width:200px;
+  height: 200px;
+  inset: -5 px;
   background: rgba(40, 40, 40, 0.55);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.5em;
+  padding: .5em;
   text-align: center;
   transition: all 0.35s ease;
 }
