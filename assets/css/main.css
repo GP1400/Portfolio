@@ -3355,6 +3355,7 @@ input, select, textarea {
   text-decoration: none;
   color: inherit;
   overflow: hidden;
+  isolation: isolate;
 }
 .project-card .image img {
   display: block;
@@ -3367,13 +3368,14 @@ input, select, textarea {
 .project-card .overlay {
   position: absolute;
 	inset: 0;
-  background: rgba(40, 40, 40, 0.75);
+  background: rgb(40, 40, 40);
+	opacity: 0.85;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-transition: all 0.35s ease;
+transition: opacity 0.35s ease;
 }
 
 /* Title (visible by default) */
@@ -3381,7 +3383,7 @@ transition: all 0.35s ease;
   margin: 0;
   font-size: 1.25em;
   color: #fff;
-  transform: translateY(20px);
+  transform: translateY(1.5em);
   transition: transform 0.35s ease;
 }
 
@@ -3396,7 +3398,7 @@ transition: all 0.35s ease;
 
 /* Hover behavior (Phantom-like) */
 .project-card:hover .overlay {
-  background: transparent;
+  opacity: 0;
 }
 .project-card:hover h3 {
   transform: translateY(0);
@@ -3407,9 +3409,14 @@ transition: all 0.35s ease;
   opacity: 1;
   transform: translateY(0);
 }
-.project-card article::before,
-.project-card article::after {
+
+.project-card::after,
+.project-card::before {
   display: none !important;
+  content: none !important;
 }
 
-
+.tiles article::after,
+.tiles article::before {
+  display: none !important;
+}
