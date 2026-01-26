@@ -3374,7 +3374,8 @@ input, select, textarea {
   align-items: center;
   padding: 1.5em;
   text-align: center;
-  transition: all 0.35s ease;
+  transition: 0.35s ease;
+  overflow: hidden;
 }
 
 /* Title (visible by default) */
@@ -3382,7 +3383,7 @@ input, select, textarea {
   margin: 0;
   font-size: 1.25em;
   color: #fff;
-  transition: 0.35s ease, opacity 0.35s ease;
+  transition: 0.35s ease;
 }
 
 /* Description (hidden by default) */
@@ -3391,17 +3392,16 @@ input, select, textarea {
   font-size: 0.9em;
   color: #fff;
   opacity: 0;
-  transform: translateY(10px);
-  transition: 0.35s ease, opacity 0.35s ease;
+  transition: opacity 0.35s ease;
 }
 
 /* Hover behavior (Phantom-like) */
 .project-card:hover .overlay {
-  background: rgba(40, 40, 40, 0.8);
+  background: transparent;
 }
 
 .project-card:hover h3 {
-  transform: translateY(-15px);
+  transform: translateY(0);
   opacity: 0;
 }
 
