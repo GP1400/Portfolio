@@ -3667,11 +3667,11 @@ transition: all 0.35s ease;
   background: transparent;
 }
 .project-card:hover h3 {
-  transform: translateY(-50%);
-  opacity: 0;
+  transform: translateY(50%);
+  opacity: 1;
 }
 
 .project-card:hover p {
-  opacity: 0;
+  opacity: 1;
   transform: translateY(0);
 }
