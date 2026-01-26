@@ -3624,20 +3624,24 @@ input, select, textarea {
   display: block;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 /* Overlay */
 .project-card .overlay {
   position: absolute;
-  inset: 0;
+	top: 0;
+	left:0;
+	right:0;
+	bottom:0;
   background: rgba(40, 40, 40, 0.55);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1em;
   text-align: center;
-  transition: all 0.35s ease;
+padding: 1.5em;
+transition: all 0.35s ease;
 }
 
 /* Title (visible by default) */
@@ -3650,11 +3654,11 @@ input, select, textarea {
 
 /* Description (hidden by default) */
 .project-card p {
-  margin-top: 0.5em;
-  font-size: 0.9em;
+  margin-top: 0.75em;
+  font-size: 1em;
   color: #fff;
   opacity: 0;
-  transform: translateY(5px);
+  transform: translateY(10px);
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
@@ -3664,7 +3668,7 @@ input, select, textarea {
 }
 
 .project-card:hover h3 {
-  transform: translateY(5px);
+  transform: translateY(-50%);
   opacity: 0;
 }
 
