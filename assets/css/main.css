@@ -3623,7 +3623,7 @@ input, select, textarea {
 .project-card .image img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 /* Overlay */
@@ -3660,7 +3660,7 @@ input, select, textarea {
 
 /* Hover behavior (Phantom-like) */
 .project-card:hover .overlay {
-  background: rgba(40, 40, 40, 0.8);
+  background: transparent;
 }
 
 .project-card:hover h3 {
