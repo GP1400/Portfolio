@@ -3630,7 +3630,7 @@ input, select, textarea {
 .project-card .overlay {
   position: absolute;
 	inset: 0;
-  background: rgba(40, 40, 40, 0.55);
+  background: transpartent
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3654,7 +3654,7 @@ transition: all 0.35s ease;
   margin-top: 0.75em;
   color: #fff;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(10px);
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
@@ -3663,7 +3663,7 @@ transition: all 0.35s ease;
   background: transparent;
 }
 .project-card:hover h3 {
-  transform: translateY(0em);
+  transform: translateY(0);
   opacity: 1;
 }
 
