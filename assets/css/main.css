@@ -3355,7 +3355,6 @@ input, select, textarea {
   text-decoration: none;
   color: inherit;
   overflow: hidden;
-  isolation: isolate;
 }
 
 .project-card .overlay {
@@ -3363,7 +3362,7 @@ input, select, textarea {
 	inset: 0;
   background: rgb(40, 40, 40);
 	opacity: 0.85;
-  display: flex;
+  display: block;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -3373,11 +3372,13 @@ transition: opacity 0.35s ease;
 
 .project-card .image img {
   display: block;
-  width: 90%;
-  height: 90%;
+  width: 100%;
   overflow: hidden;
-]
-
+}
+	
+.project-card:hover .overlay {
+  opacity: 0;
+}
 /* Overlay */
 
 /*
@@ -3394,9 +3395,7 @@ transition: opacity 0.35s ease;
 	text-align:center
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
-.project-card:hover .overlay {
-  opacity: 0;
-}
+
 .project-card:hover h3 {
   transform: translateY(0);
   opacity: 1;
