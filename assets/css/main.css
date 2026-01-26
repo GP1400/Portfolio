@@ -3357,14 +3357,7 @@ input, select, textarea {
   overflow: hidden;
   isolation: isolate;
 }
-.project-card .image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
 
-/* Overlay */
 .project-card .overlay {
   position: absolute;
 	inset: 0;
@@ -3378,24 +3371,29 @@ input, select, textarea {
 transition: opacity 0.35s ease;
 }
 
-/* Title (visible by default) */
+/*.project-card .image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Overlay */
+
+/* ===
+Title (visible by default) */
 .project-card h3 {
   margin: 0;
   font-size: 1.25em;
   color: #fff;
-  transform: translateY(1.5em);
   transition: transform 0.35s ease;
 }
 
 /* Description (hidden by default) */
 .project-card p {
-  margin-top: 0.5em;
+  margin-top: 0.75em;
   color: #fff;
   opacity: 0;
-	max-width:90%;
-	white-space: normal;
-	word-break: normal;
-	line-height:1.4;
 	text-align:center
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
@@ -3412,10 +3410,4 @@ transition: opacity 0.35s ease;
 .project-card:hover p {
   opacity: 1;
 }
-
-.project-card::after,
-.project-card::before {
-  display: none !important;
-  content: none !important;
-}
-
+=== */
