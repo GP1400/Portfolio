@@ -3619,8 +3619,13 @@ input, select, textarea {
   color: inherit;
   overflow: hidden;
 }
-
-.project-card .image img {
+.project-card .image {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  line-height: 0;
+}
+.project-card .image {
   display: block;
   width: 100%;
   height: 100%;
@@ -3630,10 +3635,7 @@ input, select, textarea {
 /* Overlay */
 .project-card .overlay {
   position: absolute;
-	top: 0;
-	left:0;
-	right:0;
-	bottom:0;
+	inset: 0;
   background: rgba(40, 40, 40, 0.55);
   display: flex;
   flex-direction: column;
@@ -3641,7 +3643,7 @@ input, select, textarea {
   align-items: center;
   text-align: center;
 padding: 1.5em;
-transition: all 0.35s ease;
+transition: background 0.35s ease;
 }
 
 /* Title (visible by default) */
@@ -3649,17 +3651,17 @@ transition: all 0.35s ease;
   margin: 0;
   font-size: 1.25em;
   color: #fff;
-  transition: transform 0.35s ease, opacity 0.35s ease;
+  transform: translateY(0);
+  transition: transform 0.35s ease;
 }
 
 /* Description (hidden by default) */
 .project-card p {
   margin-top: 0.75em;
-  font-size: 1em;
   color: #fff;
   opacity: 0;
   transform: translateY(10px);
-  transition: transform 0.35s ease, opacity 0.35s ease;
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 /* Hover behavior (Phantom-like) */
@@ -3667,11 +3669,16 @@ transition: all 0.35s ease;
   background: transparent;
 }
 .project-card:hover h3 {
-  transform: translateY(50%);
+  transform: translateY(-0.75em);
   opacity: 1;
 }
 
 .project-card:hover p {
   opacity: 1;
   transform: translateY(0);
+}
+.project-card::before,
+.project-card::after {
+  display: none !important;
+  content: none !important;
 }
