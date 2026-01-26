@@ -3364,7 +3364,7 @@ input, select, textarea {
 }
 
 .project-card .overlay {
-  position: absolute;
+  position: relative;
 	inset: 0;
   background: rgb(40, 40, 40);
 	opacity: 0.85;
