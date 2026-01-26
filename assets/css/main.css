@@ -3382,7 +3382,7 @@ input, select, textarea {
   margin: 0;
   font-size: 1.25em;
   color: #fff;
-  transition: transform 0.35s ease, opacity 0.35s ease;
+  transition: 0.35s ease, opacity 0.35s ease;
 }
 
 /* Description (hidden by default) */
@@ -3392,7 +3392,7 @@ input, select, textarea {
   color: #fff;
   opacity: 0;
   transform: translateY(10px);
-  transition: transform 0.35s ease, opacity 0.35s ease;
+  transition: 0.35s ease, opacity 0.35s ease;
 }
 
 /* Hover behavior (Phantom-like) */
