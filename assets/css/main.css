@@ -3350,57 +3350,62 @@ input, select, textarea {
 /* === Project cards (Phantom-style hover, Read Only layout) === */
 
 .project-card {
-  position: absolute;
+  position: relative;
   display: block;
-	text-decoration: none;
-	color: inherit;
-	overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
 }
 
 .project-card .image img {
   display: block;
   width: 100%;
-  overflow: hidden;
+  height: auto;
 }
 
+/* Overlay */
 .project-card .overlay {
-  position: relative;
-	inset: 0;
-  background: rgb(40, 40, 40);
-	opacity: 0.85;
-  display: block;
+  position: absolute;
+  inset: 0;
+  background: rgba(40, 40, 40, 0.55);
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1.5em;
   text-align: center;
-transition: opacity 0.35s ease;
+  transition: all 0.35s ease;
 }
-	
-.project-card:hover .overlay {
-  opacity: 0;
-}
-/* Overlay */
 
-/*
+/* Title (visible by default) */
 .project-card h3 {
   margin: 0;
   font-size: 1.25em;
   color: #fff;
-  transition: transform 0.35s ease;
-}
-.project-card p {
-  margin-top: 0.75em;
-  color: #fff;
-  opacity: 0;
-	text-align:center
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
-.project-card:hover h3 {
-  transform: translateY(0);
-  opacity: 1;
+/* Description (hidden by default) */
+.project-card p {
+  margin-top: 0.75em;
+  font-size: 0.9em;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: transform 0.35s ease, opacity 0.35s ease;
 }
+
+/* Hover behavior (Phantom-like) */
+.project-card:hover .overlay {
+  background: rgba(40, 40, 40, 0.8);
+}
+
+.project-card:hover h3 {
+  transform: translateY(-15px);
+  opacity: 0;
+}
+
 .project-card:hover p {
   opacity: 1;
+  transform: translateY(0);
 }
-*/
