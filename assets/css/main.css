@@ -3357,7 +3357,7 @@ input, select, textarea {
   overflow: hidden;
 }
 
-.project-card .image img {
+.project-card .image {
   display: block;
   width: 100%;
   height: 100%;
@@ -3373,8 +3373,6 @@ input, select, textarea {
 	height: 100%;
 	width: 100%;
   background: rgba(40, 40, 40, 0.55);
-}
-	/*
 	display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3383,10 +3381,11 @@ input, select, textarea {
   text-align: center;
   transition: 0.35s ease;
   overflow: hidden;
+}
 
 
 /* Title (visible by default) */
-/*.project-card h3 {
+.project-card h3 {
   margin: 0;
   font-size: 1.25em;
   color: #fff;
@@ -3394,20 +3393,20 @@ input, select, textarea {
 }
 
 /* Description (hidden by default) */
-/*.project-card p {
+.project-card p {
   margin-top: 0.75em;
   font-size: 0.9em;
   color: #fff;
   opacity: 0;
   transition: opacity 0.35s ease;
 }
-*/
+
 /* Hover behavior (Phantom-like) */
 .project-card:hover .overlay {
   opacity: 1;
 }
 
-/* .project-card:hover h3 {
+.project-card:hover h3 {
   transform: translateY(0);
   opacity: 1;
 }
@@ -3416,4 +3415,3 @@ input, select, textarea {
   opacity: 1;
   transform: translateY(0);
 }
-*/
