@@ -3662,6 +3662,8 @@ transition: background 0.35s ease;
   opacity: 0;
   transform: translateY(10px);
   transition: transform 0.35s ease, opacity 0.35s ease;
+	white-space: normal;
+	max-width: 100%;
 }
 
 /* Hover behavior (Phantom-like) */
