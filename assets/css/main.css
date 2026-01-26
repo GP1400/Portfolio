@@ -3389,10 +3389,14 @@ transition: opacity 0.35s ease;
 
 /* Description (hidden by default) */
 .project-card p {
-  margin-top: 0.75em;
+  margin-top: 0.5em;
   color: #fff;
   opacity: 0;
-  transform: translateY(10px);
+	max-width:90%;
+	white-space: normal;
+	word-break: normal;
+	line-height:1.4;
+	text-align:center
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
@@ -3407,7 +3411,6 @@ transition: opacity 0.35s ease;
 
 .project-card:hover p {
   opacity: 1;
-  transform: translateY(0);
 }
 
 .project-card::after,
@@ -3416,7 +3419,3 @@ transition: opacity 0.35s ease;
   content: none !important;
 }
 
-.tiles article::after,
-.tiles article::before {
-  display: none !important;
-}
