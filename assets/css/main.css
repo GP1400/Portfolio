@@ -3398,7 +3398,7 @@ bottom: 0;
   transition: background 0.35s ease;
 }
 
-/* Title (default state) 
+/* Title (default state) */
 .project-card h3 {
   margin: 0;
   color: #fff;
@@ -3425,7 +3425,7 @@ bottom: 0;
   background: transparent;
 }
 
-/* Title moves up when description appears 
+/* Title moves up when description appears */
 .project-card:hover h3 {
   transform: translateY(-0.75rem);
 }
