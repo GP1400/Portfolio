@@ -3383,7 +3383,7 @@ input, select, textarea {
 
 /* Overlay */
 .project-card .overlay {
-  position: absolute;
+  position: relative;
   inset: 0;
   background: rgba(40, 40, 40, 0.75);
   display: flex;
@@ -3418,7 +3418,7 @@ input, select, textarea {
 
 /* Hover behavior */
 .project-card:hover .overlay {
-  background: rgba(40, 40, 40, 0.15);
+  background: transparent;
 }
 
 /* Title moves up when description appears */
