@@ -3383,8 +3383,11 @@ input, select, textarea {
 
 /* Overlay */
 .project-card .overlay {
-  position: relative;
-  inset: 0;
+  position: absolute;
+  top: 0;
+bottom: 0;
+	left: 0;
+	right:0;
   background: rgba(40, 40, 40, 0.75);
   display: flex;
   flex-direction: column;
@@ -3414,6 +3417,7 @@ input, select, textarea {
   text-wrap: balance;
   transform: translateY(10px);
   transition: opacity 0.35s ease, transform 0.35s ease;
+	overflow: hidden;
 }
 
 /* Hover behavior */
@@ -3430,4 +3434,5 @@ input, select, textarea {
 .project-card:hover p {
   opacity: 1;
   transform: translateY(0);
+	overflow: hidden;
 }
