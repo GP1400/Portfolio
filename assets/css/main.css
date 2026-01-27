@@ -3400,6 +3400,7 @@ input, select, textarea {
   color: #fff;
   opacity: 0;
   transition: opacity 0.35s ease;
+	overflow: hidden;
 }
 
 /* Hover behavior (Phantom-like) */
@@ -3416,6 +3417,7 @@ input, select, textarea {
 .project-card:hover p {
   opacity: 1;
   transform: translateY(0);
+	overflow: hidden;
 }
 
 .project-link {
