@@ -3349,15 +3349,33 @@ input, select, textarea {
 
 /* === Project cards (Phantom-style hover, Read Only layout) === */
 
+/* Card wrapper */
 .project-card {
   position: relative;
-  display: block;
-  text-decoration: none;
-  color: inherit;
   overflow: hidden;
+  isolation: isolate; /* prevents bleed */
 }
 
+/* Link reset */
+.project-link {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Kill HTML5 UP link artifacts */
+.project-link::before,
+.project-link::after {
+  display: none !important;
+}
+
+/* Image */
 .project-card .image {
+  display: block;
+}
+
+.project-card .image img {
   display: block;
   width: 100%;
   height: auto;
@@ -3366,75 +3384,50 @@ input, select, textarea {
 /* Overlay */
 .project-card .overlay {
   position: absolute;
-  top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 100%;
-	width: 100%;
-  background: rgba(40, 40, 40, 0.55);
-	display: flex;
+  inset: 0;
+  background: rgba(40, 40, 40, 0.75);
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5em;
+  justify-content: center;   /* vertical center */
+  align-items: center;       /* horizontal center */
   text-align: center;
-  transition: 0.35s ease;
-  overflow: hidden;
+  padding: 1.5rem;
+  transition: background 0.35s ease;
 }
 
-
-/* Title (visible by default) */
+/* Title (default state) */
 .project-card h3 {
   margin: 0;
-  font-size: 1.25em;
   color: #fff;
-  transition: 0.35s ease;
+  font-size: 1.25em;
+  transform: translateY(0);
+  transition: transform 0.35s ease;
 }
 
-/* Description (hidden by default) 
-*/
+/* Description (hidden by default) */
 .project-card p {
-  margin-top: 0.75em;
-  font-size: 0.9em;
+  margin-top: 0.75rem;
   color: #fff;
   opacity: 0;
-  transition: opacity 0.35s ease;
-	overflow: hidden;
+  max-width: 90%;
+  line-height: 1.4;
+  text-wrap: balance;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-/* Hover behavior (Phantom-like) */
+/* Hover behavior */
 .project-card:hover .overlay {
-  opacity: 1;
+  background: rgba(40, 40, 40, 0.15);
 }
 
-
+/* Title moves up when description appears */
 .project-card:hover h3 {
-  transform: translateY(0);
-  opacity: 1;
+  transform: translateY(-0.75rem);
 }
 
+/* Reveal description */
 .project-card:hover p {
   opacity: 1;
   transform: translateY(0);
-	overflow: hidden;
-}
-
-.project-link {
-  display: block;
-  position: relative;
-  text-decoration: none;
-  color: inherit;
-}
-
-.project-card {
-  overflow: hidden;
-  isolation: isolate;
-}
-
-.project-link::before,
-.project-link::after {
-  display: none !important;
-	overflow: hidden;
-	isolation: isloate;
 }
