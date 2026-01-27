@@ -3399,7 +3399,7 @@ bottom: 0;
 }
 
 /* Title (default state) */
-.project-card h3 {
+.project-card h4 {
   margin: 0;
   color: #fff;
   font-size: 1.25em;
@@ -3426,7 +3426,7 @@ bottom: 0;
 }
 
 /* Title moves up when description appears */
-.project-card:hover h3 {
+.project-card:hover h4 {
   transform: translateY(-0.75rem);
 }
 
