@@ -3384,7 +3384,7 @@ input, select, textarea {
 }
 
 
-/* Title (visible by default) 
+/* Title (visible by default) */
 .project-card h3 {
   margin: 0;
   font-size: 1.25em;
@@ -3393,6 +3393,7 @@ input, select, textarea {
 }
 
 /* Description (hidden by default) 
+*/
 .project-card p {
   margin-top: 0.75em;
   font-size: 0.9em;
@@ -3406,7 +3407,7 @@ input, select, textarea {
   opacity: 1;
 }
 
-/*
+
 .project-card:hover h3 {
   transform: translateY(0);
   opacity: 1;
@@ -3416,4 +3417,20 @@ input, select, textarea {
   opacity: 1;
   transform: translateY(0);
 }
-*/
+
+.project-link {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.project-link::before,
+.project-link::after {
+  display: none !important;
+}
