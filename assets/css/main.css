@@ -3385,7 +3385,7 @@ input, select, textarea {
 .project-card .overlay {
   position: absolute;
   top: 0;
-bottom: -10px;
+bottom: 0;
 	left: 0;
 	right:0;
   background: rgba(40, 40, 40, 0.75);
@@ -3398,7 +3398,7 @@ bottom: -10px;
   transition: background 0.35s ease;
 }
 
-/* Title (default state) */
+/* Title (default state) 
 .project-card h3 {
   margin: 0;
   color: #fff;
@@ -3425,7 +3425,7 @@ bottom: -10px;
   background: transparent;
 }
 
-/* Title moves up when description appears */
+/* Title moves up when description appears 
 .project-card:hover h3 {
   transform: translateY(-0.75rem);
 }
