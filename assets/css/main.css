@@ -3435,4 +3435,6 @@ input, select, textarea {
 .project-link::before,
 .project-link::after {
   display: none !important;
+	overflow: hidden;
+	isolation: isloate;
 }
