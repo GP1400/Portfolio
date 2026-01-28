@@ -3382,11 +3382,9 @@ input, select, textarea {
   inset: 0;
   background: rgba(40, 40, 40, 0.75);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  transition: background 0.35s ease;
+transition: background 0.35s ease;
 }
 
 /* Title – centered by default */
@@ -3394,7 +3392,6 @@ input, select, textarea {
   color: #fff;
   font-size: 1.25em;
   margin: 0;
-  transform: translateY(5rem);
   transition: transform 0.35s ease;
 }
 
@@ -3407,19 +3404,16 @@ input, select, textarea {
   max-width: 90%;
   line-height: 1.4;
   transition: opacity 0.35s ease, transform 0.35s ease;
-  transform: translateY(0.5rem);
 }
 
 /* HOVER STATE (this replaces your `.hover` class idea) */
 .project-card:hover .overlay {
   background: transparent;
-  justify-content: flex-start;
-  padding-top: 1rem;
 }
 
 /* Title moves up */
 .project-card:hover h4 {
-  transform: translateY(0);
+  transform: translateY(-1.25rem);
 }
 
 /* Description fades in */
