@@ -3394,7 +3394,7 @@ transition: background 0.35s ease;
   color: #fff;
   font-size: 1.25em;
   margin: 0;
-  transform: translateY(4rem);
+  transform: translateY(3rem);
   transition: transform 0.35s ease;
 }
 
