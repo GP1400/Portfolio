@@ -3394,8 +3394,9 @@ input, select, textarea {
   position: relative
 	color: #fff;
   font-size: 1.25em;
-  margin: 0;
-  transform: translateY(-50%);
+  top: 50%
+	left: 50%;
+	transform: translate (-50%, -50%);
   transition: transform 0.35s ease;
 }
 
