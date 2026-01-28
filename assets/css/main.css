@@ -3391,10 +3391,11 @@ input, select, textarea {
 
 /* Title – centered by default */
 .project-card h4 {
-  color: #fff;
+  position: relative
+	color: #fff;
   font-size: 1.25em;
   margin: 0;
-  transform: translateY(1rem);
+  transform: translateY(-50%);
   transition: transform 0.35s ease;
 }
 
