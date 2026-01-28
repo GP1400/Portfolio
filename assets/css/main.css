@@ -3394,6 +3394,7 @@ transition: background 0.35s ease;
   font-size: 1.25em;
   margin: 0;
   transition: transform 0.35s ease;
+	test-align:center;
 }
 
 
