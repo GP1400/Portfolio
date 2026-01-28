@@ -3394,6 +3394,7 @@ transition: background 0.35s ease;
   color: #fff;
   font-size: 1.25em;
   margin: 0;
+  transform: translateY(4rem);
   transition: transform 0.35s ease;
 }
 
@@ -3415,7 +3416,7 @@ transition: background 0.35s ease;
 
 /* Title moves up */
 .project-card:hover h4 {
-  transform: translateY(-1.25rem);
+  transform: translateY(.5rem);
 }
 
 /* Description fades in */
