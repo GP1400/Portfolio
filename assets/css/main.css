@@ -3353,7 +3353,7 @@ input, select, textarea {
 .project-card {
   position: relative;
   overflow: hidden;
-  isolation: isolate; /* prevents bleed */
+  isolation: isolate;
 }
 
 /* Link reset */
@@ -3364,83 +3364,70 @@ input, select, textarea {
   color: inherit;
 }
 
-/* Kill HTML5 UP link artifacts */
 .project-link::before,
 .project-link::after {
   display: none !important;
 }
 
 /* Image */
-.project-card .image {
-  display: block;
-}
-
 .project-card .image img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-/* Overlay */
+/* Overlay (single structure, two states) */
 .project-card .overlay {
   position: absolute;
   inset: 0;
   background: rgba(40, 40, 40, 0.75);
-	opacity: 1;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   transition: background 0.35s ease;
 }
 
-/* Title (default state) */
-.overlay h4 {
-  top: 50%;
+/* Title – centered by default */
+.project-card h4 {
   color: #fff;
   font-size: 1.25em;
-	position: absolute;
+  margin: 0;
+  transform: translateY(1rem);
   transition: transform 0.35s ease;
-	text-align: center;
 }
 
-/* Description (hidden by default) */
-.hover h4 {
-	color: #fff;
-  font-size: 1.25em;
-	position: absolute;
- text-align: center;
-}
-
-.hover p {
+/* Description – hidden by default */
+.project-card p {
   margin-top: 0.75rem;
   color: #fff;
   opacity: 0;
   max-width: 90%;
   line-height: 1.4;
-  text-wrap: balance;
-  transform: translateY(10px);
   transition: opacity 0.35s ease, transform 0.35s ease;
-	overflow: hidden;
+  transform: translateY(0.5rem);
 }
 
-/* Hover behavior */
-.overlay:hover .h4 {
+/* HOVER STATE (this replaces your `.hover` class idea) */
+.project-card:hover .overlay {
   background: transparent;
-	opacity:0;
-	transform: translateY(-0.75rem);
-}
-/* Reveal description */
-.hover:hover h4 {
-  opacity: 1;
-  transform: translateY(0);
-	overflow: hidden;
+  justify-content: flex-start;
+  padding-top: 1rem;
 }
 
-/* Reveal description */
-.hover:hover p {
-  opacity: 1;
+/* Title moves up */
+.project-card:hover h4 {
   transform: translateY(0);
-	overflow: hidden;
 }
 
+/* Description fades in */
+.project-card:hover p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Remove Phantom spacing */
 .project-card .image.fit {
   margin-bottom: 0 !important;
 }
