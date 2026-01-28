@@ -3386,26 +3386,30 @@ input, select, textarea {
   position: absolute;
   inset: 0;
   background: rgba(40, 40, 40, 0.75);
+	opacity: 1;
   display: flex;
-  flex-direction: column;
-  justify-content: center;   /* vertical center */
-  align-items: center;       /* horizontal center */
-  text-align: center;
-  padding: 0;
   transition: background 0.35s ease;
 }
 
 /* Title (default state) */
-.project-card h4 {
+.overlay h4 {
   top: 50%;
   color: #fff;
   font-size: 1.25em;
-  transform: translateY(0);
+	position: absolute;
   transition: transform 0.35s ease;
+	text-align: center;
 }
 
 /* Description (hidden by default) */
-.project-card p {
+.hover h4 {
+	color: #fff;
+  font-size: 1.25em;
+	position: absolute;
+ text-align: center;
+}
+
+.hover p {
   margin-top: 0.75rem;
   color: #fff;
   opacity: 0;
@@ -3418,17 +3422,20 @@ input, select, textarea {
 }
 
 /* Hover behavior */
-.project-card:hover .overlay {
+.overlay:hover .h4 {
   background: transparent;
+	opacity:0;
+	transform: translateY(-0.75rem);
 }
-
-/* Title moves up when description appears */
-.project-card:hover h4 {
-  transform: translateY(-0.75rem);
+/* Reveal description */
+.hover:hover h4 {
+  opacity: 1;
+  transform: translateY(0);
+	overflow: hidden;
 }
 
 /* Reveal description */
-.project-card:hover p {
+.hover:hover p {
   opacity: 1;
   transform: translateY(0);
 	overflow: hidden;
