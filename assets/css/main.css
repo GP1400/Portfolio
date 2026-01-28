@@ -3385,6 +3385,7 @@ input, select, textarea {
 	flex-direction:column;
   align-items: center;
   justify-content: center;
+   text-align:center;
 transition: background 0.35s ease;
 }
 
@@ -3394,7 +3395,6 @@ transition: background 0.35s ease;
   font-size: 1.25em;
   margin: 0;
   transition: transform 0.35s ease;
-	test-align:center;
 }
 
 
