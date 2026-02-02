@@ -65,12 +65,12 @@
 							<section id="two">
 								<div class="container">
 									<h3>Project Overview</h3>
-									<p> <h6> Goal </h6>
+									<p> <h4> Goal </h4>
 Identify the most suitable locations for wind farm development in West Virginia using GIS-based multi-criteria decision analysis (MCDA). </br>
 
-<h6> Why this matters </h6>
+<h5> Why this matters </h5>
 West Virginia currently relies on coal for ~95% of its energy generation, but renewable energy—particularly wind—offers a path to long-term sustainability while maintaining the state’s role as an energy producer </br>
-<h6>Study Area </h6>
+<h5>Study Area </h5>
 							While most U.S. onshore wind potential is concentrated in the Midwest and Rockies, portions of West Virginia—especially the Allegheny Highlands and Eastern Panhandle—show strong wind potential
 								</p>
 								</div>
@@ -80,13 +80,25 @@ West Virginia currently relies on coal for ~95% of its energy generation, but re
 							<section id="three">
 								<div class="container">
 								<h3>Tools & Data</h3>
-                     <ul>
-                        <li>ArcGIS Pro (Network Analyst, Spatial Analyst)</li>
-                        <li>Python (ArcPy)</li>
-                        <li>LiDAR-derived DEMs</li>
-                        <li>Census block-level population data</li>
-                        <li>Tsunami inundation zones</li>
-                    </ul>
+									<h4>ArcGIS Pro</h4>
+									<ul>
+										<li>Spatial Analyst</li>
+										<li> Raster Calculator</li>
+										<li>GIS Raster and Vector Analysis</li>
+										<li>Multi-criteria Decision-making (MCDA)</li>
+									</ul>
+								</br>
+									<h4>Key Data Sources</h4>
+									<ul>
+                				        <li>Wind speed datasets (NREl WIND Toolkit)</li>
+    				                    <li>LiDAR-derived elevation and slope</li>
+       					                 <li>Roads, railroads, transmission lines</li>
+       					                 <li>Urban areas (NAIP LULC 2016)</li>
+       					                 <li>Airports</li>
+										<li>Parks & protected lands</li>
+										<li>Critical wildlife areas</li>
+										<li>Water bodies</li>
+     				               </ul>
 									</div>
 							</section>
 
@@ -94,6 +106,10 @@ West Virginia currently relies on coal for ~95% of its energy generation, but re
 							<section id="four">
 								<div class="container">
 									<h3>Methodology</h3>
+									<p>
+										This project uses a mutliple criteria decision-making (MCDA) framework with equal weighting, avoiding expert-bias-driven weighting schemes such as Analytic Hierarchy Process (AHP).
+									</p>
+									<h5>Suitability Criteria</h5>
 									<p>
       Pedestrian networks were constructed using walkable infrastructure,
       with impedance values adjusted for slope derived from LiDAR data.
