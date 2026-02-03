@@ -65,8 +65,8 @@
 							<section id="two">
 								<div class="container">
 									<h3>Project Overview</h3>
-									<p> West Virginia generates roughly 95% of its electricity from coal, yet portions of the state possess strong potential for utility-scale wind energy. This project evaluates where wind farms could be developed while balancing environmental protection, human acceptability, and economic feasibility.
-Using GIS-based multi-criteria decision analysis (MCDA), I modeled statewide wind farm suitability to identify regions that warrant further site-specific investigation.
+									<p> West Virginia's wind power potential is on par with that of the Rocky Mountains and the Midwest. 
+										This project explores this concept to pinpoint the specific areas where wind power generation would be the most suitable based on natural constraints, human acceptability, and economic viability. 
 									</p>
 									<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
 								</div>
@@ -111,13 +111,53 @@ Using GIS-based multi-criteria decision analysis (MCDA), I modeled statewide win
 									<p>
 										This project uses a mutliple criteria decision-making (MCDA) framework with equal weighting, avoiding expert-bias-driven weighting schemes such as Analytic Hierarchy Process (AHP).
 									</p>
-									<h5>Suitability Criteria</h5>
-									<p>
-      Pedestrian networks were constructed using walkable infrastructure,
-      with impedance values adjusted for slope derived from LiDAR data.
-      Evacuation routes were generated from populated origin points to
-      designated safe zones outside tsunami inundation areas.
-                  </p>
+									<section class="criteria-infographic">
+  <div class="row gtr-50 gtr-uniform">
+
+    <!-- Environmental -->
+    <div class="col-4 col-12-small">
+      <div class="criteria-card">
+        <h4>Environmental Exclusions</h4>
+        <span class="image fit">
+          <img src="images/maps/environmental_exclusions.jpg" alt="Environmental exclusion zones map">
+        </span>
+        <p>
+          Protected lands, water bodies, wildlife habitat, and airport safety
+          buffers were fully excluded from development.
+        </p>
+      </div>
+    </div>
+
+    <!-- Human -->
+    <div class="col-4 col-12-small">
+      <div class="criteria-card">
+        <h4>Human Acceptability</h4>
+        <span class="image fit">
+          <img src="images/maps/human_acceptability.jpg" alt="Human acceptability suitability map">
+        </span>
+        <p>
+          Suitability increases with distance from urban areas to minimize
+          visual and noise impacts.
+        </p>
+      </div>
+    </div>
+
+    <!-- Economic -->
+    <div class="col-4 col-12-small">
+      <div class="criteria-card">
+        <h4>Economic Viability</h4>
+        <span class="image fit">
+          <img src="images/maps/economic_viability.jpg" alt="Economic viability suitability map">
+        </span>
+        <p>
+          Wind speed, slope, and proximity to infrastructure determine
+          construction feasibility.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
 								</div>
 							</section>
 
