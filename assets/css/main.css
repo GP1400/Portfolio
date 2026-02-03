@@ -3429,3 +3429,28 @@ transition: background 0.35s ease;
 .project-card .image.fit {
   margin-bottom: 0 !important;
 }
+
+/* ===== Stuff for Infograph ======= */
+.criteria-infographic {
+  margin-top: 2rem;
+}
+
+.criteria-card {
+  text-align: center;
+}
+
+.criteria-card h4 {
+  margin-bottom: 0.75rem;
+  font-size: 1.1em;
+}
+
+.criteria-card p {
+  margin-top: 0.75rem;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+.criteria-card .image {
+  border-radius: 0.35rem;
+  overflow: hidden;
+}
