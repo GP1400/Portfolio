@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Land Cover Change from 1984 to 2024 in the Eastern Panhandle of West Virginia</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<base href="../">
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<a href="#navPanel" class="navPanelToggle"></a>
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<h1 id="logo"><a href="#">Land Cover Change from 1984 to 2024 in the Eastern Panhandle of West Virginia</a></h1>
+					<p>Supervised and unsupervised classification of land cover change comparison.</p>
+				</header>				
+				<nav id="nav">
+					<ul>
+						<li><a href="#two" class="active">Overview</a></li>
+						<li><a href="#three">Tools & Data</a></li>
+						<li><a href="#four">Methodology</a></li>
+						<li><a href="#five">Results</a></li>
+						<li><a href="#six">Deliverables</a></li>
+						<li><a href="index.html#three" class="logo">← More Projects</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="image main" data-position="center">
+									<img src="images/banner.jpg" alt="" />
+								</div>
+								<div class="container">
+									<header class="major">
+										<h2>Land Cover Change from 1984 to 2024 in the Eastern Panhandle of West Virginia</h2>
+										<p>Supervised and unsupervised classification of land cover change comparison.</p>
+									</header>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two">
+								<div class="container">
+									<h3>Project Overview</h3>
+                  <h4>What is the problem?</h4>
+									<p>Understanding how land cover has changed between 1984 and 2024 in the Eastern Panhandle of West Virginia, which is the fastest growing region in West Virginia.
+									</p>
+                  <h4>Why does it need to be solved?</h4>
+									<p>Understanding how a region is changing can be difficult to really understand given the variety of different jurisdictions and zoning requirements defined by each entity. Seeing how areas are growing can help in understanding factors for environmental management and urban planning for the region as a whole.
+									</p>
+									<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+								</div>
+							</section>
+
+						<!-- Three -->
+							<section id="three">
+								<div class="container">
+								<h3>Tools & Data</h3>
+									<div class="row">
+											<div class="col-6 col-12-xsmall">
+									<h5>ArcGIS Pro</h5>
+									<ul>
+										<li>Raster Calculator</li>
+										<li>GIS Raster Analysis</li>
+										<li>Confusion Matrix</li>
+										<li>NDVI and NDBI Formulas</li>
+										<li>Supervised Classification for Land Cover</li>
+										<li>Unsupervised Classification for Land Cover</li>
+										<li>Raster reclassification & normalization</li>
+                    <li>Composite Raster Bands</li>
+                    <li>Mosaic Rasters</li>
+									</ul>
+											</div>
+												<div class="col-6 col-12-xsmall">
+									<h5>Core datasets used</h5>
+									<ul>
+                				        <li>Satellite images from USGS Earth Explorer</li>
+     				               </ul>
+									</div>
+									</div>
+								</div>
+							</section>
+
+						<!-- Four -->
+							<section id="four">
+								<div class="container">
+									<h3>Methodology</h3>
+									<p>
+										Collected images from 1984 and 2024 from USGS with less than 5% cloud cover in spring and summer due to the better detection of vegetation. <br><br>
+Images were collected from the middle of September for both years. Different composites were then created using different bands to highlight different aspects of the image.
+									</p>
+<!-- TABLE -->
+                  <p>
+                  SWIR composite with 30 figures for each of the 6 classification types were created. These groupings were then used for the supervised classification using the SVM (Support Vector Machine) algorithm, and an NDVI image was added in the algorithm’s classification process.
+									</p>
+								</div>
+							</section>
+
+						<!-- Five -->
+							<section id="five">
+								<div class="container">
+									<h3>Results</h3>
+									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+								</div>
+							</section>
+
+						<!-- Six -->
+							<section id="six">
+								<div class="container">
+									<h3>Deliverables</h3>
+                    <ul>
+                      <li>
+                        <a href="https://github.com/yourusername/your-repo" target="_blank">
+                            GitHub Repository
+                        </a>
+                      </li>
+                      <li>
+                        <a href="files/tsunami_report.pdf" target="_blank">
+                            Project Report (PDF)
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="features">
+										<article>
+											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>Possibly broke spacetime</h4>
+												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+											</div>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>Terraformed a small moon</h4>
+												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+											</div>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>Snapped dark matter in the wild</h4>
+												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+											</div>
+										</article>
+									</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+
+</html>
