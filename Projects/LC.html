@@ -27,7 +27,8 @@
 						<li><a href="#three">Tools & Data</a></li>
 						<li><a href="#four">Methodology</a></li>
 						<li><a href="#five">Results</a></li>
-						<li><a href="#six">Deliverables</a></li>
+						<li><a href="#six">Limitations & Conclusion</a></li>
+						<li><a href="#seven">Deliverables</a></li>						
 						<li><a href="index.html#three" class="logo">← More Projects</a></li>
 					</ul>
 				</nav>
@@ -133,12 +134,36 @@ Images were collected from the middle of September for both years. Different com
 							<section id="five">
 								<div class="container">
 									<h3>Results</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+									<!-- TABLE -->
+									<p>The table above shows that while roughly 3,400 acres of forest and almost 5,000 acres of vegetation have changed classification during these 40 years, they only lost 1% each of their total area coverage. The urban classification on the other hand gained 2%, or 9,700 acres, showing that the growth the area is having is causing urban land cover to expand.
+</p>
+			<!-- MAP -->
+						<p>The resulting land cover classication for both years can be seen above.</p>
+					
+									
 								</div>
 							</section>
-
+						
 						<!-- Six -->
 							<section id="six">
+								<div class="container">
+									<h3>Limitations and Conclusions</h3>
+									<h4>Limitations</h4>
+									<p>One of the biggest problems in using a raster based approach for land cover classification has to do with the amount of information carried by that one pixel. The analysis was done using a 30 m by 30 m resolution, meaning that a variety of different land cover types could possibly be covered in this area. This is especially true in possible misclassification that can occur in farm areas that have trees boarding their properties or in urban areas that have tree lined streets. The misclassification could also cause salt and pepper in these areas that have more than one land cover type within the 30 m by 30 m area. 
+</p>
+									<p>The best way to resolve these problems would be to use an image resolution that would represent a smaller area on the ground. While the solution is there, the sharper resolution isn’t always available, especially when looking at older images, so these problems need to be understood as a problem, and results taken with a grain of sand.</p>
+									</div>
+								<h4>Conclusions</h4>
+								<p>Given the results it can be seen as plausible as the growth being seen in the western panhandle being a direct result of loss of vegetation and forest land cover types. The amount of area lost in those two types roughly equal the amount of growth seen by the urban area land cover type.
+</p>
+								<p>Future studies in trying to pinpoint land cover changes more directly could be done by reducing the types of land cover types to only 3, rather than the 6 used in the end for this study. The use of only 3 land cover types could help really understand where these changes of land cover were actually occurring on the ground.
+</p>
+								<p>Lastly, the one improvement that should have also been performed was running a confusion matrix after each classification, supervised and unsupervised, were originally run rather than waiting until they were combined. Running confusion matrices ensure that SVM for supervised classification and ISODATA for unsupervised classification were working as expected above 80% accuracy by themselves. Also confirming that the training data for the supervised classification was adequate and whether the correct number of clusters were originally created for the unsupervised classification. The final reason this would help would be to see the type of impact combining the classification types together had rather than assuming that combining them together would result in a better overall classification accuracy.
+</p>
+							</section>
+						
+						<!-- Seven -->
+							<section id="seven">
 								<div class="container">
 									<h3>Deliverables</h3>
                     <ul>
@@ -176,7 +201,8 @@ Images were collected from the middle of September for both years. Different com
 											</div>
 										</article>
 									</div>
-
+			</div>
+								</section>
 				<!-- Footer -->
 					<section id="footer">
 						<div class="container">
@@ -186,7 +212,7 @@ Images were collected from the middle of September for both years. Different com
 						</div>
 					</section>
 
-			</div>
+
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
