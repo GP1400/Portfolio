@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Landslide Susceptibility Hot Spot Analysis for West Virginia
+</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<base href="../">
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<a href="#navPanel" class="navPanelToggle"></a>
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<h1 id="logo"><a href="#">Landslide Susceptibility Hot Spot Analysis for West Virginia</a></h1>
+					<p>"Even with good maps, there's no guarantee that the public will get the word about landslide hazards, or that state and local governments will take action to discourage or prevent building in dangerous areas." — Bill Dedman
+</p>
+				</header>				
+				<nav id="nav">
+					<ul>
+						<li><a href="#two" class="active">Overview</a></li>
+						<li><a href="#three">Tools & Data</a></li>
+						<li><a href="#four">Methodology</a></li>
+						<li><a href="#five">Results</a></li>
+						<li><a href="#six">Limitations & Conclusion</a></li>
+						<li><a href="#seven">Deliverables</a></li>						
+						<li><a href="index.html#three" class="logo">← More Projects</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="image main" data-position="center">
+									<img src="images/banner.jpg" alt="" />
+								</div>
+								<div class="container">
+									<header class="major">
+										<h2>Landslide Susceptibility Hot Spot Analysis for West Virginia</h2>
+										<p>"Even with good maps, there's no guarantee that the public will get the word about landslide hazards, or that state and local governments will take action to discourage or prevent building in dangerous areas." — Bill Dedman
+</p>
+									</header>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two">
+								<div class="container">
+									<h3>Project Overview</h3>
+                  <h4>What is the problem?</h4>
+									<p>The problem this study is trying to solve is to locate which locations in the state of West Virginia have the greatest risk of landslides occurring. Landslides are defined as the rapid movement of soil, rock, and debris down slope, which is often triggered by intense rainfall, seismic activity, volcanic eruptions, and human-induced alterations to the landscape.
+</p>
+                  <h4>Why does it need to be solved?</h4>
+									<p>Landslides represent a hazard with large socio-economic and environmental impacts, especially in regions with steep topography and vulnerable communities. Climate change just makes things worse by altering precipitation patterns and increasing soil moisture variability in areas already prone to instability. This clustering of landslides seems to be influenced by underlying environmental characteristics like slope, aspect, curvature, soil properties, and land cover, as well as hydrologic factors like surface runoff and subsurface flow. 
+</p>
+									<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+								</div>
+							</section>
+
+						<!-- Three -->
+							<section id="three">
+								<div class="container">
+								<h3>Tools & Data</h3>
+									<div class="row">
+											<div class="col-6 col-12-xsmall">
+									<h5>ArcGIS Pro Tools</h5>
+									<ul>
+                    <li>Raster Resize</li>
+                    <li>Gi*</li>
+                    <li>Ripley's K</li>
+									</ul>
+											</div>
+												<div class="col-6 col-12-xsmall">
+									<h5>Data Sources</h5>
+									<ul>
+                				        <li>LiDAR-derived DTM that allows for penetration through vegetation</li>
+     				               </ul>
+									</div>
+									</div>
+								</div>
+							</section>
+
+						<!-- Four -->
+							<section id="four">
+								<div class="container">
+									<h3>Methodology</h3>
+									<p>
+Spatial autocorrelation provides a statistical measure of how much something is correlated with itself in space and determines spatial patterns like clustering, dispersion, or if it's randomly spaced. Global measures of spatial autocorrelation assume that nothing moves and provide a single value that summarizes the entire area. Local measures, on the other hand, help identify local patterns of clustering and dispersion, making them especially important in areas where the local trends might differ from the global or regional trend.<br>
+                    &nbsp;&nbsp;&nbsp;This study tests the spatial relationships of landslide susceptibility in West Virginia using global, local, and multi-distance spatial statistics. Specifically, Global Moran’s I and Getis-Ord General G are used to test for overall spatial autocorrelation and clustering of hot or low susceptibility values. Ripley’s K Function is applied to identify the spatial scales at which clustering occurs, and local Hot Spot Analysis through Getis-Ord Gi* is used to map statistically concentrated areas of high and low susceptibility. By combining these complementary methods within a watershed summarization of landslide susceptibility, this study provides a way to test and determine the spatial patterns of landslide susceptibility across West Virginia.
+									</p>
+                  <p>This study tests the spatial relationships of landslide susceptibility in West Virginia using global, local, and multi-distance spatial statistics. Specifically, Global Moran’s I and Getis-Ord General G are used to test for overall spatial autocorrelation and clustering of hot or low susceptibility values. Ripley’s K Function is applied to identify the spatial scales at which clustering occurs, and local Hot Spot Analysis through Getis-Ord Gi* is used to map statistically concentrated areas of high and low susceptibility. By combining these complementary methods within a watershed summarization of landslide susceptibility, this study provides a way to test and determine the spatial patterns of landslide susceptibility across West Virginia.
+</p>
+<!-- MAP -->
+                  <p>Understanding where landslides tend to occur through the mean landslide susceptibility by watershed.
+</p>
+            <!-- MAP -->      
+                  <div class="col-6 col-12-xsmall">
+									<h5>Clustering was tested through testing global autocorrelation indexes: Moran’s I, Getis-Ord General G, and Ripley’s K.
+</h5>
+									<ul>
+                    <li>Global Moran’s I test, which is widely used to estimate general patterns of spatial dependency, is used to understand how a phenomenon of interest is correlated with itself over a large area.
+</li>
+                    <li>General G is used to assess whether high or low landslide susceptibility values were globally clustered.
+</li>
+                    <li>Ripley's K is used to study spatial patterns and determine the scale at which clustering, random spread, or dispersion is observed. HUC 10 polygons were converted to Z-score centroids for this analysis because points are required for this analysis. Scales set to be tested were from 10 km for 15 times, allowing for testing from about the size of 1 HUC 10 to about the whole state.
+</li>
+                    <li>Getis-Ord Gi* is a z-score-based statistic that is used to test for statistically significant clusters of high and low areas in a study area.
+</li>
+									</ul>
+											</div>
+								</div>
+							</section>
+
+						<!-- Five -->
+							<section id="five">
+								<div class="container">
+									<h3>Results</h3>
+          <div class="features">
+										<article>
+											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>Global Moran’s I</h4>
+												<p>Global Moran’s I showed a very strong positive spatial autocorrelation in the landslide susceptibility values, showing that watersheds with similar susceptibility tend to be spatially clustered.
+</p>
+											</div>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>Moran’s I's</h4>
+												<p>Moran’s I's results near a positive one indicate clustering, seen in this test with I = 0.72.
+</p>
+											</div>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>Getis-Ord General G</h4>
+												<p>The Getis-Ord General G indicated significant global clustering of high landslide susceptibility values, suggesting that areas of high susceptibility are regionally clustered rather than randomly distributed. While General G tests for clustering as a whole, either for low value clustering or high value clustering, the positive z-score indicates a higher degree of high value clustering.
+</p>
+											</div>
+										</article>
+            									<article>
+											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>Ripely's K's</h4>
+												<p>Ripely's K's graph shows that statistically significant clustering of high landslide susceptibility for watersheds occurs at distances ranging from approximately 30 km to 140 km. The graph shows these results by looking at where the Observed K is above the upper confidence envelope. This pattern suggests that landslide-prone areas in West Virginia are not randomly distributed but instead show regional-scale clustering.
+</p>
+											</div>
+										</article>
+            									<article>
+											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>Getis-Ord Gi*</h4>
+												<p>Getis-Ord Gi* results can be seen on the left. The map is divided evenly into two clustering groups for both hot and cold spots.
+</p>
+											</div>
+										</article>
+									</div>
+								</div>
+							</section>
+						
+						<!-- Six -->
+							<section id="six">
+								<div class="container">
+									<h3>Limitations and Conclusions</h3>
+									<h4>Limitations</h4>
+									<p>While using HUC 10 vectors rather than county-based data made sense when looking to understand clustering of landslides, for better distributions of funds to areas that experience landslides, it would be beneficial to use county vectors. 
+</p>
+								<h4>Conclusions</h4>
+								<p>In conclusion, this study shows that landslide susceptibility in West Virginia is strongly spatially autocorrelated, regionally clustered, and scale-dependent. The combined use of Global Moran’s I, Getis-Ord General G, Ripley’s K Function, and Getis-Ord Gi* provides a comprehensive group of tests to understand both the intensity and spatial organization of landslide susceptibility. Future research could be done to work with landslide inventories to validate this clustering or test various scales to see if clustering is still seen in similar areas.
+</p>
+						</div>	
+							</section>
+						
+						<!-- Seven -->
+							<section id="seven">
+								<div class="container">
+									<h3>Deliverables</h3>
+                    <ul>
+                      <li>
+                        <a href="https://github.com/yourusername/your-repo" target="_blank">
+                            GitHub Repository
+                        </a>
+                      </li>
+                      <li>
+                        <a href="files/tsunami_report.pdf" target="_blank">
+                            Project Report (PDF)
+                        </a>
+                      </li>
+                    </ul>
+                   
+			</div>
+								</section>
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+					</div>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+
+</html>
