@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Pedestrian Evacuation Time Estimator Tool
+</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<base href="../">
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<a href="#navPanel" class="navPanelToggle"></a>
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<h1 id="logo"><a href="#">Pedestrian Evacuation Time Estimator Tool</a></h1>
+					<p>Everybody has an idea of the tsunami, of being a big wave. It is not a big wave. It is a huge amount of water that comes to land. - Juan Antonio Bayona
+</p>
+				</header>				
+				<nav id="nav">
+					<ul>
+						<li><a href="#two" class="active">Overview</a></li>
+						<li><a href="#three">Tools & Data</a></li>
+						<li><a href="#four">Methodology</a></li>
+						<li><a href="#five">Results</a></li>
+						<li><a href="#six">Limitations & Conclusion</a></li>
+						<li><a href="#seven">Deliverables</a></li>						
+						<li><a href="index.html#three" class="logo">← More Projects</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="image main" data-position="center">
+									<img src="images/banner.jpg" alt="" />
+								</div>
+								<div class="container">
+									<header class="major">
+										<h2>Pedestrian Evacuation Time Estimator Tool</h2>
+										<p>Everybody has an idea of the tsunami, of being a big wave. It is not a big wave. It is a huge amount of water that comes to land. - Juan Antonio Bayona
+</p>
+									</header>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two">
+								<div class="container">
+									<h3>Project Overview</h3>
+                  <h4>What is the problem?</h4>
+									<p>Estimating travel time from different locations in the event of a tsunami to assembly points along the coast or to areas of high elevation.
+</p>
+                  <h4>Why does it need to be solved?</h4>
+									<p>Tsunamis are a threat to millions of people living near the coast, and understanding the travel time they need to make it to assembly points or areas of high elevation could help in determining if more assembly points are needed for the population of an area or if the assembly points are well distributed for the area in question.
+</p>
+									<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+								</div>
+							</section>
+
+						<!-- Three -->
+							<section id="three">
+								<div class="container">
+								<h3>Tools & Data</h3>
+									<div class="row">
+											<div class="col-6 col-12-xsmall">
+									<h5>Tools</h5>
+									<ul>
+                    <li>Python</li>
+                    <li>ArcGIS Pro</li>
+                    <li>Tool Creation in ArcGIS Pro</li>
+									</ul>
+											</div>
+												<div class="col-6 col-12-xsmall">
+									<h5>Data Sources</h5>
+									<ul>
+                				        <li>Land Cover</li>
+                				        <li>DEM at 10m</li>
+                                <li>Speed through Land Covers</li>
+                                <li>Assembly Points</li>
+                                <li>Critical Facilities</li>
+                                <li>Areas Deemed Free of Tsunami Risk</li>
+     				               </ul>
+									</div>
+									</div>
+								</div>
+							</section>
+
+						<!-- Four -->
+							<section id="four">
+								<div class="container">
+									<h3>Methodology</h3>
+									<p>
+The problem was solved through the creation of an original Tool for ArcGIS Pro using Python.
+									</p>
+<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+								</div>
+							</section>
+
+						<!-- Five -->
+							<section id="five">
+								<div class="container">
+									<h3>Results</h3>
+									                    <div class="features">
+										<article>
+											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>Rainfall</h4>
+												<p>&emsp;&emsp;&emsp;Rainfall shows a strong correlation to the elevation of the terrain. The overall rainfall in one study area along the Reedy River shows that while rainfall varies, a linear trend shows an increase in the amount of rainfall the area will receive in the future.<br>
+												&emsp;&emsp;&emsp;Studying the projected flood rates shows a clear trend of increasing rates at 1.5, 10, and 20-year flood rates, with the jump from 2020 to 2040 being a small increase, and the largest jumps being between 2040 and 2080.<br>
+												&emsp;&emsp;&emsp;Climate change has made the one-day rainfall amounts show a clear increase, which will only continue to be a problem. In 2005, for example, the rainfall of over 4 inches in one day for 2005 accounted for 10% of the total rainfall for that year. Heavy rainfall is a trend that is expected to continue to increase in frequency and pose a risk regarding flooding with the large volume of water falling over a short period of time.
+</p>
+											</div>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>Temperature</h4>
+												<p>&emsp;&emsp;&emsp;One of the reasons that precipitation will increase, rainfall intensity will increase, and flow rate will increase stems from an increase in temperature.<br>
+												&emsp;&emsp;&emsp;A rate of linear increase of 1°F every 7 years is seen using data from 2000 to 2023.<br>
+												&emsp;&emsp;&emsp;The number of days spent above 90°F on average went from about 40 days in the early 2000s to around 60 in the early 2020s. This is a jump of almost a week and a half, dealing with temperatures over 90°F. The same trend is also seen in the number of days seen above 70°F, from around 205 days in the early 2000s to 230 days in the early 2020s; this is almost a full month of warmth.
+					  </p>
+											</div>
+										</article>
+																									<article>
+											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>Land Cover</h4>
+												<p>&emsp;&emsp;&emsp;The land cover within the watershed shows that forest went from being tied with developed land to now being 10% behind developed land in terms of acres. This change in land cover shows the growth and urban development that is occurring within Greenville County, which can be seen in the maps below, as being mostly in the form of suburban expansion. 
+</p>
+											</div>
+										</article>
+																									<article>
+												<h4>Riparian Areas</h4>
+												<p><span class="image left"><img src="images/pic01.jpg" alt="" /></span>&emsp;&emsp;&emsp;Riparian areas were the last items explored as they are those areas around a river that impact the river the most in their contributions to runoff, especially when flooding occurs. Riparian areas are critical in helping understand the health of a river and helping improve the water quality of the river.
+<br>&emsp;&emsp;&emsp;Forests and other vegetation types should be prioritized when looking at the land cover types within the riparian areas. These land cover types provide shade and habitats for fish and other animals that need to rely on the river. Shade is very important for rivers, especially in this watershed, which shows that temperatures are rising, as providing shade helps lower the temperatures of the river. High temperatures can be deadly for animals that live in the Reedy River.
+<br>&emsp;&emsp;&emsp;The actual riparian areas downstream of the city of Greenville show mostly “good” riparian land use, being mostly vegetation and forested. The suburban expansion in the south of the watershed should be limited to continue to help support the river. These good riparian areas downstream of the Greenville help by also providing natural filtering, especially areas like Conestee Nature Preserve, where nature is prioritized, and wetlands were created and are thriving.
+</p>
+										</article>
+									</div>
+								</div>
+							</section>
+						
+						<!-- Six -->
+							<section id="six">
+								<div class="container">
+									<h3>Limitations and Conclusions</h3>
+									<h4>Limitations</h4>
+																					<p>&emsp;&emsp;&emsp;One of the limitations of the tool is that it assumes that everyone will be walking rather than using any other form of transport, and that everyone will know which direction safety is located.<br>
+												&emsp;&emsp;&emsp;The tool also currently has no way to account for travel time assumptions for obstacles, such as cars on the roads, nor the delay with a mass of people moving in the same direction.<br>
+												&emsp;&emsp;&emsp;The tool would also benefit from on-ground timing validation to verify that specific travel times, such as the use of Tobler’s Hiking Function and the speeds used going through different land cover types, are accurate.
+					  </p>
+								<h4>Conclusions</h4>
+								<p>This tool is not perfect, but it is a basic foundation that could be built upon and expanded. One way the tool could be expanded upon would be through creating different versions of the tool where only vehicle travel times are taken into account, or one that looks into travel time with the use of transit. A final master tool could then use the resulting analysis of all these tools to get a regional average for travel times for a region. This would be a good way to use this tool’s concept for planning for tsunami evacuations. 
+</p>
+						</div>	
+							</section>
+						
+						<!-- Seven -->
+							<section id="seven">
+								<div class="container">
+									<h3>Deliverables</h3>
+                    <ul>
+                      <li>
+                        <a href="https://github.com/yourusername/your-repo" target="_blank">
+                            GitHub Repository
+                        </a>
+                      </li>
+                      <li>
+                        <a href="files/tsunami_report.pdf" target="_blank">
+                            Project Report (PDF)
+                        </a>
+                      </li>
+                    </ul>
+
+			</div>
+								</section>
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+					</div>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+
+</html>
