@@ -3454,3 +3454,14 @@ transition: background 0.35s ease;
   border-radius: 0.35rem;
   overflow: hidden;
 }
+
+/* === Skills section – tighten gap between icon headings and bullet lists === */
+
+ul.feature-icons li h4 {
+    margin-bottom: 0.1em;
+}
+
+ul.feature-icons + ul {
+    margin-top: -1.5em;
+    margin-bottom: 1em;
+}
