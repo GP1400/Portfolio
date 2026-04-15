@@ -3463,19 +3463,21 @@ ul.feature-icons li h4 {
     line-height: 1.2em;
 }
 
-ul.feature-icons + ul {
-    margin-top: -2em;
-    margin-bottom: 1.5em;
-    padding-left: 1em;
-}
-
 ul.feature-icons {
     margin-bottom: 0;
     padding-left: 0;
-    margin-left: -3em;
+    margin-left: -1.5em;
 }
 
 ul.feature-icons li {
     padding-left: 4.5em;
     margin-bottom: 0.5em;
+}
+
+ul.feature-icons + ul {
+    margin-top: 0.5em;
+    margin-bottom: 1.5em;
+    padding-left: 4em;
+    position: relative;
+    z-index: 1;
 }
