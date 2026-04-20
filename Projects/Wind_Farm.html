@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Wind Farm Suitability
+		<title>Wind Farm Suitability Analysis for West Virginia
 </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -18,8 +18,8 @@
 		<!-- Header -->
 			<section id="header">
 				<header>
-					<h1 id="logo"><a href="#">Wind Farm Suitability</a></h1>
-					<p>GIS-based multi-criteria decision analysis to identify optimal locations for utility-scale wind energy development in West Virginia.</p>
+					<h1 id="logo"><a href="#">Wind Farm Suitability Analysis for West Virginia</a></h1>
+					<p>""Solar power, wind power, the way forward is to collaborate with nature - it's the only way we are going to get to the other end of the 21st century." - Björk</p>
 				</header>				
 				<nav id="nav">
 					<ul>
@@ -27,7 +27,8 @@
 						<li><a href="#three">Tools & Data</a></li>
 						<li><a href="#four">Methodology</a></li>
 						<li><a href="#five">Results</a></li>
-						<li><a href="#six">Deliverables</a></li>
+						<li><a href="#six">Limitations & Conclusion</a></li>
+						<li><a href="#seven">Deliverables</a></li>						
 						<li><a href="../index.html#three" class="logo">← More Projects</a></li>
 					</ul>
 				</nav>
@@ -54,7 +55,7 @@
 								<div class="container">
 									<header class="major">
 										<h2>Wind Farm Suitability Analysis for West Virginia</h2>
-										<p>GIS-based multi-criteria decision analysis to identify optimal locations for utility-scale wind energy development in West Virginia.</p>
+										<p>""Solar power, wind power, the way forward is to collaborate with nature - it's the only way we are going to get to the other end of the 21st century." - Björk</p>
 									</header>
 								</div>
 							</section>
@@ -63,10 +64,11 @@
 							<section id="two">
 								<div class="container">
 									<h3>Project Overview</h3>
-									<p> West Virginia's wind power potential is on par with that of the Rocky Mountains and the Midwest. 
-										This project explores this concept to pinpoint the specific areas where wind power generation would be the most suitable based on natural constraints, human acceptability, and economic viability. 
+                  <h4>What is the problem?</h4>
+									<p>West Virginia is known for its power production capabilities, but its reliance on coal to generate that power will leave it struggling in a world where renewable energy is prioritized. One of the best renewable energies for West Virginia's mountainous terrain would be wind power. Locating those prime locations for wind farm placements then becomes the problem.
 									</p>
-									<a href="#" class="image"><img src="../images/pic01.jpg" alt="" /></a>
+                  <h4>Why does it need to be solved?</h4>
+									<p>Wind farms, while they can be placed anywhere, have three main factors that need to be taken into consideration for them to be successful. Human factors, environmental restraints, and economic viability. These factors limit where a wind farm can be placed and produce the most electricity.</p>
 								</div>
 							</section>
 
@@ -74,27 +76,26 @@
 							<section id="three">
 								<div class="container">
 								<h3>Tools & Data</h3>
-									<p>This analysis integrates environmental, social, and economic spatial datasets to represent real-world siting constraints.</p>
 									<div class="row">
 											<div class="col-6 col-12-xsmall">
-									<h5>ArcGIS Pro</h5>
+									<h5>ArcGIS Pro Tools</h5>
 									<ul>
-										<li>Spatial Analyst</li>
+                    <li>Clip</li>
+                    <li>Spatial Analyst</li>
 										<li>Raster Calculator</li>
-										<li>GIS Raster and Vector Analysis</li>
-										<li>Multi-criteria Decision-making (MCDA)</li>
-										<li>Raster reclassification & normalization</li>
+										<li>Multi-criteria Decision-Making Analysis (MCDA)</li>
+										<li>Raster Reclassification & Normalization</li>
 									</ul>
 											</div>
 												<div class="col-6 col-12-xsmall">
-									<h5>Core datasets used</h5>
+									<h5>Data Sources</h5>
 									<ul>
                 				        <li>Wind speed datasets (NREl WIND Toolkit)</li>
-    				                    <li>Elevation and slope (LiDAR-derived DEMS</li>
-       					                 <li>Roads, railroads, transmission lines</li>
-       					                 <li>Urban areas (NAIP LULC 2016)</li>
-       					                 <li>Airports</li>
-										<li>Parks, protected lands, and wildlife areas</li>
+                				        <li>Elevation and slope (LiDAR-derived DEMS)</li>
+                                <li>Roads, railroads, transmission lines</li>
+                                <li>Urban areas (NAIP LULC 2016)</li>
+                                <li>Airports</li>
+                                <li>Parks, protected lands, and wildlife areas</li>
 										<li>Water bodies</li>
      				               </ul>
 									</div>
@@ -107,55 +108,147 @@
 								<div class="container">
 									<h3>Methodology</h3>
 									<p>
-										This project uses a mutliple criteria decision-making (MCDA) framework with equal weighting, avoiding expert-bias-driven weighting schemes such as Analytic Hierarchy Process (AHP).
+&emsp;&emsp;&emsp;This project uses a mutliple criteria decision-making (MCDA) framework with equal weighting, avoiding expert-bias-driven weighting schemes such as Analytic Hierarchy Process (AHP).<br>
+										&emsp;&emsp;&emsp;The problem was solved by looking into the criteria that would determine the most suitable sites for wind farms. These criteria were determined based on looking into the criteria used by other studies and grouping them into nature, human acceptability, and economic viability.
 									</p>
-									<section class="criteria-infographic">
-  <div class="row gtr-50 gtr-uniform">
-
-    <!-- Environmental -->
-    <div class="col-4 col-12-small">
-      <div class="criteria-card">
-        <h4>Environmental Exclusions</h4>
-        <span class="image fit">
-          <img src="../images/maps/environmental_exclusions.jpg" alt="Environmental exclusion zones map">
-        </span>
-        <p>
-          Protected lands, water bodies, wildlife habitat, and airport safety
-          buffers were fully excluded from development.
-        </p>
-      </div>
-    </div>
-
-    <!-- Human -->
-    <div class="col-4 col-12-small">
-      <div class="criteria-card">
-        <h4>Human Acceptability</h4>
-        <span class="image fit">
-          <img src="../images/maps/human_acceptability.jpg" alt="Human acceptability suitability map">
-        </span>
-        <p>
-          Suitability increases with distance from urban areas to minimize
-          visual and noise impacts.
-        </p>
-      </div>
-    </div>
-
-    <!-- Economic -->
-    <div class="col-4 col-12-small">
-      <div class="criteria-card">
-        <h4>Economic Viability</h4>
-        <span class="image fit">
-          <img src="../images/maps/economic_viability.jpg" alt="Economic viability suitability map">
-        </span>
-        <p>
-          Wind speed, slope, and proximity to infrastructure determine
-          construction feasibility.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
+									<div class="features">
+										<article>
+												<h4>Nature Factors</h4>
+											<a href="#" class="image"><img src="../images/pic02.jpg" alt="" /></a>
+												<p>&emsp;&emsp;&emsp;Bird and bat mortality and wind farms used to be a large problem in early wind farms. While technology has improved to lessen the mortality rate, it is still recommended to take into account “important bird areas” as designated by the DNR. A 1 km buffer has been established around these areas.<br>
+												&emsp;&emsp;&emsp;Nature areas already established as parks were also used as areas where windfarms could not be located, and even included a 2 km buffer<br>
+												&emsp;&emsp;&emsp;Water bodies were also excluded with a 1 km buffer to allow for protection around wetlands and prevent hazardious run off from wind farm sites.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="../images/pic02.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>Human Factors</h4>
+												<p>&emsp;&emsp;&emsp;A linear weighted buffer placed around urban areas, which were determined by land cover classification.<br>
+												&emsp;&emsp;&emsp;Airport buffer recommended by the FAA of 3.5 miles or ~5.6 km was used around airports</p>
+											</div>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="../images/pic03.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>Economic Viability</h4>
+												<p>&emsp;&emsp;&emsp;Higher wind speeds allow for money to be produced by a wind farm, thus areas of at least 5 m/s wind speed were used in the study.<br>
+												&emsp;&emsp;&emsp;Construction cost for building and setting up of wind farms also needs to be taken into account, resulting in slopes with a maximum slope of 15% were allowed.<br>
+												&emsp;&emsp;&emsp;Proximity to established infrastructure, like roads, railroads, and electrical lines, was also prioritized. A buffer around electrical lines and railroads was also given, but a linear buffer was placed around this infrastructure.
+</p>
+											</div>
+										</article>
+									</div>
+									<p>
+&emsp;&emsp;&emsp;Combining these criteria altogether. A multiple criteria decision - making analysis with equal weight was used, allowing for all factors to have even weight. </p>
+<h4>Table</h4>
+										<h5>Factors and Evaluation Methods Used for This Analysis</h5>
+										<div class="table-wrapper">
+											<table>
+												<thead>
+													<tr>
+														<th>Criteria</th>
+														<th>Minimum</th>
+														<th>Maximum</th>
+														<th>Method</th>
+														<th>Desire</th>
+														<th>Intervals</th>
+														<th>Weights</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Wind Potential</td>
+														<td>5 m/s</td>
+														<td></td>
+														<td>Linear</td>
+														<td>Highter</td>
+														<td>1 m/s</td>
+														<td>7</td>
+													</tr>
+													<tr>
+														<td>Slope</td>
+														<td></td>
+														<td>15%</td>
+														<td>Linear</td>
+														<td>Lower</td>
+														<td>2.5%</td>
+														<td>6</td>
+													</tr>
+													<tr>
+														<td>Transmission Lines</td>
+														<td>300 m</td>
+														<td>10,000 m</td>
+														<td>Linear</td>
+														<td>Lower</td>
+														<td>1,000 m</td>
+														<td>10</td>
+													</tr>
+													<tr>
+														<td>Roads</td>
+														<td></td>
+														<td>10,000 m</td>
+														<td>Linear</td>
+														<td>Lower</td>
+														<td>1,000 m</td>
+														<td>9</td>
+													</tr>
+													<tr>
+														<td>Railroads</td>
+														<td>1,000 m</td>
+														<td>10,000 m</td>
+														<td>Linear</td>
+														<td>Lower</td>
+														<td>1,000 m</td>
+														<td>9</td>
+													</tr>
+													<tr>
+														<td>Urban Areas</td>
+														<td>500 m</td>
+														<td></td>
+														<td>Linear</td>
+														<td>Higher</td>
+														<td>1,000 m</td>
+														<td>9</td>
+													</tr>
+													<tr>
+														<td>Airports</td>
+														<td>5,000 m</td>
+														<td></td>
+														<td>Binary</td>
+														<td>No</td>
+														<td></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>Parks</td>
+														<td>2,000 m</td>
+														<td></td>
+														<td>Binary</td>
+														<td>No</td>
+														<td></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>Critical Wildlife Areas</td>
+														<td>1,000 m</td>
+														<td></td>
+														<td>Binary</td>
+														<td>No</td>
+														<td></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>Water Bodies</td>
+														<td>1,000 m</td>
+														<td></td>
+														<td>Binary</td>
+														<td>No</td>
+														<td></td>
+														<td></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
 								</div>
 							</section>
 
@@ -163,12 +256,29 @@
 							<section id="five">
 								<div class="container">
 									<h3>Results</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+	<a href="#" class="image"><img src="../images/pic01.jpg" alt="" /></a>
+									<p>&emsp;&emsp;&emsp;The final part of my analysis was to compare it to where real-life wind farms are currently located to see how well my criteria align.<br>
+									&emsp;&emsp;&emsp;It was interesting to see that while some existing wind farms did fall within my approved criteria locations, most did not. 
+</p>
 								</div>
 							</section>
-
+						
 						<!-- Six -->
 							<section id="six">
+								<div class="container">
+									<h3>Limitations and Conclusions</h3>
+									<h4>Limitations</h4>
+									<p>&emsp;&emsp;&emsp;One of the biggest limitations in this analysis is within those binary exclusion areas that might have been better placed with a gradient ranking, to be able to cover more areas. Another limitation was the equal weighting of all the characteristics, which might also have allowed more of the existing wind farms to fall within my approved areas. The biggest problem with trying to do a weighted approach is the bias that comes about when trying to create a ranking criterion. The analytic hierarchy process places weight on different criteria, but the bias factor is why it was not used in this study. My recommendation would be to use a ranking weight approach to distribute the weight better, or even a Pairwise comparison method, given that there aren’t too many criteria for this study.
+The biggest limitation in studying the Reedy River was the lack of physical data collected from the river itself to validate the information collected and viewed. This was only a quick study of the Reedy River watershed.
+									</p>
+								<h4>Conclusions</h4>
+								<p>While this multiple criteria decision-making analysis didn’t have much overlap with existing wind farms, this analysis could be run again with the ranking method weight approach to see how that could better align with existing wind farm placement. The conclusion of that analysis would be to look at that analysis to then study where more wind farms could be placed. 
+</p>
+						</div>	
+							</section>
+						
+						<!-- Seven -->
+							<section id="seven">
 								<div class="container">
 									<h3>Deliverables</h3>
                     <ul>
@@ -183,31 +293,9 @@
                         </a>
                       </li>
                     </ul>
-                    <div class="features">
-										<article>
-											<a href="#" class="image"><img src="../images/pic01.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Possibly broke spacetime</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="../images/pic02.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Terraformed a small moon</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="../images/pic03.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Snapped dark matter in the wild</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-											</div>
-										</article>
-									</div>
-								</div>
-							</section>
+
+			</div>
+								</section>
 					</div>
 
 				<!-- Footer -->
@@ -218,7 +306,8 @@
 							</ul>
 						</div>
 					</section>
-			</div>
+					</div>
+
 
 		<!-- Scripts -->
 			<script src="../assets/js/jquery.min.js"></script>
