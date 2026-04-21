@@ -101,42 +101,84 @@
 							</section>
 
 						<!-- Four -->
-							<section id="four">
-								<div class="container">
-									<h3>Methodology</h3>
-									<p>
-&emsp;&emsp;&emsp;This project uses a Multiple Criteria Decision-Making Analysis (MCDA) framework with equal weighting across all criteria, avoiding expert-bias-driven approaches such as the Analytic Hierarchy Process (AHP), which tends to prioritize economic viability over environmental and social factors. Suitable sites were identified through a review of existing wind farm suitability literature and were organized into three categories: environmental constraints, human acceptability, and economic viability.</p>
-									<div class="features">
-										<article>
-											<a href="#" class="image"><img src="../images/pic01.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Environmental Constraints</h4>
-												<p>&emsp;&emsp;&emsp;Bird and bat mortality had historically been a concern with wind farm development. While improvements have reduced mortality rates, a 1 km exclusion buffer was still applied around important bird areas, as designated by the DNR, as a result of historic precautions.
-<br>
-												&emsp;&emsp;&emsp;Parks and protected lands were fully excluded with a 2 km buffer, and water bodies were excluded with a 1 km buffer to protect wetlands and prevent hazardous runoff from wind farm construction and operation.
-</p>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="../images/pic02.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Human Acceptability</h4>
-												<p>&emsp;&emsp;&emsp;Human opposition is frequently cited as the primary reason wind farm projects are denied. Taking neighboring communities into account is therefore a critical part of responsible wind farm siting.<br>
-												&emsp;&emsp;&emsp;Urban areas, identified through land cover classification, were assigned a linear weighted buffer to account for urban proximity and the visual impacts it could have on communities.<br>
-												&emsp;&emsp;&emsp;An airport buffer was used around airports as recommended by the FAA of 3.5 miles or ~5.6 km to prevent interference with flight paths and radar systems.</p>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="../images/pic03.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Economic Viability</h4>
-												<p>&emsp;&emsp;&emsp;Wind speeds are the primary driver of energy production and profitability, so only areas with a minimum wind speed of 5 m/s were considered for this study.<br>
-												&emsp;&emsp;&emsp;Terrain slope was capped at 15% to keep construction costs down. West Virginia’s mountainous terrain made this threshold particularly important as steeper slopes significantly increase site preparation costs.<br>
-												&emsp;&emsp;&emsp;Proximity to existing infrastructure - roads, railroads, and transmission lines - was prioritized using linear weighted buffers, as proximity reduces construction costs and the expense of connecting the wind farm to the grid.</p>
-											</div>
-										</article>
-									</div>
-									<p>All criteria were then combined using an equal-weight MCDA, ensuring no single factor dominated the final suitability result.</p>
+<section id="four">
+    <div class="container">
+        <h3>Methodology</h3>
+        <p>&emsp;&emsp;&emsp;This project uses a Multiple Criteria Decision-Making Analysis (MCDA) framework with equal weighting across all criteria, avoiding expert-bias-driven approaches such as the Analytic Hierarchy Process (AHP), which tends to prioritize economic viability over environmental and social factors. Suitable sites were identified through a review of existing wind farm suitability literature and were organized into three categories: environmental constraints, human acceptability, and economic viability.</p>
+        
+        <div class="features">
+            <article>
+                <div class="image">
+                    <img 
+                        class="lightbox-thumb"
+                        src="../images/Map1_Binary.png"
+                        data-full="../images/Map1_Binary.png"
+                        data-caption="Map 1. Binary Criteria — Bird areas, parks, water bodies, and airports weighted binarily."
+                        alt="Map 1 Binary Criteria"
+                    />
+                </div>
+                <div class="inner">
+                    <h4>Environmental Constraints</h4>
+                    <p>&emsp;&emsp;&emsp;Bird and bat mortality had historically been a concern with wind farm development. While improvements have reduced mortality rates, a 1 km exclusion buffer was still applied around important bird areas, as designated by the DNR, as a result of historic precautions.
+                    <br>
+                    &emsp;&emsp;&emsp;Parks and protected lands were fully excluded with a 2 km buffer, and water bodies were excluded with a 1 km buffer to protect wetlands and prevent hazardous runoff from wind farm construction and operation.</p>
+                </div>
+            </article>
+
+            <article>
+                <div class="image">
+                    <img 
+                        class="lightbox-thumb"
+                        src="../images/Map2_Urban.png"
+                        data-full="../images/Map2_Urban.png"
+                        data-caption="Map 2. Urban Areas — Urban areas identified from NAIP LULC 2016, with linear weighted buffer applied."
+                        alt="Map 2 Urban Areas"
+                    />
+                </div>
+                <div class="inner">
+                    <h4>Human Acceptability</h4>
+                    <p>&emsp;&emsp;&emsp;Human opposition is frequently cited as the primary reason wind farm projects are denied. Taking neighboring communities into account is therefore a critical part of responsible wind farm siting.<br>
+                    &emsp;&emsp;&emsp;Urban areas, identified through land cover classification, were assigned a linear weighted buffer to account for urban proximity and the visual impacts it could have on communities.<br>
+                    &emsp;&emsp;&emsp;An airport buffer was used around airports as recommended by the FAA of 3.5 miles or ~5.6 km to prevent interference with flight paths and radar systems.</p>
+                </div>
+            </article>
+
+            <article>
+                <div class="image">
+                    <img 
+                        class="lightbox-thumb"
+                        src="../images/Map3_Natural.png"
+                        data-full="../images/Map3_Natural.png"
+                        data-caption="Map 3. Linear Weighted Natural — Slope and wind speed linearly weighted for economic viability."
+                        alt="Map 3 Linear Weighted Natural"
+                    />
+                </div>
+                <div class="inner">
+                    <h4>Economic Viability</h4>
+                    <p>&emsp;&emsp;&emsp;Wind speeds are the primary driver of energy production and profitability, so only areas with a minimum wind speed of 5 m/s were considered for this study.<br>
+                    &emsp;&emsp;&emsp;Terrain slope was capped at 15% to keep construction costs down. West Virginia's mountainous terrain made this threshold particularly important as steeper slopes significantly increase site preparation costs.<br>
+                    &emsp;&emsp;&emsp;Proximity to existing infrastructure - roads, railroads, and transmission lines - was prioritized using linear weighted buffers, as proximity reduces construction costs and the expense of connecting the wind farm to the grid.</p>
+                </div>
+            </article>
+
+            <article>
+                <div class="image">
+                    <img 
+                        class="lightbox-thumb"
+                        src="../images/Map4_Manmade.png"
+                        data-full="../images/Map4_Manmade.png"
+                        data-caption="Map 4. Linear Weighted Manmade — Railroad, road, and transmission line proximity linearly weighted."
+                        alt="Map 4 Linear Weighted Manmade"
+                    />
+                </div>
+                <div class="inner">
+                    <h4>Infrastructure Proximity</h4>
+                    <p>&emsp;&emsp;&emsp;Roads, railroads, and transmission lines were each assigned linear weighted buffers with a maximum distance of 10,000 m. A minimum buffer was also applied around transmission lines and railroads to account for the diameter span of wind turbine blades.</p>
+                </div>
+            </article>
+        </div>
+
+        <p>All criteria were then combined using an equal-weight MCDA, ensuring no single factor dominated the final suitability result.</p>
 <h4>Table</h4>
 										<h5>Factors and Evaluation Methods Used for This Analysis</h5>
 										<div class="table-wrapper">
@@ -308,7 +350,42 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+<!-- Lightbox Overlay -->
+<div class="lightbox-overlay" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="" />
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+		<script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
 
+    document.querySelectorAll('.lightbox-thumb').forEach(function(thumb) {
+        thumb.addEventListener('click', function() {
+            lightboxImg.src = this.dataset.full;
+            lightboxCaption.textContent = this.dataset.caption || '';
+            lightbox.classList.add('active');
+        });
+    });
+
+    lightboxClose.addEventListener('click', function() {
+        lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            lightbox.classList.remove('active');
+        }
+    });
+</script>
 	</body>
 
 </html>
