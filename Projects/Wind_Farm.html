@@ -50,7 +50,7 @@
 						<!-- One -->
 							<section id="one">
 								<div class="image main" data-position="center">
-									<img src="../images/banner.jpg" alt="" />
+									<img src="../images/maps/wind/Wind.png" alt="Wind Farm Wind Farm Suitability Analysis Final Results" />
 								</div>
 								<div class="container">
 									<header class="major">
@@ -111,10 +111,10 @@
                 <div class="image">
                     <img 
                         class="lightbox-thumb"
-                        src="../images/Map1_Binary.png"
-                        data-full="../images/Map1_Binary.png"
-                        data-caption="Map 1. Binary Criteria — Bird areas, parks, water bodies, and airports weighted binarily."
-                        alt="Map 1 Binary Criteria"
+                        src="../images/maps/wind/binary.png"
+                        data-full="../images/maps/wind/binary.png"
+                        data-caption="Binary Exclusion Criteria. (A) Bird areas, (B) parks, (C) water bodies, and (D) airports were all weighted binarily. These maps show areas that were binary in their weights, with areas to be included weighted 100 and areas excluded weighted 0."
+                        alt="Binary Exclusion Criteria."
                     />
                 </div>
                 <div class="inner">
@@ -129,10 +129,10 @@
                 <div class="image">
                     <img 
                         class="lightbox-thumb"
-                        src="../images/Map2_Urban.png"
-                        data-full="../images/Map2_Urban.png"
-                        data-caption="Map 2. Urban Areas — Urban areas identified from NAIP LULC 2016, with linear weighted buffer applied."
-                        alt="Map 2 Urban Areas"
+                        src="../images/maps/wind/urban.png"
+                        data-full="../images/maps/wind/urban.png"
+                        data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
+                        alt="Human Acceptability: Urban Buffer Weighting."
                     />
                 </div>
                 <div class="inner">
@@ -147,10 +147,10 @@
                 <div class="image">
                     <img 
                         class="lightbox-thumb"
-                        src="../images/Map3_Natural.png"
-                        data-full="../images/Map3_Natural.png"
-                        data-caption="Map 3. Linear Weighted Natural — Slope and wind speed linearly weighted for economic viability."
-                        alt="Map 3 Linear Weighted Natural"
+                        src="../images/maps/wind/naturallin.png"
+                        data-full="../images/maps/wind/naturallin.png"
+                        data-caption="Economic Viability: Natural Weighting Factors. (A) Slope of >15% excluded, the remaining slope values were linearly weighted, with increasing values closer to 0%. (B) Wind speeds of <5m/s were excluded, with the remaining values linearly weighted, with increasing values the higher the wind speeds."
+                        alt="Economic Viability: Natural Weighting Factors."
                     />
                 </div>
                 <div class="inner">
@@ -165,10 +165,10 @@
                 <div class="image">
                     <img 
                         class="lightbox-thumb"
-                        src="../images/Map4_Manmade.png"
-                        data-full="../images/Map4_Manmade.png"
-                        data-caption="Map 4. Linear Weighted Manmade — Railroad, road, and transmission line proximity linearly weighted."
-                        alt="Map 4 Linear Weighted Manmade"
+                        src="../images/maps/wind/humanlin.png"
+                        data-full="../images/maps/wind/humanlin.png"
+                        data-caption="Economic Viability: Infrastructure Weighting Factors. (A) Railroad proximity linearly weighted, with increasing values closer to the buffer around the railroad tracks of 1,000 m to account for the diameter of wind turbine blades and wind created by trains. (B) Road proximity is linearly weighted, showing increasing values closer to the roads they got. (C) Transmission lines are costly, with increasing values closer to the buffer round the lines around the transmission lines or 300 m to account for the diameter of wind turbine blades."
+                        alt="Economic Viability: Infrastructure Weighting Factors."
                     />
                 </div>
                 <div class="inner">
@@ -295,7 +295,15 @@
 							<section id="five">
 								<div class="container">
 									<h3>Results</h3>
-	<a href="#" class="image"><img src="../images/pic01.jpg" alt="" /></a>
+									                <div class="image">
+                    <img 
+                        class="lightbox-thumb"
+                        src="../images/maps/wind/Wind.png"
+                        data-full="../images/maps/wind/Wind.png"
+                        data-caption="Wind Farm Wind Farm Suitability Analysis Final Results. Results of the final analysis of the multiple criteria decision-making process. The larger map shows the concentration of excellent suitability seen in the area termed the Allegheny Highlands and also the Eastern Panhandle of West Virginia."
+                        alt="Wind Farm Wind Farm Suitability Analysis Final Results."
+                    />
+                </div>
 									<p>&emsp;&emsp;&emsp;The analysis identified approximately 514 mi<sup>2</sup> of West Virginia as having excellent suitability for wind farm development, with an additional 1,118 mi<sup>2</sup> rated very good and 974 mi<sup>2</sup> rated good. Combined, this means that roughly 13% of the state meets the suitability criteria established in this study, with the strongest concentrations found in the Allegheny Highlands and the Eastern Panhandle.<br>
 									&emsp;&emsp;&emsp;When compared against the only other wind farm suitability study conducted for West Virginia, by Ajanaku et al. (2022), there was notable overlap despite the two studies using different weighting approaches. That study, which used an expert-driven Analytic Hierarchy Process prioritizing economic factors, identified Tucker, Grant, Mineral, and Pocahontas counties as most suitable. This study identified Grant, Mineral, Upshur, Barbour, Present, and western Randolph counties as suitable. This means that Grant and Mineral counties were deemed suitable by both analyses, lending additional confidence to those findings.<br>
 									&emsp;&emsp;&emsp;Overlaying existing wind farm locations onto the final suitability map showed that while some turbines fall within suitable areas, others do not - suggesting that real-world development decisions involve additional site-specific considerations beyond the broad criteria used for this analysis.</p>
@@ -309,6 +317,15 @@
 									<h4>Limitations</h4>
 									<p>&emsp;&emsp;&emsp;One of the biggest limitations in this analysis is within those binary exclusion areas, which might have been better represented with a gradient ranking to allow for more nuance in borderline areas. Equal weighting across all criteria is another limitation, as it may not fully reflect real-world development priorities. While a weighted approach such as the Analytic Hierarchy Process could address this, it introduces expert bias - which is why it was avoided in this study. Future analyses could explore a ranked weight approach or a Pairwise comparison method to better distribute importance across criteria without relying on expert opinion.<br>
 										&emsp;&emsp;&emsp;One of the broader challenges in wind farm suitability studies is the integration of social factors into the decision-making process. Human opposition is frequently cited as the primary reason wind farm projects are denied, yet it remains difficult to quantify spatially. Better mechanisms for incorporating local public input, alongside public education on the benefits of wind energy, would strengthen future suitability analyses. Notably, siting wind farms on previously undesirable land uses - such as landfills or strip mines - has shown promise in gaining public acceptance.</p>
+									<div class="image">
+                    <img 
+                        class="lightbox-thumb"
+                        src="../images/maps/wind/compare.png"
+                        data-full="../images/maps/wind/compare.png"
+                        data-caption="Suitability Analysis vs Existing Wind Farms. Results of the final analysis of the multiple criteria decision-making process overlaid with the current wind farms in the state of West Virginia. There are four main constraints of wind farms in the state, with all but one area falling mostly within non-suitable locations."
+                        alt="Suitability Analysis vs Existing Wind Farms."
+                    />
+                </div>
 								<h4>Conclusions</h4>
 								<p>&emsp;&emsp;&emsp;This analysis shows that 13% of West Virginia has strong potential for wind farm development, concentrated in the Allegheny Highlands and Eastern Panhandle. While not all existing wind farms fall within the identified suitable areas, this is consistent with the broader literature, which shows that real-world siting decisions often prioritize economic factors over the broader criteria used in regional suitability studies.<br>
 									&emsp;&emsp;&emsp;Given the overlap between this study and Ajanaku et al. (2022) in Grant and Mineral counties, these areas represent the strongest candidates for future investigation. A follow-up county-level study incorporating land use and zoning data could provide the granular detail needed to guide responsible wind farm development - and help West Virginia continue its legacy as an energy powerhouse, now powered by the wind.</p>
@@ -325,6 +342,11 @@
                             Project Report (PDF)
                         </a>
                       </li>
+						<li>
+							<a href="../images/maps/wind/Wind.png" target="_blank" rel="noopener noreferrer">
+								Final Suitability Map (PNG)
+							</a,>
+						</li>
                     </ul>
 
 			</div>
