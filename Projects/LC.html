@@ -49,7 +49,7 @@
 						<!-- One -->
 							<section id="one">
 								<div class="image main" data-position="center">
-									<img src="../images/banner.jpg" alt="" />
+									<img src="../images/maps/lc/2024.png" alt="2024 Final Land Cover Classification" />
 								</div>
 								<div class="container">
 									<header class="major">
@@ -107,7 +107,8 @@
 									<h3>Methodology</h3>
 									<p><span class="image left">
         <img
-            class="lightbox-thumb"
+            style="width: 18em !important;"
+			class="lightbox-thumb"
             src="../images/maps/lc/True.png"
             data-full="../images/maps/lc/True.png"
             data-caption="True Color Composites. Standard RGB composite of the Landsat 5 and 9 images, respectively, showing the Eastern Panhandle of West Virginia as it would appear to the human eye."
@@ -130,7 +131,6 @@
                 alt="NIR False Color Composites for both years"
             />
         </div>
-        <p style="text-align:center; font-size:0.85em; margin-top:-1em;">NIR False Color</p>
     </div>
     <div class="col-6 col-12-small">
         <div class="image fit">
@@ -142,7 +142,6 @@
                 alt="SWIR False Color Composites for both years"
             />
         </div>
-        <p style="text-align:center; font-size:0.85em; margin-top:-1em;">SWIR False Color</p>
     </div>
     <div class="col-6 col-12-small">
         <div class="image fit">
@@ -154,7 +153,6 @@
                 alt="NDVI"
             />
         </div>
-        <p style="text-align:center; font-size:0.85em; margin-top:-1em;">NDVI</p>
     </div>
     <div class="col-6 col-12-small">
         <div class="image fit">
@@ -166,7 +164,6 @@
                 alt="NDBI"
             />
         </div>
-        <p style="text-align:center; font-size:0.85em; margin-top:-1em;">NDBI</p>
     </div>
 </div>
 									<h4>Validation</h4>
@@ -185,7 +182,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Classified ↓ / Reference →</th>
+                        <th>Reference → / Classified ↓</th>
                         <th>Water</th>
                         <th>Forest</th>
                         <th>Urban</th>
@@ -295,7 +292,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Classified ↓ / Reference →</th>
+                        <th>Reference → / Classified ↓</th>
                         <th>Water</th>
                         <th>Forest</th>
                         <th>Urban</th>
@@ -390,7 +387,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Classified ↓ / Reference →</th>
+                        <th>Reference → / Classified ↓</th>
                         <th>Water</th>
                         <th>Forest</th>
                         <th>Urban</th>
@@ -500,7 +497,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Classified ↓ / Reference →</th>
+                        <th>Reference → / Classified ↓</th>
                         <th>Water</th>
                         <th>Forest</th>
                         <th>Urban</th>
@@ -594,6 +591,7 @@
 									<h3>Results</h3>
 									<div class="row">
     <div class="col-6 col-12-small">
+        <p style="text-align:center; font-size:0.85em; margin-top:0em;">1984 Land Cover</p>		
         <div class="image fit">
             <img
                 class="lightbox-thumb"
@@ -603,9 +601,9 @@
                 alt="1984 Final Land Cover Classification"
             />
         </div>
-        <p style="text-align:center; font-size:0.85em; margin-top:-1em;">1984 Land Cover</p>
     </div>
     <div class="col-6 col-12-small">
+        <p style="text-align:center; font-size:0.85em; margin-top:0em;">2024 Land Cover</p>		
         <div class="image fit">
             <img
                 class="lightbox-thumb"
@@ -615,7 +613,6 @@
                 alt="2024 Final Land Cover Classification"
             />
         </div>
-        <p style="text-align:center; font-size:0.85em; margin-top:-1em;">2024 Land Cover</p>
     </div>
 </div>
 									<p>&emsp;&emsp;&emsp;The land cover classification maps for 1984 and 2024, along with the land cover change table and chart above, show a clear pattern of urbanization across the Eastern Panhandle over the 40-year study period. While forest and vegetation remain the dominant land cover types in both years, the changes between them tell a significant story.<br>
@@ -643,7 +640,7 @@
 									<h3>Limitations and Conclusions</h3>
 									<h4>Limitations</h4>
 									<p>&emsp;&emsp;&emsp;One of the biggest problems in using a raster-based approach for land cover classification has to do with the amount of information carried by that one pixel. The analysis was done using a 30 m by 30 m resolution, meaning that a variety of different land cover types could possibly be covered in this area. This is especially true in possible misclassification that can occur in farm areas that have trees bordering their properties or in urban areas that have tree-lined streets. The misclassification could also cause salt and pepper effects in these areas that have more than one land cover type within the 30 m by 30 m area.<br>
-                    					&emsp;&emsp;&emsp;The best way to resolve these problems would be to use an image resolution that would represent a smaller area on the ground. While the solution is there, the sharper resolution isn't always available, especially when looking at older images, so these problems need to be understood, and results should be interpreted with some caution.
+                    					&emsp;&emsp;&emsp;The best way to resolve these problems would be to use an image resolution that would represent a smaller area on the ground. While the solution is there, the sharper resolution isn't always available, especially when looking at older images, so these problems need to be understood, and results should be interpreted with some caution.<br>
                     					&emsp;&emsp;&emsp;An additional limitation specific to the 1984 classification is a visible error on the image that is assumed to be an artifact of this older image. This artifact affected the classification in that area, likely contributing to the inflated "Other" category in the 1984 results, which showed 1,326 acres compared to just 140 acres in 2024. This discrepancy should be interpreted as a data artifact rather than a genuine land cover change, and a future study should address this by being more diligent in image selection, ensuring no artifacts are on the images.
 </p>
 								<h4>Conclusions</h4>
