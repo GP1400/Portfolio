@@ -105,7 +105,7 @@
 							<section id="four">
 								<div class="container">
 									<h3>Methodology</h3>
-									<<p>&emsp;&emsp;&emsp;Two Landsat images were collected from USGS Earth Explorer — one from September 19, 1984 and one from September 9, 2024. Images were required to have less than 5% cloud cover, and September was selected because spring and summer images allow for better distinction between land cover types due to vegetation being in full bloom. Both years required two image frames to cover the full extent of the Eastern Panhandle, which were composited and mosaiced into a single image for each year, then clipped to the study area boundary.<br>
+									<p>&emsp;&emsp;&emsp;Two Landsat images were collected from USGS Earth Explorer — one from September 19, 1984 and one from September 9, 2024. Images were required to have less than 5% cloud cover, and September was selected because spring and summer images allow for better distinction between land cover types due to vegetation being in full bloom. Both years required two image frames to cover the full extent of the Eastern Panhandle, which were composited and mosaiced into a single image for each year, then clipped to the study area boundary.<br>
                     					&emsp;&emsp;&emsp;Once the images were prepared, multiple composite images were created using different band combinations — true color, NIR false color, and SWIR false color — to highlight different characteristics of the land surface. NDVI and NDBI ratio images were also created for both years. NDVI highlights differences in vegetation health, while NDBI highlights built-up urban areas, with both indices normalizing values between -1 and +1.<br>
                     					&emsp;&emsp;&emsp;A hybrid-supervised classification method was used, combining both supervised and unsupervised classification to produce the most accurate result. For the supervised component, training data was drawn over a SWIR composite with a minimum of 30 samples per class across 6 land cover types: water, forest, urban, vegetation, farm, and other. The Support Vector Machine (SVM) algorithm was selected over the more common Maximum Likelihood Classification due to its demonstrated accuracy advantages in other land cover classification studies. An NDVI image was included in the classification process to improve the distinction between land cover types.<br>
 										&emsp;&emsp;&emsp;For the unsupervised component, an ISODATA clustering algorithm was applied to the same data, generating 35 spectral clusters. These clusters were then manually grouped into the same 6 land cover types using NDBI values and band similarities as reference. The two classifications were then combined, with areas where they differed being reclassified through visual inspection using the composite images already created.
@@ -115,6 +115,417 @@
                     					&emsp;&emsp;&emsp;Improving the accuracy was done through combining the vegetation and farmland classes into a single class, reducing the classifications from 6 land cover types to 5. The classifications were then re-run and re-validated. The revised 1984 classification received an overall accuracy of 88.03% with a Kappa coefficient of 0.86, and the revised 2024 classification received an overall accuracy of 88.46% with a Kappa coefficient of 0.86 — both indicating strong agreement between the classification and reference data.<br>
                     					&emsp;&emsp;&emsp;It is important to note that both classifications were validated using reference points drawn from the 2024 image; there is no historical aerial or satellite imagery of sufficient resolution available for 1984. This means the 1984 validation should be interpreted with some caution, as land cover conditions in 1984 may differ from what the 2024 reference data assumes.
 </p>
+									<h4>Validation Tables</h4>
+
+<!-- 1984 Matrices -->
+<h5>1984 Confusion Matrices</h5>
+<div class="row">
+    <div class="col-6 col-12-medium">
+        <h6>Original 1984 Confusion Matrix (Overall Accuracy: 72%)</h6>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Classified ↓ / Reference →</th>
+                        <th>Water</th>
+                        <th>Forest</th>
+                        <th>Urban</th>
+                        <th>Farm</th>
+                        <th>Vegetation</th>
+                        <th>Other</th>
+                        <th>Total</th>
+                        <th>U_Accuracy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Water</td>
+                        <td>10</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>10</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>Forest</td>
+                        <td>1</td>
+                        <td>255</td>
+                        <td>3</td>
+                        <td>11</td>
+                        <td>10</td>
+                        <td>0</td>
+                        <td>280</td>
+                        <td>91%</td>
+                    </tr>
+                    <tr>
+                        <td>Urban</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>12</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>18</td>
+                        <td>67%</td>
+                    </tr>
+                    <tr>
+                        <td>Farm</td>
+                        <td>0</td>
+                        <td>14</td>
+                        <td>2</td>
+                        <td>43</td>
+                        <td>23</td>
+                        <td>1</td>
+                        <td>83</td>
+                        <td>52%</td>
+                    </tr>
+                    <tr>
+                        <td>Vegetation</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>8</td>
+                        <td>56</td>
+                        <td>48</td>
+                        <td>1</td>
+                        <td>115</td>
+                        <td>42%</td>
+                    </tr>
+                    <tr>
+                        <td>Other</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>7</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>10</td>
+                        <td>30%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td>12</td>
+                        <td>271</td>
+                        <td>32</td>
+                        <td>113</td>
+                        <td>82</td>
+                        <td>6</td>
+                        <td>516</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>P_Accuracy</strong></td>
+                        <td>83%</td>
+                        <td>94%</td>
+                        <td>38%</td>
+                        <td>38%</td>
+                        <td>59%</td>
+                        <td>50%</td>
+                        <td colspan="2"><strong>Overall: 72%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-6 col-12-medium">
+        <h6>Final 1984 Confusion Matrix (Overall Accuracy: 87%)</h6>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Classified ↓ / Reference →</th>
+                        <th>Water</th>
+                        <th>Forest</th>
+                        <th>Urban</th>
+                        <th>Vegetation</th>
+                        <th>Other</th>
+                        <th>Total</th>
+                        <th>U_Accuracy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Water</td>
+                        <td>10</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>10</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>Forest</td>
+                        <td>1</td>
+                        <td>255</td>
+                        <td>3</td>
+                        <td>21</td>
+                        <td>0</td>
+                        <td>280</td>
+                        <td>91%</td>
+                    </tr>
+                    <tr>
+                        <td>Urban</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>12</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>18</td>
+                        <td>67%</td>
+                    </tr>
+                    <tr>
+                        <td>Vegetation</td>
+                        <td>0</td>
+                        <td>16</td>
+                        <td>10</td>
+                        <td>170</td>
+                        <td>2</td>
+                        <td>198</td>
+                        <td>86%</td>
+                    </tr>
+                    <tr>
+                        <td>Other</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>7</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>10</td>
+                        <td>30%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td>12</td>
+                        <td>271</td>
+                        <td>32</td>
+                        <td>195</td>
+                        <td>6</td>
+                        <td>516</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>P_Accuracy</strong></td>
+                        <td>83%</td>
+                        <td>94%</td>
+                        <td>38%</td>
+                        <td>87%</td>
+                        <td>50%</td>
+                        <td colspan="2"><strong>Overall: 87%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- 2024 Matrices -->
+<h5>2024 Confusion Matrices</h5>
+<div class="row">
+    <div class="col-6 col-12-medium">
+        <h6>Original 2024 Confusion Matrix (Overall Accuracy: 69%)</h6>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Classified ↓ / Reference →</th>
+                        <th>Water</th>
+                        <th>Forest</th>
+                        <th>Urban</th>
+                        <th>Farm</th>
+                        <th>Vegetation</th>
+                        <th>Other</th>
+                        <th>Total</th>
+                        <th>U_Accuracy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Water</td>
+                        <td>10</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>10</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>Forest</td>
+                        <td>2</td>
+                        <td>225</td>
+                        <td>5</td>
+                        <td>11</td>
+                        <td>34</td>
+                        <td>0</td>
+                        <td>277</td>
+                        <td>81%</td>
+                    </tr>
+                    <tr>
+                        <td>Urban</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>22</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>28</td>
+                        <td>79%</td>
+                    </tr>
+                    <tr>
+                        <td>Farm</td>
+                        <td>0</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>48</td>
+                        <td>19</td>
+                        <td>1</td>
+                        <td>77</td>
+                        <td>62%</td>
+                    </tr>
+                    <tr>
+                        <td>Vegetation</td>
+                        <td>0</td>
+                        <td>23</td>
+                        <td>11</td>
+                        <td>34</td>
+                        <td>48</td>
+                        <td>0</td>
+                        <td>116</td>
+                        <td>41%</td>
+                    </tr>
+                    <tr>
+                        <td>Other</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>10</td>
+                        <td>60%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td>16</td>
+                        <td>253</td>
+                        <td>42</td>
+                        <td>97</td>
+                        <td>102</td>
+                        <td>8</td>
+                        <td>518</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>P_Accuracy</strong></td>
+                        <td>63%</td>
+                        <td>89%</td>
+                        <td>52%</td>
+                        <td>49%</td>
+                        <td>47%</td>
+                        <td>75%</td>
+                        <td colspan="2"><strong>Overall: 69%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-6 col-12-medium">
+        <h6>Final 2024 Confusion Matrix (Overall Accuracy: 80%)</h6>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Classified ↓ / Reference →</th>
+                        <th>Water</th>
+                        <th>Forest</th>
+                        <th>Urban</th>
+                        <th>Vegetation</th>
+                        <th>Other</th>
+                        <th>Total</th>
+                        <th>U_Accuracy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Water</td>
+                        <td>10</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>10</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>Forest</td>
+                        <td>2</td>
+                        <td>225</td>
+                        <td>5</td>
+                        <td>45</td>
+                        <td>0</td>
+                        <td>277</td>
+                        <td>81%</td>
+                    </tr>
+                    <tr>
+                        <td>Urban</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>22</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>28</td>
+                        <td>79%</td>
+                    </tr>
+                    <tr>
+                        <td>Vegetation</td>
+                        <td>0</td>
+                        <td>28</td>
+                        <td>15</td>
+                        <td>149</td>
+                        <td>1</td>
+               			<td>193</td>
+                        <td>77%</td>
+                    </tr>
+                    <tr>
+                        <td>Other</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>10</td>
+                        <td>60%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td>16</td>
+                        <td>253</td>
+                        <td>42</td>
+                        <td>199</td>
+                        <td>8</td>
+                        <td>518</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>P_Accuracy</strong></td>
+                        <td>63%</td>
+                        <td>89%</td>
+                        <td>52%</td>
+                        <td>75%</td>
+                        <td>75%</td>
+                        <td colspan="2"><strong>Overall: 80%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 								</div>
 							</section>
 
