@@ -105,11 +105,70 @@
 							<section id="four">
 								<div class="container">
 									<h3>Methodology</h3>
-									<p>&emsp;&emsp;&emsp;Two Landsat images were collected from USGS Earth Explorer — one from September 19, 1984 and one from September 9, 2024. Images were required to have less than 5% cloud cover, and September was selected because spring and summer images allow for better distinction between land cover types due to vegetation being in full bloom. Both years required two image frames to cover the full extent of the Eastern Panhandle, which were composited and mosaiced into a single image for each year, then clipped to the study area boundary.<br>
+									<p><span class="image left">
+        <img
+            class="lightbox-thumb"
+            src="../images/maps/lc/True.png"
+            data-full="../images/maps/lc/True.png"
+            data-caption="True Color Composites. Standard RGB composite of the Landsat 5 and 9 images, respectively, showing the Eastern Panhandle of West Virginia as it would appear to the human eye."
+            alt="True Color Composites for Both Years"
+        />
+    </span>
+										&emsp;&emsp;&emsp;Two Landsat images were collected from USGS Earth Explorer — one from September 19, 1984 and one from September 9, 2024. Images were required to have less than 5% cloud cover, and September was selected because spring and summer images allow for better distinction between land cover types due to vegetation being in full bloom. Both years required two image frames to cover the full extent of the Eastern Panhandle, which were composited and mosaiced into a single image for each year, then clipped to the study area boundary.<br>
                     					&emsp;&emsp;&emsp;Once the images were prepared, multiple composite images were created using different band combinations — true color, NIR false color, and SWIR false color — to highlight different characteristics of the land surface. NDVI and NDBI ratio images were also created for both years. NDVI highlights differences in vegetation health, while NDBI highlights built-up urban areas, with both indices normalizing values between -1 and +1.<br>
                     					&emsp;&emsp;&emsp;A hybrid-supervised classification method was used, combining both supervised and unsupervised classification to produce the most accurate result. For the supervised component, training data was drawn over a SWIR composite with a minimum of 30 samples per class across 6 land cover types: water, forest, urban, vegetation, farm, and other. The Support Vector Machine (SVM) algorithm was selected over the more common Maximum Likelihood Classification due to its demonstrated accuracy advantages in other land cover classification studies. An NDVI image was included in the classification process to improve the distinction between land cover types.<br>
 										&emsp;&emsp;&emsp;For the unsupervised component, an ISODATA clustering algorithm was applied to the same data, generating 35 spectral clusters. These clusters were then manually grouped into the same 6 land cover types using NDBI values and band similarities as reference. The two classifications were then combined, with areas where they differed being reclassified through visual inspection using the composite images already created.
 									</p>
+									<div class="row">
+    <div class="col-6 col-12-small">
+        <div class="image fit">
+            <img
+                class="lightbox-thumb"
+                src="../images/maps/lc/NIR.png"
+                data-full="../images/maps/lc/NIR.png"
+                data-caption="NIR False Color Composites. Near-infrared false color composite highlighting vegetation in red tones. Healthy vegetation appears bright red, making it easy to distinguish from urban and bare areas."
+                alt="NIR False Color Composites for both years"
+            />
+        </div>
+        <p style="text-align:center; font-size:0.85em; margin-top:-1em;">NIR False Color</p>
+    </div>
+    <div class="col-6 col-12-small">
+        <div class="image fit">
+            <img
+                class="lightbox-thumb"
+                src="../images/maps/lc/SWIR.png"
+                data-full="../images/maps/lc/SWIR.png"
+                data-caption="SWIR False Color Composites. Short-wave infrared composite used as the basis for supervised classification training data. Particularly useful for distinguishing between vegetation, urban, and bare soil areas."
+                alt="SWIR False Color Composites for both years"
+            />
+        </div>
+        <p style="text-align:center; font-size:0.85em; margin-top:-1em;">SWIR False Color</p>
+    </div>
+    <div class="col-6 col-12-small">
+        <div class="image fit">
+            <img
+                class="lightbox-thumb"
+                src="../images/maps/lc/NDVI.png"
+                data-full="../images/maps/lc/NDVI.png"
+                data-caption="NDVI — Normalized Difference Vegetation Index. Values range from -1 to +1, with higher values indicating healthier and denser vegetation. Used to improve the distinction between land cover types in the supervised classification."
+                alt="NDVI"
+            />
+        </div>
+        <p style="text-align:center; font-size:0.85em; margin-top:-1em;">NDVI</p>
+    </div>
+    <div class="col-6 col-12-small">
+        <div class="image fit">
+            <img
+                class="lightbox-thumb"
+                src="../images/maps/lc/NDBI.png"
+                data-full="../images/maps/lc/NDBI.png"
+                data-caption="NDBI — Normalized Difference Built-up Index. Values range from -1 to +1, with higher values indicating built-up urban areas. Used alongside band similarities to manually group unsupervised classification clusters."
+                alt="NDBI"
+            />
+        </div>
+        <p style="text-align:center; font-size:0.85em; margin-top:-1em;">NDBI</p>
+    </div>
+</div>
 									<h4>Validation</h4>
 									<p>&emsp;&emsp;&emsp;Final classifications for both dates were validated using a confusion matrix comparing classified pixels against reference points. The initial results fell below 80% accuracy, resulting in a closer examination of where the classification was failing. Analysis of the confusion matrix revealed that vegetation and farmland were frequently confused with each other — a common challenge in agricultural regions where the spectral signatures of crops and natural vegetation are very similar.<br>
                     					&emsp;&emsp;&emsp;Improving the accuracy was done through combining the vegetation and farmland classes into a single class, reducing the classifications from 6 land cover types to 5. The classifications were then re-run and re-validated. The revised 1984 classification received an overall accuracy of 88.03% with a Kappa coefficient of 0.86, and the revised 2024 classification received an overall accuracy of 88.46% with a Kappa coefficient of 0.86 — both indicating strong agreement between the classification and reference data.<br>
@@ -533,9 +592,47 @@
 							<section id="five">
 								<div class="container">
 									<h3>Results</h3>
+									<div class="row">
+    <div class="col-6 col-12-small">
+        <div class="image fit">
+            <img
+                class="lightbox-thumb"
+                src="../images/maps/lc/1984.png"
+                data-full="../images/maps/lc/1984.png"
+                data-caption="1984 Final Land Cover Classification. Eastern Panhandle of West Virginia showing five land cover types: water, forest, urban, vegetation, and other. Overall classification accuracy: 87%, Kappa coefficient: 0.86."
+                alt="1984 Final Land Cover Classification"
+            />
+        </div>
+        <p style="text-align:center; font-size:0.85em; margin-top:-1em;">1984 Land Cover</p>
+    </div>
+    <div class="col-6 col-12-small">
+        <div class="image fit">
+            <img
+                class="lightbox-thumb"
+                src="../images/maps/lc/2024.png"
+                data-full="../images/maps/lc/2024.png"
+                data-caption="2024 Final Land Cover Classification. Eastern Panhandle of West Virginia showing five land cover types: water, forest, urban, vegetation, and other. Overall classification accuracy: 80%, Kappa coefficient: 0.86."
+                alt="2024 Final Land Cover Classification"
+            />
+        </div>
+        <p style="text-align:center; font-size:0.85em; margin-top:-1em;">2024 Land Cover</p>
+    </div>
+</div>
 									<p>&emsp;&emsp;&emsp;The land cover classification maps for 1984 and 2024, along with the land cover change table and chart above, show a clear pattern of urbanization across the Eastern Panhandle over the 40-year study period. While forest and vegetation remain the dominant land cover types in both years, the changes between them tell a significant story.<br>
                     					&emsp;&emsp;&emsp;Urban land cover saw the most dramatic change, growing from 17,377 acres (4%) in 1984 to 27,156 acres (6%) in 2024 — a gain of 9,779 acres representing nearly a 56% increase in urban land cover over 40 years. This near doubling of developed land is consistent with the Eastern Panhandle's status as the fastest growing region in West Virginia.<br>
                     					&emsp;&emsp;&emsp;Forest cover declined by 3,403 acres and vegetation by 4,990 acres over the same period, each losing approximately 1 percentage point of total area coverage. Water and other land cover types remained effectively stable, each showing less than 1% change in total area.
+</p>
+									<div class="image fit">
+    <img
+        class="lightbox-thumb"
+        src="../images/maps/lc/Change.png"
+        data-full="../images/maps/lc/Change.png"
+        data-caption="Land Cover Change from 1984 to 2024. Bar chart showing acreage for each land cover class in 1984 (blue) and 2024 (orange), with net change labeled above each pair. Urban land cover gained 9,779 acres (+56%), while forest and vegetation declined by 3,403 and 4,990 acres, respectively."
+        alt="Land Cover Change from 1984 to 2024 bar chart"
+    />
+</div>
+<p style="font-size:0.85em; font-style:italic;">
+    *The significant decline in the "Other" category between 1984 and 2024 is partially attributable to an image artifact in the 1984 imagery rather than actual land cover change.
 </p>
 								</div>
 							</section>
@@ -547,6 +644,7 @@
 									<h4>Limitations</h4>
 									<p>&emsp;&emsp;&emsp;One of the biggest problems in using a raster-based approach for land cover classification has to do with the amount of information carried by that one pixel. The analysis was done using a 30 m by 30 m resolution, meaning that a variety of different land cover types could possibly be covered in this area. This is especially true in possible misclassification that can occur in farm areas that have trees bordering their properties or in urban areas that have tree-lined streets. The misclassification could also cause salt and pepper effects in these areas that have more than one land cover type within the 30 m by 30 m area.<br>
                     					&emsp;&emsp;&emsp;The best way to resolve these problems would be to use an image resolution that would represent a smaller area on the ground. While the solution is there, the sharper resolution isn't always available, especially when looking at older images, so these problems need to be understood, and results should be interpreted with some caution.
+                    					&emsp;&emsp;&emsp;An additional limitation specific to the 1984 classification is a visible error on the image that is assumed to be an artifact of this older image. This artifact affected the classification in that area, likely contributing to the inflated "Other" category in the 1984 results, which showed 1,326 acres compared to just 140 acres in 2024. This discrepancy should be interpreted as a data artifact rather than a genuine land cover change, and a future study should address this by being more diligent in image selection, ensuring no artifacts are on the images.
 </p>
 								<h4>Conclusions</h4>
 								<p>&emsp;&emsp;&emsp;The growth seen in the Eastern Panhandle can plausibly be linked to the loss of vegetation and forest land cover, as the amount of area lost in those two types roughly equals the amount gained by urban land cover.<br>
@@ -562,18 +660,24 @@
 									<h3>Deliverables</h3>
                     <ul>
                       <li>
-                        <a href="https://github.com/yourusername/your-repo" target="_blank">
-                            GitHub Repository
-                        </a>
-                      </li>
-                      <li>
-                        <a href="../files/tsunami_report.pdf" target="_blank">
+                        <a href="../Files/Papers/Land Cover Change from 1984 to 2024 in the Eastern Panhandle of West Virginia.pdf" target="_blank" rel="noopener noreferrer">
                             Project Report (PDF)
                         </a>
                       </li>
+						<li>
+							<a href="../images/maps/wind/1984.png" target="_blank" rel="noopener noreferrer">
+								1984 Final Land Cover Classification (PNG)
+							</a>
+						</li>
+						<li>
+							<a href="../images/maps/wind/2024.png" target="_blank" rel="noopener noreferrer">
+								2024 Final Land Cover Classification (PNG)
+							</a>
+						</li>
                     </ul>
-								</div>
-							</section>
+
+			</div>
+								</section>
 					</div>
 
 				<!-- Footer -->
@@ -597,7 +701,42 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+<!-- Lightbox Overlay -->
+<div class="lightbox-overlay" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="" />
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+		<script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
 
+    document.querySelectorAll('.lightbox-thumb').forEach(function(thumb) {
+        thumb.addEventListener('click', function() {
+            lightboxImg.src = this.dataset.full;
+            lightboxCaption.textContent = this.dataset.caption || '';
+            lightbox.classList.add('active');
+        });
+    });
+
+    lightboxClose.addEventListener('click', function() {
+        lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            lightbox.classList.remove('active');
+        }
+    });
+</script>
 	</body>
 
 </html>
