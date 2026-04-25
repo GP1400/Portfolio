@@ -3470,14 +3470,14 @@ ul.feature-icons {
 }
 
 ul.feature-icons li {
-    padding-left: 3.5em;
+    padding-left: 4.5em;
     margin-bottom: 0.5em;
 }
 
 ul.feature-icons + ul {
     margin-top: 0.5em;
     margin-bottom: 1.5em;
-    padding-left: 3em;
+    padding-left: 4em;
     position: relative;
     z-index: 1;
 }
