@@ -104,45 +104,42 @@
 							</section>
 
 						<!-- Four -->
-							<section id="four">
-								<div class="container">
-									<h3>Methodology</h3>
-									<p>
-&emsp;&emsp;&emsp;A raster of landslide susceptibility for West Virginia was created as part of an ongoing project using LiDAR-based digital elevation model variables at a two-meter resolution (Maxwell, 2021; Maxwell, 2020). While this resolution is excellent for site-level analysis, identifying broader spatial patterns required a different approach. The solution was to convert the raster into a vector format by summarizing mean landslide susceptibility values by HUC-10 watershed, a spatial unit that naturally accounts for both topography and water flow, the two primary factors influencing landslide occurrence.<br>
-										&emsp;&emsp;&emsp;Watersheds were chosen over the more commonly used county boundaries because counties are administrative units that do not reflect the natural processes that drive landslide risk. HUC-10 watersheds, by contrast, capture where water flows and where terrain creates conditions for slope failure, making them a more meaningful unit for this type of analysis.
-</p>
-				<div class="image fit">
-    <img
-        class="lightbox-thumb"
-        src="../images/maps/hucland/HUC10.png"
-        data-full="../images/maps/hucland/HUC10.png"
-        data-caption="HUC-10 Watersheds of West Virginia. The 228 HUC-10 watersheds were used as the spatial unit of analysis for this study. Watersheds were selected over county boundaries because they represent the natural processes that drive landslide risk, topography and water flow."
-        alt="HUC-10 Watersheds of West Virginia"
-    />
-</div>
-                  <p>&emsp;&emsp;&emsp;HUC-10 Watersheds of West Virginia. The 228 HUC-10 watersheds were used as the spatial unit of analysis for this study. Watersheds were selected over county boundaries because they represent the natural processes that drive landslide risk, topography and water flow. 
-</p>   
-                  <div class="col-6 col-12-xsmall">
-									<h5>This study applies three levels of spatial statistics, moving from global to local in scale:</h5>
-									<ul>
-                    <li><span class="image left">
-        <img
-            style="width: 20em !important;"
-			class="lightbox-thumb"
-            src="../images/maps/hucland/mean.png"
-            data-full="../images/maps/hucland/mean.png"
-            data-caption="Mean Landslide Susceptibility by HUC-10 Watershed. Mean landslide susceptibility values are summarized from a LiDAR-derived raster at 2m resolution for each HUC-10 watershed in West Virginia. Higher values indicate greater susceptibility to landslide occurrence."
-            alt="Mean Landslide Susceptibility by HUC-10 Watershed"
-        />
-    </span>Global Statistics — Two global tests were applied to understand overall spatial patterns across the state. Global Moran's I tested whether watersheds with similar landslide susceptibility values tend to be located near each other, in other words, whether the data shows spatial autocorrelation. The Getis-Ord General G test then assessed whether the clustering was driven by high susceptibility values, low susceptibility values, or both. For both tests, neighbors were defined using "contiguity edges, corners," meaning any watershed sharing a border, node, or overlap was considered a neighbor, which reflects how water and terrain connect adjacent watersheds.</li>
-                    <li>Multi-Distance Statistics — Ripley's K Function was applied to identify the spatial scale at which clustering occurs, testing distances from 10 km to 150 km in 10 km increments. Since Ripley's K requires point data, the centroids of watersheds with z-scores greater than one were used rather than all watershed centroids. A simulation boundary with 99 iterations was used to account for edge effects near the state border.
-</li>
-                    <li>Local Statistics — Finally, Getis-Ord Gi* was applied to identify statistically significant hot spots and cold spots at the individual watershed level. This local statistic assigns each watershed a z-score indicating whether it is surrounded by similarly high or low susceptibility values, with results classified into confidence levels of 90%, 95%, and 99%.
-</li>
-									</ul>
-											</div>
-								</div>
-							</section>
+<section id="four">
+    <div class="container">
+        <h3>Methodology</h3>
+        <p>
+            &emsp;&emsp;&emsp;A raster of landslide susceptibility for West Virginia was created as part of an ongoing project using LiDAR-based digital elevation model variables at a two-meter resolution (Maxwell, 2021; Maxwell, 2020). While this resolution is excellent for site-level analysis, identifying broader spatial patterns required a different approach. The solution was to convert the raster into a vector format by summarizing mean landslide susceptibility values by HUC-10 watershed, a spatial unit that naturally accounts for both topography and water flow, the two primary factors influencing landslide occurrence.<br>
+            &emsp;&emsp;&emsp;Watersheds were chosen over the more commonly used county boundaries because counties are administrative units that do not reflect the natural processes that drive landslide risk. HUC-10 watersheds, by contrast, capture where water flows and where terrain creates conditions for slope failure, making them a more meaningful unit for this type of analysis.
+        </p>
+        <div class="image fit">
+            <img
+                class="lightbox-thumb"
+                src="../images/maps/hucland/HUC10.png"
+                data-full="../images/maps/hucland/HUC10.png"
+                data-caption="HUC-10 Watersheds of West Virginia. The 228 HUC-10 watersheds were used as the spatial unit of analysis for this study. Watersheds were selected over county boundaries because they represent the natural processes that drive landslide risk, topography and water flow."
+                alt="HUC-10 Watersheds of West Virginia"
+            />
+        </div>
+        <p>
+            <span class="image left" style="width: 18em;">
+                <img
+                    class="lightbox-thumb"
+                    src="../images/maps/hucland/mean.png"
+                    data-full="../images/maps/hucland/mean.png"
+                    data-caption="Mean Landslide Susceptibility by HUC-10 Watershed. Mean landslide susceptibility values are summarized from a LiDAR-derived raster at 2m resolution for each HUC-10 watershed in West Virginia. Higher values indicate greater susceptibility to landslide occurrence."
+                    alt="Mean Landslide Susceptibility by HUC-10 Watershed"
+                />
+            </span>
+            This study applies three levels of spatial statistics, moving from global to local in scale:
+        </p>
+        <ul>
+            <li>Global Statistics — Two global tests were applied to understand overall spatial patterns across the state. Global Moran's I tested whether watersheds with similar landslide susceptibility values tend to be located near each other, in other words, whether the data shows spatial autocorrelation. The Getis-Ord General G test then assessed whether the clustering was driven by high susceptibility values, low susceptibility values, or both. For both tests, neighbors were defined using "contiguity edges, corners," meaning any watershed sharing a border, node, or overlap was considered a neighbor, which reflects how water and terrain connect adjacent watersheds.</li>
+            <li>Multi-Distance Statistics — Ripley's K Function was applied to identify the spatial scale at which clustering occurs, testing distances from 10 km to 150 km in 10 km increments. Since Ripley's K requires point data, the centroids of watersheds with z-scores greater than one were used rather than all watershed centroids. A simulation boundary with 99 iterations was used to account for edge effects near the state border.</li>
+            <li>Local Statistics — Finally, Getis-Ord Gi* was applied to identify statistically significant hot spots and cold spots at the individual watershed level. This local statistic assigns each watershed a z-score indicating whether it is surrounded by similarly high or low susceptibility values, with results classified into confidence levels of 90%, 95%, and 99%.</li>
+        </ul>
+
+    </div>
+</section>
 
 						<!-- Five -->
 							<section id="five">
@@ -159,6 +156,7 @@
     <div class="col-6 col-12-small">
         <div class="image fit">
             <img
+				class="lightbox-thumb"
                 src="../images/maps/hucland/globalmoran.png"
                         data-full="../images/maps/hucland/globalmoran.png"
                         data-caption="Global Moran's I Spatial Autocorrelation Report. Moran's Index of 0.7242 with a z-score of 15.19 and p-value < 0.001, indicating statistically significant clustering at the 99% confidence level. The result falls in the high-clustering tail of the distribution, confirming strong positive spatial autocorrelation across HUC-10 watersheds."
