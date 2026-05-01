@@ -35,9 +35,9 @@
 				</nav>
 				<footer>
 					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/sebastian-gomez-parra-4a339a250" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin"><span class="label">LinkdIn in new Tab</span></a></li>
+						<li><a href="https://www.linkedin.com/in/sebastian-gomez-parra-4a339a250" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin"><span class="label">LinkedIn in new Tab</span></a></li>
 						<li><a href="mailto:gomezparra1400@gmail.com" class="icon solid fa-envelope"><span class="label">Send Email</span></a></li>
-						<li><a href="Files/Sebastian GP Gomez Parra Resume.pdf" target="_blank" rel="noopener noreferrer" class="icon solid fa-address-card"><span class="label">Resume</span></a></li>
+						<li><a href="../Files/Sebastian GP Gomez Parra Resume.pdf" target="_blank" rel="noopener noreferrer" class="icon solid fa-address-card"><span class="label">Resume</span></a></li>
 					</ul>
 				</footer>
 			</section>
@@ -51,7 +51,7 @@
 						<!-- One -->
 							<section id="one">
 								<div class="image main" data-position="center">
-									<img src="../images/banner.jpg" alt="" />
+									<img src="../images/maps/hucland/HUC10.png" alt="HUC-10 Watersheds of West Virginia" />
 								</div>
 								<div class="container">
 									<header class="major">
@@ -67,12 +67,11 @@
 								<div class="container">
 									<h3>Project Overview</h3>
                   <h4>What is the problem?</h4>
-									<p>The problem this study is trying to solve is to locate which locations in the state of West Virginia have the greatest risk of landslides occurring. Landslides are defined as the rapid movement of soil, rock, and debris down slope, which is often triggered by intense rainfall, seismic activity, volcanic eruptions, and human-induced alterations to the landscape.
+									<p>Landslides are a significant hazard across West Virginia, a state that’s characterized by steep topography and vulnerable communities. The rapid movement of soil, rock, and debris downslope causes extensive damage and loss of life, which disproportionately affects those least able to recover. Landslides can be triggered by intense rainfall, seismic activity, and human-induced landscape alterations. While landslide susceptibility maps exist for West Virginia, understanding where high-risk areas are spatially concentrated could help in hazard management and resource allocation.
 </p>
                   <h4>Why does it need to be solved?</h4>
-									<p>Landslides represent a hazard with large socio-economic and environmental impacts, especially in regions with steep topography and vulnerable communities. Climate change just makes things worse by altering precipitation patterns and increasing soil moisture variability in areas already prone to instability. This clustering of landslides seems to be influenced by underlying environmental characteristics like slope, aspect, curvature, soil properties, and land cover, as well as hydrologic factors like surface runoff and subsurface flow. 
+									<p>Landslides are not randomly distributed across the landscape, as they tend to cluster in areas shaped by underlying environmental factors like slope, soil properties, land cover, and hydrologic conditions. Identifying where these clusters occur statistically, rather than just visually, allows for more defensible decisions about where to focus funding, infrastructure investment, and mitigation efforts. Climate change further increases the urgency of this work by altering precipitation patterns and increasing soil moisture variability in areas already prone to instability.
 </p>
-									<a href="#" class="image"><img src="../images/pic01.jpg" alt="" /></a>
 								</div>
 							</section>
 
@@ -84,15 +83,20 @@
 											<div class="col-6 col-12-xsmall">
 									<h5>ArcGIS Pro Tools</h5>
 									<ul>
-                    <li>Raster Resize</li>
-                    <li>Gi*</li>
-                    <li>Ripley's K</li>
+                    <li>Resample</li>
+                    <li>Zonal Statistics as Table</li>
+                    <li>Spatial Join</li>
+					<li>Global Moran's I</li>
+										<li>High/Low Clustering (Getis-Ord General G)</li>
+										<li>Multi-Distance Spatial Cluster Analysis (Ripley's K)</li>
+										<li>Hot Spot Analysis (Getis-Ord Gi*)</li>
 									</ul>
 											</div>
 												<div class="col-6 col-12-xsmall">
 									<h5>Data Sources</h5>
 									<ul>
-                				        <li>LiDAR-derived DTM that allows for penetration through vegetation</li>
+                				        <li>Landslide susceptibility raster derived from LiDAR-based digital elevation model (DEM) variables at 2m resolution (Maxwell, 2021; Maxwell, 2020)</li>
+										<li>HUC-10 watershed boundaries (USGS National Hydrography Dataset)</li>
      				               </ul>
 									</div>
 									</div>
@@ -104,26 +108,27 @@
 								<div class="container">
 									<h3>Methodology</h3>
 									<p>
-&emsp;&emsp;&emsp;Spatial autocorrelation provides a statistical measure of how much something is correlated with itself in space and determines spatial patterns like clustering, dispersion, or if it's randomly spaced. Global measures of spatial autocorrelation assume that nothing moves and provide a single value that summarizes the entire area. Local measures, on the other hand, help identify local patterns of clustering and dispersion, making them especially important in areas where the local trends might differ from the global or regional trend.<br>
-                    &emsp;&emsp;&emsp;This study tests the spatial relationships of landslide susceptibility in West Virginia using global, local, and multi-distance spatial statistics. Specifically, Global Moran’s I and Getis-Ord General G are used to test for overall spatial autocorrelation and clustering of hot or low susceptibility values. Ripley’s K Function is applied to identify the spatial scales at which clustering occurs, and local Hot Spot Analysis through Getis-Ord Gi* is used to map statistically concentrated areas of high and low susceptibility. By combining these complementary methods within a watershed summarization of landslide susceptibility, this study provides a way to test and determine the spatial patterns of landslide susceptibility across West Virginia.
-									</p>
-                  <p>&emsp;&emsp;&emsp;This study tests the spatial relationships of landslide susceptibility in West Virginia using global, local, and multi-distance spatial statistics. Specifically, Global Moran’s I and Getis-Ord General G are used to test for overall spatial autocorrelation and clustering of hot or low susceptibility values. Ripley’s K Function is applied to identify the spatial scales at which clustering occurs, and local Hot Spot Analysis through Getis-Ord Gi* is used to map statistically concentrated areas of high and low susceptibility. By combining these complementary methods within a watershed summarization of landslide susceptibility, this study provides a way to test and determine the spatial patterns of landslide susceptibility across West Virginia.
+&emsp;&emsp;&emsp;A raster of landslide susceptibility for West Virginia was created as part of an ongoing project using LiDAR-based digital elevation model variables at a two-meter resolution (Maxwell, 2021; Maxwell, 2020). While this resolution is excellent for site-level analysis, identifying broader spatial patterns required a different approach. The solution was to convert the raster into a vector format by summarizing mean landslide susceptibility values by HUC-10 watershed, a spatial unit that naturally accounts for both topography and water flow, the two primary factors influencing landslide occurrence.<br>
+										&emsp;&emsp;&emsp;Watersheds were chosen over the more commonly used county boundaries because counties are administrative units that do not reflect the natural processes that drive landslide risk. HUC-10 watersheds, by contrast, capture where water flows and where terrain creates conditions for slope failure, making them a more meaningful unit for this type of analysis.
 </p>
-<!-- MAP -->
-                  <p>&emsp;&emsp;&emsp;Understanding where landslides tend to occur through the mean landslide susceptibility by watershed.
-</p>
-            <!-- MAP -->      
+				<div class="image fit">
+    <img
+        class="lightbox-thumb"
+        src="../images/maps/hucland/HUC10.png"
+        data-full="../images/maps/hucland/HUC10.png"
+        data-caption="HUC-10 Watersheds of West Virginia. The 228 HUC-10 watersheds were used as the spatial unit of analysis for this study. Watersheds were selected over county boundaries because they represent the natural processes that drive landslide risk, topography and water flow."
+        alt="HUC-10 Watersheds of West Virginia"
+    />
+</div>
+                  <p>&emsp;&emsp;&emsp;HUC-10 Watersheds of West Virginia. The 228 HUC-10 watersheds were used as the spatial unit of analysis for this study. Watersheds were selected over county boundaries because they represent the natural processes that drive landslide risk, topography and water flow. 
+</p>   
                   <div class="col-6 col-12-xsmall">
-									<h5>Clustering was tested through testing global autocorrelation indexes: Moran’s I, Getis-Ord General G, and Ripley’s K.
-</h5>
+									<h5>This study applies three levels of spatial statistics, moving from global to local in scale:</h5>
 									<ul>
-                    <li>Global Moran’s I test, which is widely used to estimate general patterns of spatial dependency, is used to understand how a phenomenon of interest is correlated with itself over a large area.
+                    <li>Global Statistics — Two global tests were applied to understand overall spatial patterns across the state. Global Moran's I tested whether watersheds with similar landslide susceptibility values tend to be located near each other, in other words, whether the data shows spatial autocorrelation. The Getis-Ord General G test then assessed whether the clustering was driven by high susceptibility values, low susceptibility values, or both. For both tests, neighbors were defined using "contiguity edges, corners," meaning any watershed sharing a border, node, or overlap was considered a neighbor, which reflects how water and terrain connect adjacent watersheds.</li>
+                    <li>Multi-Distance Statistics — Ripley's K Function was applied to identify the spatial scale at which clustering occurs, testing distances from 10 km to 150 km in 10 km increments. Since Ripley's K requires point data, the centroids of watersheds with z-scores greater than one were used rather than all watershed centroids. A simulation boundary with 99 iterations was used to account for edge effects near the state border.
 </li>
-                    <li>General G is used to assess whether high or low landslide susceptibility values were globally clustered.
-</li>
-                    <li>Ripley's K is used to study spatial patterns and determine the scale at which clustering, random spread, or dispersion is observed. HUC 10 polygons were converted to Z-score centroids for this analysis because points are required for this analysis. Scales set to be tested were from 10 km for 15 times, allowing for testing from about the size of 1 HUC 10 to about the whole state.
-</li>
-                    <li>Getis-Ord Gi* is a z-score-based statistic that is used to test for statistically significant clusters of high and low areas in a study area.
+                    <li>Local Statistics — Finally, Getis-Ord Gi* was applied to identify statistically significant hot spots and cold spots at the individual watershed level. This local statistic assigns each watershed a z-score indicating whether it is surrounded by similarly high or low susceptibility values, with results classified into confidence levels of 90%, 95%, and 99%.
 </li>
 									</ul>
 											</div>
@@ -136,47 +141,63 @@
 									<h3>Results</h3>
           <div class="features">
 										<article>
-											<a href="#" class="image"><img src="../images/pic01.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Global Moran’s I</h4>
-												<p>Global Moran’s I showed a very strong positive spatial autocorrelation in the landslide susceptibility values, showing that watersheds with similar susceptibility tend to be spatially clustered.
-</p>
-											</div>
-										</article>
+											<div class="image">
+                    <img 
+                        class="lightbox-thumb"
+                        src="../images/maps/hucland/globalmoran.png"
+                        data-full="../images/maps/hucland/globalmoran.png"
+                        data-caption="Global Moran's I Spatial Autocorrelation Report. Moran's Index of 0.7242 with a z-score of 15.19 and p-value < 0.001, indicating statistically significant clustering at the 99% confidence level. The result falls in the high-clustering tail of the distribution, confirming strong positive spatial autocorrelation across HUC-10 watersheds."
+                        alt="Global Moran's I Spatial Autocorrelation Report"
+                    /><br><p style="text-align:center; font-size:0.85em; margin-top:-1em;">Global Moran's I</p>
+					<br>
+					<img 
+                        class="lightbox-thumb"
+                        src="../images/maps/hucland/geng.png"
+                        data-full="../images/maps/hucland/geng.png"
+                        data-caption="Getis-Ord General G High-Low Clustering Report. Observed General G of 0.006787 with a z-score of 6.258 and p-value < 0.001, confirming statistically significant clustering of high landslide susceptibility values at the 99% confidence level. The positive z-score specifically indicates that the clustering is driven by high rather than low susceptibility values."
+                        alt="Getis-Ord General G High-Low Clustering Report"
+                    /><br><p style="text-align:center; font-size:0.85em; margin-top:-1em;">Getis-Ord General G</p>
+                </div>
+                <div class="inner">
+												<h4>Global Statistics</h4>
+												<p>&emsp;&emsp;&emsp;Global Moran's I showed a very strong positive spatial autocorrelation in landslide susceptibility values across HUC-10 watersheds (I = 0.72, z = 15.19, p < 0.001), confirming that watersheds with similar susceptibility values tend to be located near one another. A Moran's I value near positive one indicates strong clustering, which the result of 0.72, represents a high degree of spatial dependence across the state.<br>
+													&emsp;&emsp;&emsp;The Getis-Ord General G test indicated significant global clustering of high landslide susceptibility values (z = 6.26, p < 0.001), suggesting that areas of high susceptibility are regionally concentrated rather than randomly distributed. The positive z-score specifically indicates that the clustering is driven by high susceptibility values rather than low ones.
+													</p>
+													</div>
+													</article>
 										<article>
-											<a href="#" class="image"><img src="../images/pic02.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Moran’s I's</h4>
-												<p>Moran’s I's results near a positive one indicate clustering, seen in this test with I = 0.72.
+										<h4>Multi-Distance Statistics</h4>
+												<p>Ripley's K Function confirmed that statistically significant clustering of high landslide susceptibility watersheds occurs at distances ranging from approximately 30 km to 140 km. This is identified on the graph where the observed K value rises above the upper confidence envelope. Below 30 km and above 140 km, the pattern approaches spatial randomness. The result means more broadly that the clustering is regional rather than purely a local phenomenon. This finding guided the scale at which the local hot spot analysis was applied.
 </p>
-											</div>
 										</article>
+<div class="image fit">
+    <img
+        class="lightbox-thumb"
+        src="../images/maps/hucland/k.png"
+        data-full="../images/maps/hucland/k.png"
+        data-caption="Ripley's K Function Multi-Distance Spatial Cluster Analysis. The observed K value rises above the upper confidence envelope at distances ranging from approximately 30 km to 140 km, confirming statistically significant clustering of high landslide susceptibility watersheds at regional scales. Below 30 km and above 140 km, the pattern approaches spatial randomness."
+        alt="Ripley's K Function Multi-Distance Spatial Cluster Analysis"
+    />
+</div>
 										<article>
-											<a href="#" class="image"><img src="../images/pic03.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Getis-Ord General G</h4>
-												<p>The Getis-Ord General G indicated significant global clustering of high landslide susceptibility values, suggesting that areas of high susceptibility are regionally clustered rather than randomly distributed. While General G tests for clustering as a whole, either for low value clustering or high value clustering, the positive z-score indicates a higher degree of high value clustering.
+												<h4>Local Statistics</h4>
+											<p><span class="image left">
+        <img
+            style="width: 20em !important;"
+			class="lightbox-thumb"
+            src="../images/maps/hucland/Gi.png"
+            data-full="../images/maps/hucland/Gi.png"
+            data-caption="Landslide Susceptibility Hot Spot Analysis (Getis-Ord Gi*). Statistically significant hot spots (high susceptibility clusters) are concentrated in two areas: the southeastern point of the state and just south of the northern panhandle. Cold spots (low susceptibility clusters) are most prominent in the Eastern Panhandle. Results are classified at 90%, 95%, and 99% confidence levels."
+            alt="Landslide Susceptibility Hot Spot Analysis (Getis-Ord Gi*)"
+        />
+    </span>&emsp;&emsp;&emsp;The Getis-Ord Gi* results revealed two distinct hot spot clusters and two cold spot clusters across the state.<br>
+												&emsp;&emsp;&emsp;Hot spots, watersheds with high landslide susceptibility surrounded by similarly high susceptibility watersheds, are concentrated on the eastern side of West Virginia. The southeastern point of the state contains the first hot spot cluster, with seven watersheds at 99% confidence, five surrounding watersheds at 95% confidence, and two at 90% confidence. With only a single watershed separating them, the second hot spot cluster sits just south of the northern panhandle, containing nine watersheds at 99% confidence, six at 95% confidence, and six at 90% confidence.<br>
+												&emsp;&emsp;&emsp;Cold spots, watersheds with low susceptibility surrounded by similarly low susceptibility watersheds, were most pronounced in the Eastern Panhandle, where thirteen watersheds show 99% confidence, two show 95% confidence, and five show 90% confidence. This concentration of 99% confidence cold spot watersheds with fewer surrounding lower-confidence watersheds indicates a particularly well-defined cold spot cluster. A smaller secondary cold spot exists in the southern interior of the state, with two watersheds at 95% confidence surrounded by six at 90% confidence.<br>
+												&emsp;&emsp;&emsp;Together, these findings confirm that landslide susceptibility in West Virginia is not randomly distributed but follows strong regional patterns that align with the state's underlying terrain and hydrologic characteristics.
 </p>
 											</div>
 										</article>
-            									<article>
-											<a href="#" class="image"><img src="../images/pic02.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Ripely's K's</h4>
-												<p>Ripely's K's graph shows that statistically significant clustering of high landslide susceptibility for watersheds occurs at distances ranging from approximately 30 km to 140 km. The graph shows these results by looking at where the Observed K is above the upper confidence envelope. This pattern suggests that landslide-prone areas in West Virginia are not randomly distributed but instead show regional-scale clustering.
-</p>
-											</div>
-										</article>
-            									<article>
-											<a href="#" class="image"><img src="../images/pic02.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Getis-Ord Gi*</h4>
-												<p>Getis-Ord Gi* results can be seen on the left. The map is divided evenly into two clustering groups for both hot and cold spots.
-</p>
-											</div>
-										</article>
-									</div>
-								</div>
+													</div>
 							</section>
 						
 						<!-- Six -->
@@ -184,10 +205,14 @@
 								<div class="container">
 									<h3>Limitations and Conclusions</h3>
 									<h4>Limitations</h4>
-									<p>While using HUC 10 vectors rather than county-based data made sense when looking to understand clustering of landslides, for better distributions of funds to areas that experience landslides, it would be beneficial to use county vectors. 
+									<p>&emsp;&emsp;&emsp;While using HUC-10 watersheds rather than county boundaries made sense for understanding the natural processes driving landslide clustering, county-level vectors would be more practical for translating these findings into funding allocations and policy decisions. A future study combining both spatial units could help bridge the gap between natural process understanding and administrative decision-making.<br>
+										&emsp;&emsp;&emsp;The landslide susceptibility raster used in this study was created exclusively from LiDAR-derived DEM variables, which is a limitation when trying to fully understand landslide susceptibility clustering risk. Factors like soil properties, land cover, vegetation, and precipitation patterns, which also influence landslide susceptibility, were not included in the original raster and therefore not captured in this clustering analysis.<br>
+										&emsp;&emsp;&emsp;Finally, this study does not include a landslide inventory to validate the clustering results against actual recorded landslide events. Validating the hot spot findings against a real landslide inventory would significantly strengthen the conclusions and provide a more direct measure of the analysis accuracy.
 </p>
 								<h4>Conclusions</h4>
-								<p>In conclusion, this study shows that landslide susceptibility in West Virginia is strongly spatially autocorrelated, regionally clustered, and scale-dependent. The combined use of Global Moran’s I, Getis-Ord General G, Ripley’s K Function, and Getis-Ord Gi* provides a comprehensive group of tests to understand both the intensity and spatial organization of landslide susceptibility. Future research could be done to work with landslide inventories to validate this clustering or test various scales to see if clustering is still seen in similar areas.
+								<p>&emsp;&emsp;&emsp;This study demonstrates that landslide susceptibility in West Virginia is strongly spatially autocorrelated, regionally clustered, and scale-dependent. Results consistently showed that susceptibility is not randomly distributed but instead follows strong regional patterns shaped by the state's underlying terrain and hydrologic characteristics.<br>
+										&emsp;&emsp;&emsp;The combined use of Global Moran's I, Getis-Ord General G, Ripley's K Function, and Getis-Ord Gi* provides a comprehensive analytical framework for understanding both the intensity and spatial organization of landslide susceptibility. The progression from global to multi-distance to local statistics allowed for a thorough characterization of spatial patterns at multiple scales, something that no single statistical method could achieve alone.<br>
+										&emsp;&emsp;&emsp;The hot spot findings have direct practical implications. The two hot spot clusters identified, in the southeastern point of the state and just south of the northern panhandle, represent areas where funding for landslide mitigation and hazard management should be prioritized. Climate change is likely to intensify these risks further by altering precipitation patterns and increasing soil moisture variability in areas already prone to instability. The cold spot areas, particularly the Eastern Panhandle, represent comparatively lower risk areas where development may be less hazardous relative to the rest of the state.
 </p>
 						</div>	
 							</section>
@@ -197,18 +222,19 @@
 								<div class="container">
 									<h3>Deliverables</h3>
                     <ul>
-                      <li>
-                        <a href="https://github.com/yourusername/your-repo" target="_blank">
-                            GitHub Repository
-                        </a>
-                      </li>
-                      <li>
-                        <a href="../files/tsunami_report.pdf" target="_blank">
+    <li>
+        <a href="../images/maps/hucland/Gi.png" 
+           target="_blank" rel="noopener noreferrer">
+            Getis-Ord Gi* Results (PNG)
+        </a>
+	</li>
+               <li>
+                        <a href="../Files/Papers/Landslide Susceptibility Hot Spot Analysis for West Virginia.pdf" target="_blank" rel="noopener noreferrer">
                             Project Report (PDF)
                         </a>
                       </li>
                     </ul>
-                   
+
 			</div>
 								</section>
 					</div>
@@ -233,7 +259,42 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+<!-- Lightbox Overlay -->
+<div class="lightbox-overlay" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="" />
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+		<script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
 
+    document.querySelectorAll('.lightbox-thumb').forEach(function(thumb) {
+        thumb.addEventListener('click', function() {
+            lightboxImg.src = this.dataset.full;
+            lightboxCaption.textContent = this.dataset.caption || '';
+            lightbox.classList.add('active');
+        });
+    });
+
+    lightboxClose.addEventListener('click', function() {
+        lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            lightbox.classList.remove('active');
+        }
+    });
+</script>
 	</body>
 
 </html>
