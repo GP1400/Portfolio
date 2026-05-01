@@ -125,7 +125,16 @@
                   <div class="col-6 col-12-xsmall">
 									<h5>This study applies three levels of spatial statistics, moving from global to local in scale:</h5>
 									<ul>
-                    <li>Global Statistics — Two global tests were applied to understand overall spatial patterns across the state. Global Moran's I tested whether watersheds with similar landslide susceptibility values tend to be located near each other, in other words, whether the data shows spatial autocorrelation. The Getis-Ord General G test then assessed whether the clustering was driven by high susceptibility values, low susceptibility values, or both. For both tests, neighbors were defined using "contiguity edges, corners," meaning any watershed sharing a border, node, or overlap was considered a neighbor, which reflects how water and terrain connect adjacent watersheds.</li>
+                    <li><span class="image left">
+        <img
+            style="width: 20em !important;"
+			class="lightbox-thumb"
+            src="../images/maps/hucland/mean.png"
+            data-full="../images/maps/hucland/mean.png"
+            data-caption="Mean Landslide Susceptibility by HUC-10 Watershed. Mean landslide susceptibility values are summarized from a LiDAR-derived raster at 2m resolution for each HUC-10 watershed in West Virginia. Higher values indicate greater susceptibility to landslide occurrence."
+            alt="Mean Landslide Susceptibility by HUC-10 Watershed"
+        />
+    </span>Global Statistics — Two global tests were applied to understand overall spatial patterns across the state. Global Moran's I tested whether watersheds with similar landslide susceptibility values tend to be located near each other, in other words, whether the data shows spatial autocorrelation. The Getis-Ord General G test then assessed whether the clustering was driven by high susceptibility values, low susceptibility values, or both. For both tests, neighbors were defined using "contiguity edges, corners," meaning any watershed sharing a border, node, or overlap was considered a neighbor, which reflects how water and terrain connect adjacent watersheds.</li>
                     <li>Multi-Distance Statistics — Ripley's K Function was applied to identify the spatial scale at which clustering occurs, testing distances from 10 km to 150 km in 10 km increments. Since Ripley's K requires point data, the centroids of watersheds with z-scores greater than one were used rather than all watershed centroids. A simulation boundary with 99 iterations was used to account for edge effects near the state border.
 </li>
                     <li>Local Statistics — Finally, Getis-Ord Gi* was applied to identify statistically significant hot spots and cold spots at the individual watershed level. This local statistic assigns each watershed a z-score indicating whether it is surrounded by similarly high or low susceptibility values, with results classified into confidence levels of 90%, 95%, and 99%.
@@ -141,30 +150,36 @@
 									<h3>Results</h3>
           <div class="features">
 										<article>
-											<div class="image">
-                    <img 
-                        class="lightbox-thumb"
-                        src="../images/maps/hucland/globalmoran.png"
-                        data-full="../images/maps/hucland/globalmoran.png"
-                        data-caption="Global Moran's I Spatial Autocorrelation Report. Moran's Index of 0.7242 with a z-score of 15.19 and p-value < 0.001, indicating statistically significant clustering at the 99% confidence level. The result falls in the high-clustering tail of the distribution, confirming strong positive spatial autocorrelation across HUC-10 watersheds."
-                        alt="Global Moran's I Spatial Autocorrelation Report"
-                    /><br><p style="text-align:center; font-size:0.85em; margin-top:-1em;">Global Moran's I</p>
-					<br>
-					<img 
-                        class="lightbox-thumb"
-                        src="../images/maps/hucland/geng.png"
-                        data-full="../images/maps/hucland/geng.png"
-                        data-caption="Getis-Ord General G High-Low Clustering Report. Observed General G of 0.006787 with a z-score of 6.258 and p-value < 0.001, confirming statistically significant clustering of high landslide susceptibility values at the 99% confidence level. The positive z-score specifically indicates that the clustering is driven by high rather than low susceptibility values."
-                        alt="Getis-Ord General G High-Low Clustering Report"
-                    /><br><p style="text-align:center; font-size:0.85em; margin-top:-1em;">Getis-Ord General G</p>
-                </div>
-                <div class="inner">
 												<h4>Global Statistics</h4>
 												<p>&emsp;&emsp;&emsp;Global Moran's I showed a very strong positive spatial autocorrelation in landslide susceptibility values across HUC-10 watersheds (I = 0.72, z = 15.19, p < 0.001), confirming that watersheds with similar susceptibility values tend to be located near one another. A Moran's I value near positive one indicates strong clustering, which the result of 0.72, represents a high degree of spatial dependence across the state.<br>
 													&emsp;&emsp;&emsp;The Getis-Ord General G test indicated significant global clustering of high landslide susceptibility values (z = 6.26, p < 0.001), suggesting that areas of high susceptibility are regionally concentrated rather than randomly distributed. The positive z-score specifically indicates that the clustering is driven by high susceptibility values rather than low ones.
 													</p>
-													</div>
 													</article>
+							<div class="row">
+    <div class="col-6 col-12-small">
+        <div class="image fit">
+            <img
+                src="../images/maps/hucland/globalmoran.png"
+                        data-full="../images/maps/hucland/globalmoran.png"
+                        data-caption="Global Moran's I Spatial Autocorrelation Report. Moran's Index of 0.7242 with a z-score of 15.19 and p-value < 0.001, indicating statistically significant clustering at the 99% confidence level. The result falls in the high-clustering tail of the distribution, confirming strong positive spatial autocorrelation across HUC-10 watersheds."
+                        alt="Global Moran's I Spatial Autocorrelation Report"
+            />
+        </div>
+		<br><p style="text-align:center; font-size:0.85em; margin-top:-1em;">Global Moran's I</p>
+    </div>
+    <div class="col-6 col-12-small">
+        <div class="image fit">
+            <img
+                class="lightbox-thumb"
+                        src="../images/maps/hucland/geng.png"
+                        data-full="../images/maps/hucland/geng.png"
+                        data-caption="Getis-Ord General G High-Low Clustering Report. Observed General G of 0.006787 with a z-score of 6.258 and p-value < 0.001, confirming statistically significant clustering of high landslide susceptibility values at the 99% confidence level. The positive z-score specifically indicates that the clustering is driven by high rather than low susceptibility values."
+                        alt="Getis-Ord General G High-Low Clustering Report"
+            />
+        </div>
+		<br><p style="text-align:center; font-size:0.85em; margin-top:-1em;">Getis-Ord General G</p>
+    </div>
+</div>
 										<article>
 										<h4>Multi-Distance Statistics</h4>
 												<p>Ripley's K Function confirmed that statistically significant clustering of high landslide susceptibility watersheds occurs at distances ranging from approximately 30 km to 140 km. This is identified on the graph where the observed K value rises above the upper confidence envelope. Below 30 km and above 140 km, the pattern approaches spatial randomness. The result means more broadly that the clustering is regional rather than purely a local phenomenon. This finding guided the scale at which the local hot spot analysis was applied.
