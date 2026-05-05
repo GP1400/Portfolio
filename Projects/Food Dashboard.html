@@ -67,10 +67,10 @@
 								<div class="container">
 									<h3>Project Overview</h3>
                   <h4>What is the problem?</h4>
-									<p>The reason this dashboard was created was to be able to visualize the different food retailers and be able to start a conversation, at the very least, about food access throughout the state of West Virginia.
-									</p>
+									<p>Food access is not evenly distributed across West Virginia, one of the most rural and economically challenged states in the country. While food retailers exist throughout the state, understanding where they are located, what types of food they offer, and whether they accept assistance programs like WIC is critical to identifying gaps in food access and informing efforts to address them.
+</p>
                   <h4>Why does it need to be solved?</h4>
-									<p>Food access is not evenly distributed throughout the community, and not all food retailers are created equally. Some retailers, while listed as being a food retailer, don't accept WIC, nor do they have fresh food. The limitation of fresh food is one of the biggest problems when trying to improve the health of the community.
+									<p>Not all food retailers are equal in the access they provide. A store listed as a food retailer may not carry fresh produce or accept WIC benefits, meaning having a retailer does not guarantee meaningful food access for all community members. Visualizing these distinctions across the state allows planners, policymakers, and community advocates to identify where incentives and investments are most needed to improve the distribution of fresh food and WIC-accepting retailers throughout West Virginia.
 </p>
 								</div>
 							</section>
@@ -83,13 +83,13 @@
 											<div class="col-6 col-12-xsmall">
 									<h5>ArcGIS Pro Tools</h5>
 									<ul>
-                    <li>ArcGIS Map Online</li>
+                    <li>ArcGIS Online (Dashboard)</li>
 									</ul>
 											</div>
 												<div class="col-6 col-12-xsmall">
 									<h5>Data Sources</h5>
 									<ul>
-                				        <li>File Continating Infomraiton for Food Retailers throughout West Virginia</li>
+                				        <li>USDA Food and Nutrition Service SNAP Retail Locator — Food retailer data for West Virginia, including retailer type, WIC acceptance, and fresh food availability (2021)</li>
      				               </ul>
 									</div>
 									</div>
@@ -101,7 +101,7 @@
 								<div class="container">
 									<h3>Methodology</h3>
 									<p>
-The problem was solved through the creation of this dashboard and just playing around with the map, seeing what different types of food retailers are available throughout the state and counties.
+Food retailer data for West Virginia was downloaded and imported into ArcGIS Online and used to create an interactive dashboard allowing users to explore food retailer distribution across the state by county, retailer type, WIC acceptance, and fresh food availability.
 									</p>
 <iframe 
   width="100%" 
@@ -113,6 +113,39 @@ The problem was solved through the creation of this dashboard and just playing a
   title="ArcGIS Dashboard" 
   src="https://www.arcgis.com/apps/dashboards/a96609226c2a43c8b4291fe66dd3ba94">
 </iframe>
+									<p>The dashboard was designed around four interactive components, each linked so that selections in one filter the others:</p>
+									  <div class="features">
+												<article>
+											<a href="#four" class="image"><img src="../images/maps/food/Dash_list.jpg" alt="Dashboard List Image" /></a>
+											<div class="inner">
+												<h4>List Area</h4>
+											<p>An ever-changing list of food stores shown on the map, with a search feature for specific stores and a fixed list showing the number of food stores per county.</p>
+											</div>
+										</article>
+										<article>
+											<a href="#four" class="image"><img src="../images/maps/food/Dash_map2.jpg" alt="Dashboard Map Image" /></a>
+											<div class="inner">
+												<h4>Map Area</h4>
+												<p>An interactive map showing all food retailers in West Virginia, color-coded by retailer type. Selecting a retailer displays additional details, including address, WIC acceptance, and fresh produce availability.
+</p>
+											</div>
+										</article>
+										<article>
+											<a href="#four" class="image"><img src="../images/maps/food/Dash_bar.jpg" alt="Dashboard Barchart Area Image" /></a>
+											<div class="inner">
+												<h4>Bar Chart</h4>
+												<p>A reactive chart showing the number of each retailer type currently visible in the map view. Selecting a bar type filters the map to show only that retailer type.</p>
+											</div>
+										</article>
+																									<article>
+											<a href="#four" class="image"><img src="../images/maps/food/Dash_pie.jpg" alt="Dashboard Pie Chart Image" /></a>
+											<div class="inner">
+												<h4>Pie Charts</h4>
+												<p>Two pie charts showing the percentage of retailers with fresh food and the percentage accepting WIC, respectively. Selecting a slice filters the map to display only that category.
+</p>
+											</div>
+										</article>
+									</div>
 								</div>
 							</section>
 
@@ -120,63 +153,63 @@ The problem was solved through the creation of this dashboard and just playing a
 							<section id="five">
 								<div class="container">
 									<h3>Results</h3>
-                  <p>The dashboard was created as a way to showcase food stores in the state of West Virginia. There are 4 main sections in the dashboard.
-</p>
-									                    <div class="features">
-												<article>
-											<a href="#four" class="image"><img src="../images/Dash_list.jpg" alt="Dashboard List Image" /></a>
-											<div class="inner">
-												<h4>List Area</h4>
-											<ul>
-                    <li>An ever-changing list of the food stores being shown on the map field, which also has a search feature for a specific store. 
-</li>
-                        <li>The list section also includes a list of the number of food stores in each county; this does not change based on the map.
-</li>
-									</ul>
-											</div>
-										</article>
-										<article>
-											<a href="#four" class="image"><img src="../images/Dash_map2.jpg" alt="Dashboard Map Image" /></a>
-											<div class="inner">
-												<h4>Map Area</h4>
-													<ul>
-                    <li>An interactive map that shows the outline of the state and counties of West Virginia. There are indicators for every food store in West Virginia with different colors, allowing for a distinction between the different types.
-</li>
-                        <li>Selecting one food retailer allows for more information to be viewed, such as address, whether they accept WIC, and whether they have fresh produce.
-</li>
-									</ul>
-											</div>
-										</article>
-										<article>
-											<a href="#four" class="image"><img src="../images/Dash_bar.jpg" alt="Dashboard Barchart Area Image" /></a>
-											<div class="inner">
-												<h4>Bar Chart</h4>
-												<p>The bar chart is reactive to the map view and shows the number of different types of food stores shown in the map display. Selecting one of the types also allows for filtering on the map display of only that type of food store.
-</p>
-											</div>
-										</article>
-																									<article>
-											<a href="#four" class="image"><img src="../images/Dash_pie.jpg" alt="Dashboard Pie Chart Image" /></a>
-											<div class="inner">
-												<h4>Pie Charts</h4>
-												<p>The first pie chart shows the percentages of food stores that have fresh food, and the other does the same for WIC acceptance. Selecting one of the pie chart slices filters the map to display only that type.
-</p>
-											</div>
-										</article>
-									</div>
-								</div>
-							</section>
+        <p>&emsp;&emsp;&emsp;The dashboard reveals significant gaps in food access across West Virginia. Out of the 799 total food retailers identified in the state, only 80, just 10%, accept WIC benefits, and only 170, ~21%, offer fresh food. The most concerning aspect is that only 71 retailers both accept WIC and offer fresh food, meaning that for many who depend on nutrition assistance programs, access to fresh produce remains extremely limited.</p>
+        <div class="row">
+            <div class="col-4 col-12-small">
+                <div class="image fit">
+                    <img
+                        class="lightbox-thumb"
+                        src="../images/maps/food/total.png"
+                        data-full="../images/maps/food/retailers_by_county.png"
+                        data-caption="Total Food Retailers by County. Five counties — Doddridge, Pleasants, Wirt, Tucker, and Tyler — have four or fewer food retailers of any kind."
+                        alt="Total Food Retailers by County"
+                    />
+                </div>
+                <p style="text-align:center; font-size:0.85em; margin-top:-1em;">Total Retailers by County</p>
+            </div>
+            <div class="col-4 col-12-small">
+                <div class="image fit">
+                    <img
+                        class="lightbox-thumb"
+                        src="../images/maps/food/WIC.png"
+                        data-full="../images/maps/food/WIC.png"
+                        data-caption="WIC-Accepting Retailers by County. Twenty counties have no food retailers that accept WIC benefits, representing a significant gap in nutrition assistance access across West Virginia."
+                        alt="WIC Accepting Retailers by County"
+                    />
+                </div>
+                <p style="text-align:center; font-size:0.85em; margin-top:-1em;">WIC Acceptance by County</p>
+            </div>
+            <div class="col-4 col-12-small">
+                <div class="image fit">
+                    <img
+                        class="lightbox-thumb"
+                        src="../images/maps/food/fresh.png"
+                        data-full="../images/maps/food/fresh.png"
+                        data-caption="Fresh Food Retailers by County. Seven counties have no food retailers offering fresh produce, making them effective fresh food deserts with no access through traditional retail channels."
+                        alt="Fresh Food Retailers by County"
+                    />
+                </div>
+                <p style="text-align:center; font-size:0.85em; margin-top:-1em;">Fresh Food Access by County</p>
+            </div>
+        </div>
+
+        <p>&emsp;&emsp;&emsp;The geographic distribution of these gaps is quite shocking. Five counties, Doddridge, Pleasants, Wirt, Tucker, and Tyler, have four or fewer food retailers of any kind, leaving residents with almost no options for food access, regardless of type. Twenty counties have no stores that accept WIC at all, and seven counties have no stores offering fresh food, meaning entire counties are fresh food deserts with no access to produce through traditional retail channels.<br>
+        &emsp;&emsp;&emsp;The results show that food access in West Virginia is not only about whether stores exist, but what those stores actually provide. The presence of a food retailer does not guarantee access to fresh food or acceptance of WIC; these distinctions have direct implications for public health planning, policy, and investment across the state.</p>
+    </div>
+</section>
 						
 						<!-- Six -->
 							<section id="six">
 								<div class="container">
 									<h3>Limitations and Conclusions</h3>
 									<h4>Limitations</h4>
-									<p>&emsp;&emsp;&emsp;One of the big limitations of this dashboard is its usability of the dashboard for a mobile display. The amount of information makes a mobile display not really functional for all aspects of the information provided. <br>
-                 &emsp;&emsp;&emsp;Another limitation is the accuracy of the information for the food retailers. Some food retailers might not be included in the list even if they do provide some food, even fresh food, like gas stations that have fresh fruits or even fruit stands, that, while not traditional food retailers, do provide access.
- </p>
+									<p>&emsp;&emsp;&emsp;The dashboard's primary limitation is its usability on mobile devices. The volume of information and interactive components makes the dashboard difficult to navigate on smaller screens, limiting its accessibility for users without desktop access.<br>
+                 						&emsp;&emsp;&emsp;The accuracy and completeness of the underlying data is also a limitation. The USDA SNAP Retail Locator represents only officially registered food retailers, meaning non-traditional sources of food access, such as gas stations selling fresh fruit, roadside produce stands, community gardens, or food banks, are not captured by this data. This means the true picture of food access may be broader than what the dashboard shows, particularly in rural counties.<br>
+										&emsp;&emsp;&emsp;Finally, the data was dated as of 2021 and reflects retailer status at that point in time. Stores may have opened, closed, or changed their WIC acceptance and fresh food offerings since then, meaning the dashboard should be treated as a snapshot rather than a current directory.
+</p>
 								<h4>Conclusions</h4>
-								<p>Understanding food access throughout the state of West Virginia can be done through the use of this dashboard by understanding not only the types of food retailers, but also the type of access to WIC and fresh food each retailer provides. The hope would be to be able to use this information to understand where incentives could be placed for access to fresh food and WIC retailers to be a better distribution throughout the state as a whole, or even just the county.
+								<p>&emsp;&emsp;&emsp;This dashboard demonstrates the power of interactive GIS tools for communicating complex spatial data about food access to a broad audience. By visualizing retailer type, WIC acceptance, and fresh food availability together in one interactive platform, it makes patterns of food access inequality immediately visible in ways that static maps or spreadsheets cannot.<br>
+									&emsp;&emsp;&emsp;The findings point to clear opportunities for policy intervention. Targeting incentives toward WIC acceptance and fresh food availability in the 20 counties with no WIC retailers and the 7 counties with no fresh food stores would have the most direct impact on food access for West Virginia's most underserved communities. Future iterations of this dashboard could incorporate more recent data, additional retailer types, and demographic overlays to further strengthen its utility as a planning tool.
 </p>
 						</div>	
 							</section>
@@ -185,10 +218,16 @@ The problem was solved through the creation of this dashboard and just playing a
 							<section id="seven">
 								<div class="container">
 									<h3>Deliverables</h3>
-									<p><span><a href="https://www.arcgis.com/apps/dashboards/a96609226c2a43c8b4291fe66dd3ba94" target="_blank" rel="noopener noreferrer" class="image left"><img src="../images/Dash2.jpg" alt="Link to full dashboard" width="100%" height="100%" /> </a>
-									</span>
-									<br><br><br><br><br><br><br><br><br><br><br><br><br><br> </p>
-			</div>
+									<p>The interactive dashboard is available to explore directly via the link below. Click the image to open the full dashboard in a new tab.</p>
+        <a href="https://www.arcgis.com/apps/dashboards/a96609226c2a43c8b4291fe66dd3ba94"
+           target="_blank"
+           rel="noopener noreferrer">
+            <div class="image fit">
+                <img src="../images/Dash2.jpg" alt="Click to open Food Retailers of WV Dashboard" />
+            </div>
+        </a>
+        <p style="text-align:center; font-size:0.85em; margin-top:-1em;">Click image to open the full interactive dashboard in a new tab</p>
+    </div>
 								</section>
 					</div>
 
@@ -213,7 +252,42 @@ The problem was solved through the creation of this dashboard and just playing a
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+<!-- Lightbox Overlay -->
+<div class="lightbox-overlay" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="" />
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+		<script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
 
+    document.querySelectorAll('.lightbox-thumb').forEach(function(thumb) {
+        thumb.addEventListener('click', function() {
+            lightboxImg.src = this.dataset.full;
+            lightboxCaption.textContent = this.dataset.caption || '';
+            lightbox.classList.add('active');
+        });
+    });
+
+    lightboxClose.addEventListener('click', function() {
+        lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            lightbox.classList.remove('active');
+        }
+    });
+</script>
 	</body>
 
 </html>
