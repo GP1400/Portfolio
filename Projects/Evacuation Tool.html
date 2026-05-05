@@ -111,15 +111,112 @@
 									<p>
 The problem was solved through the creation of an original Tool for ArcGIS Pro using Python.
 									</p>
-<pre><code>i = 0;
+<details>
+    <summary style="cursor:pointer; color:#F08000; font-weight:700; font-size:1.1em; margin-top:2em;">
+        &#9654; View Python Source Code
+    </summary>
+    <pre><code>import arcpy
+from arcpy import sa
+from arcpy.sa import (
+    Raster, Reclassify, RemapValue, RemapRange, Con, CellStatistics,
+    ExtractByMask, IsNull, Slope, Exp, Abs, CostDistance, CostPath
+)
+import pandas as pd
 
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
+arcpy.AddMessage("Starting...")
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+# Enable Spatial Analyst
+arcpy.CheckOutExtension("Spatial")
+arcpy.env.overwriteOutput = True
+
+# === Parameters from ArcGIS Tool ===
+in_dem = arcpy.GetParameterAsText(0)
+in_landcover = arcpy.GetParameterAsText(1)
+landcover_speed_t = arcpy.GetParameterAsText(2)
+evac_pts = arcpy.GetParameterAsText(3)
+start_locations = arcpy.GetParameterAsText(4)
+land_zone = arcpy.GetParameterAsText(5)
+output_tobler_speed = arcpy.GetParameterAsText(6)
+output_lc_speed = arcpy.GetParameterAsText(7)
+out_combined_speed = arcpy.GetParameterAsText(8)
+output_time_raster = arcpy.GetParameterAsText(9)
+output_leastcost_path = arcpy.GetParameterAsText(10)
+final_output = arcpy.GetParameterAsText(11)
+
+# === Environment Settings ===
+arcpy.env.extent = in_dem
+arcpy.env.mask = in_dem
+
+# === Convert Safe Zone to Raster (in memory) ===
+land_raster = arcpy.conversion.PolygonToRaster(
+    in_features=land_zone,
+    value_field="FEATURE",
+    cell_assignment="MAXIMUM_AREA",
+    priority_field="FEATURE",
+    cellsize=arcpy.Describe(in_dem).meanCellWidth
+).getOutput(0)
+arcpy.AddMessage("Step 0 complete: Land zone raster created in memory.")
+
+# === Step 1: Slope and Tobler Speed (m/min) ===
+slope_percent = Slope(in_dem, "PERCENT_RISE") / 100.0
+tobler_speed = Con(slope_percent > 0, 6000 * Exp(-3.5 * Abs(slope_percent + 0.05)) / 60)
+tobler_speed.save(output_tobler_speed)
+arcpy.AddMessage("Step 1 complete: Tobler speed raster created.")
+
+# === Step 2: Land Cover Reclassification ===
+df = pd.read_csv(landcover_speed_t).dropna()
+df.columns = df.columns.str.strip()
+remap_list = [[int(row[0]), int(row[1])] for row in df.values]
+lc_speed = Reclassify(Raster(in_landcover), "Value", RemapValue(remap_list), "NODATA")
+lc_speed.save(output_lc_speed)
+arcpy.AddMessage("Step 2 complete: Land cover reclassified to walking speed.")
+
+# === Step 3: Combine Tobler and Land Cover Speeds ===
+combined_speed = Con((lc_speed > 0) & (tobler_speed > 0), CellStatistics([lc_speed, tobler_speed], "MINIMUM", "DATA"))
+combined_speed = ExtractByMask(combined_speed, in_dem)
+combined_speed.save(out_combined_speed)
+arcpy.AddMessage("Step 3 complete: Combined walking speed raster saved.")
+
+# === Step 4: Invert Speed to Get Cost Raster ===
+cost_raster = Con(combined_speed > 0, 1.0 / combined_speed)
+arcpy.AddMessage("Step 4 complete: Cost raster (min/m) created.")
+
+# === Step 5: Cost Distance and Time Raster ===
+sa.CostDistance(evac_pts, cost_raster, out_backlink_raster="memory/backlink")
+backlink = Raster("memory/backlink")
+time_evac = sa.CostDistance(evac_pts, cost_raster)
+time_evac_safe = Con((time_evac > 0) & (time_evac < 120), time_evac)
+time_evac_safe.save(output_time_raster)
+arcpy.AddMessage("Step 5 complete: Travel time to evacuation points calculated and saved.")
+
+# === Step 6: Least Cost Path Polylines ===
+least_cost = CostPath(start_locations, time_evac_safe, backlink, "EACH_ZONE", "FID")
+arcpy.RasterToPolyline_conversion(
+    in_raster=least_cost,
+    out_polyline_features=output_leastcost_path,
+    background_value="ZERO",
+    simplify="NO_SIMPLIFY"
+)
+arcpy.AddMessage("Step 6 complete: Least cost path polylines saved.")
+
+# === Step 7: Generate Isochrones and Final Classification ===
+reclass_map = RemapRange([
+    [0, 5, 9], [5, 10, 8], [10, 15, 7], [15, 20, 6],
+    [20, 25, 5], [25, 30, 4], [30, 60, 3], [60, 120, 2]
+])
+iso = Reclassify(time_evac_safe, "Value", reclass_map, "NODATA")
+arcpy.AddMessage("Step 7 complete: Isochrone raster created in memory.")
+
+# === Step 8: Final Classification with Tsunami and Safe Land ===
+ts = Raster(cost_raster)
+land = Raster(land_raster)
+
+base = Con((~IsNull(iso)) & (~IsNull(ts)), iso)
+with_tsunami = Con((IsNull(iso)) & (~IsNull(ts)), 0, base)
+final = Con(~IsNull(land), 10, with_tsunami)
+final.save(final_output)
+arcpy.AddMessage("Step 8 complete: Final tsunami impact classification saved.")</code></pre>
+</details>
 								</div>
 							</section>
 
