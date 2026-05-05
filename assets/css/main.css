@@ -3369,11 +3369,13 @@ input, select, textarea {
   display: none !important;
 }
 
-/* Image */
+/* Image — fixed height for square cards */
 .project-card .image img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 220px;
+  object-fit: cover;
+  object-position: center center;
 }
 
 /* Overlay (single structure, two states) */
@@ -3394,8 +3396,9 @@ transition: background 0.35s ease;
   color: #fff;
   font-size: 1.25em;
   margin: 0;
-  transform: translateY(3rem);
+  transform: translateY(0);
   transition: transform 0.35s ease;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
 }
 
 
@@ -3409,16 +3412,14 @@ transition: background 0.35s ease;
   transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-/* HOVER STATE (this replaces your `.hover` class idea) */
+/* HOVER STATE */
 .project-card:hover .overlay {
-  background: transparent;
+  background: rgba(40, 40, 40, 0.35);
 }
-
-/* Title moves up */
+/* Title moves up on hover */
 .project-card:hover h4 {
-  transform: translateY(.5rem);
+  transform: translateY(-1.5rem);
 }
-
 /* Description fades in */
 .project-card:hover p {
   opacity: 1;
@@ -3538,4 +3539,31 @@ ul.feature-icons + ul {
     margin-top: 1em;
     padding: 0.5em;
     line-height: 1.5em;
+}
+/* === Square project card images === */
+.project-card .image.fit img {
+    height: 220px;
+    object-fit: cover;
+}
+
+/* Per-card position adjustments */
+/* Wind Farm — show the suitability map center */
+.project-card:nth-child(1) .image.fit img {
+    object-position: center center;
+}
+/* Land Cover — show the green classification */
+.project-card:nth-child(2) .image.fit img {
+    object-position: center top;
+}
+/* Reedy River — show the riparian map */
+.project-card:nth-child(3) .image.fit img {
+    object-position: center center;
+}
+/* Landslide — show the WV state map */
+.project-card:nth-child(4) .image.fit img {
+    object-position: center center;
+}
+/* Food Dashboard — show the map area */
+.project-card:nth-child(5) .image.fit img {
+    object-position: center top;
 }
