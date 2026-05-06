@@ -35,9 +35,9 @@
 				</nav>
 				<footer>
 					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/sebastian-gomez-parra-4a339a250" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin"><span class="label">LinkdIn in new Tab</span></a></li>
+						<li><a href="https://www.linkedin.com/in/sebastian-gomez-parra-4a339a250" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin"><span class="label">LinkedIn in new Tab</span></a></li>
 						<li><a href="mailto:gomezparra1400@gmail.com" class="icon solid fa-envelope"><span class="label">Send Email</span></a></li>
-						<li><a href="Files/Sebastian GP Gomez Parra Resume.pdf" target="_blank" rel="noopener noreferrer" class="icon solid fa-address-card"><span class="label">Resume</span></a></li>
+						<li><a href="../Files/Sebastian GP Gomez Parra Resume.pdf" target="_blank" rel="noopener noreferrer" class="icon solid fa-address-card"><span class="label">Resume</span></a></li>
 					</ul>
 				</footer>
 			</section>
@@ -135,7 +135,7 @@
                 </div>
                 <div class="inner">
                     <h4>Step 1: Slope and Tobler Speed</h4>
-                    <p>Slope is calculated from the input DEM in percent rise and converted to a fraction. The fraction is then applied to Tobler's Hiking Function, a well-established formula that models how walking speed varies with slope, peaking at a -5% downhill gradient. The result is a raster showing estimated walking speed in meters per minute across the entire study area.
+                    <p>Slope is calculated from the input DEM in percent rise and converted to a fraction. The fraction is then applied to Tobler's Hiking Function, a well-established formula that models how walking speed varies with slope, peaking at a -5% downhill gradient. The result is a raster showing estimated walking speed in meters per minute across the entire study area.</p>
 </div>
             </article>
 
@@ -172,6 +172,7 @@
                 </div>
             </article>
 										             <article>
+														 <div class="inner">
                     <h4>Step 4: Cost Raster</h4>
                     <p>The combined speed raster is inverted from meters per minute to minutes per meter, creating a cost raster where each cell value represents the time cost of traversing that cell. This is the foundation for all the following travel time calculations.
 </p>
@@ -193,20 +194,24 @@
                 </div>
             </article>
 										             <article>
+														 <div class="inner">
                     <h4>Step 6: Least Cost Path</h4>
                     <p>Least cost paths are calculated from critical facilities, police stations, schools, hospitals, and fire stations to the nearest assembly points. These paths represent the optimal evacuation routes from locations where people are likely to gather during an emergency and are saved as polylines for use in evacuation planning and signage.
 </p>
             </article>
 										             <article>
+														 <div class="inner">
                     <h4>Step 7: Isochrone Generation</h4>
                     <p>Travel time values are reclassified into isochrone bands at 5-minute intervals, scored on a descending scale from 9 (0–5 minutes) to 2 (60–120 minutes). These bands visually communicate the urgency of evacuation from different locations relative to the assembly points.
 </p>
             </article>
 										             <article>
+														 <div class="inner">
                     <h4>Step 8: Final Classification</h4>
                     <p>The isochrone raster is combined with the tsunami hazard zone boundary. Areas outside the isochrone range, those where reaching an assembly point within two hours is unlikely, are scored 0, while areas already within the tsunami-free zone are scored 10. The final raster provides a single integrated view of evacuation feasibility across the entire study area.
 </p>
             </article>
+									</div>
 <details>
     <summary style="cursor:pointer; color:#F08000; font-weight:700; font-size:1.1em; margin-top:2em;"> View Python Source Code
     </summary>
@@ -368,18 +373,21 @@ arcpy.AddMessage("Step 8 complete: Final tsunami impact classification saved.")<
 							<section id="seven">
 								<div class="container">
 									<h3>Deliverables</h3>
-                    <ul>
-                      <li>
-                        <a href="https://github.com/yourusername/your-repo" target="_blank">
-                            GitHub Repository
-                        </a>
-                      </li>
-                      <li>
-                        <a href="../files/tsunami_report.pdf" target="_blank">
-                            Project Report (PDF)
-                        </a>
-                      </li>
-                    </ul>
+                    <!-- Replace with -->
+<ul>
+    <li>
+        <a href="../Files/Papers/Pedestrian Evacuation Time Estimator.pdf" 
+           target="_blank" rel="noopener noreferrer">
+            Project Report (PDF)
+        </a>
+    </li>
+    <li>
+        <a href="../Files/PedestrianEvacuationTool.zip" 
+           target="_blank" rel="noopener noreferrer">
+            Download Tool Package (ZIP)
+        </a>
+    </li>
+</ul>
 
 			</div>
 								</section>
