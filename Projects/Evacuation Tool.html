@@ -51,7 +51,7 @@
 						<!-- One -->
 							<section id="one">
 								<div class="image main" data-position="center">
-									<img src="../images/maps/evac/Tob.png" alt="" />
+									<img src="../images/maps/evac/Tob.png" alt="Tobler's Hiking Function: Walking Speed by Slope." />
 								</div>
 								<div class="container">
 									<header class="major">
@@ -108,7 +108,17 @@
 							<section id="four">
 								<div class="container">
 									<h3>Methodology</h3>
-									<p>This tool was developed as a custom Python geoprocessing tool integrated into ArcGIS Pro, allowing users to run the full evacuation time analysis through a single interface by providing the required inputs. The tool processes data through eight sequential steps:
+									<p>
+										 <span class="image left">
+                <img
+					style="width: 18em !important;"
+                    class="lightbox-thumb"
+                    src="../images/maps/evac/Tool.png"
+                    data-full="../images/maps/evac/Tool.png"
+                    data-caption="The custom geoprocessing tool interface in ArcGIS Pro. Required inputs include a DEM, land cover raster, land cover speed table, evacuation assembly points, critical facilities, and tsunami hazard zone boundary. Optional intermediate outputs can be saved for inspection at each step of the analysis."
+                />
+            </span>
+										This tool was developed as a custom Python geoprocessing tool integrated into ArcGIS Pro, allowing users to run the full evacuation time analysis through a single interface by providing the required inputs. The tool processes data through eight sequential steps:
 									</p>
 									 <div class="features">
             <article>
@@ -117,8 +127,8 @@
                         class="lightbox-thumb"
                         src="../images/maps/evac/Tob.png"
                         data-full="../images/maps/evac/Tob.png"
-                        data-caption="Binary Exclusion Criteria. (A) Bird areas, (B) parks, (C) water bodies, and (D) airports were all weighted binarily. These maps show areas that were binary in their weights, with areas to be included weighted 100 and areas excluded weighted 0."
-                        alt="Binary Exclusion Criteria."
+                        data-caption="Tobler's Hiking Function: Walking Speed by Slope. Walking speed in meters per minute derived from Tobler's Hiking Function applied to the 10m DEM. Speed peaks at a -5% downhill gradient and decreases on steeper uphill and downhill slopes. Areas with no data represent water or areas outside the study extent."
+                        alt="Tobler's Hiking Function: Walking Speed by Slope."
                     />
                 </div>
                 <div class="inner">
@@ -131,10 +141,10 @@
                 <div class="image">
                     <img 
                         class="lightbox-thumb"
-                        src="../images/maps/evac/lc.png"
-                        data-full="../images/maps/evac/lc.png"
-                        data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
-                        alt="Human Acceptability: Urban Buffer Weighting."
+                        src="../images/maps/evac/LC.png"
+                        data-full="../images/maps/evac/LC.png"
+                        data-caption="Land Cover Walking Speed Reclassification. Walking speeds assigned to each land cover type based on values collected from US Army Corps of Engineers, DOGAMI, and transportation studies."
+                        alt="Land Cover Walking Speed Reclassification"
                     />
                 </div>
                 <div class="inner">
@@ -149,8 +159,8 @@
                         class="lightbox-thumb"
                         src="../images/maps/evac/Combined.png"
                         data-full="../images/maps/evac/Combined.png"
-                        data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
-                        alt="Human Acceptability: Urban Buffer Weighting."
+                        data-caption="Combined Walking Speed: Conservative Minimum. The combined walking speed raster keeps the slower of the Tobler speed and land cover speed at each cell. This conservative approach ensures travel time estimates reflect realistic worst-case conditions across the Oregon coast study area."
+                        alt="Combined Walking Speed: Conservative Minimum."
                     />
                 </div>
                 <div class="inner">
@@ -170,8 +180,8 @@
                         class="lightbox-thumb"
                         src="../images/maps/evac/traveltime.png"
                         data-full="../images/maps/evac/traveltime.png"
-                        data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
-                        alt="Human Acceptability: Urban Buffer Weighting."
+                        data-caption="Pedestrian Travel Time to Nearest Assembly Point. Accumulated pedestrian travel time in minutes to the nearest assembly point, calculated using cost distance analysis. Results are restricted to a 0–120 minute window. Areas in green are within minutes of an assembly point, while areas in red represent locations where reaching safety within two hours is increasingly uncertain."
+                        alt="Pedestrian Travel Time to Nearest Assembly Point."
                     />
                 </div>
                 <div class="inner">
@@ -307,12 +317,31 @@ arcpy.AddMessage("Step 8 complete: Final tsunami impact classification saved.")<
 							<section id="five">
 								<div class="container">
 									<h3>Results</h3>
-									        <p>&emsp;&emsp;&emsp;The Pedestrian Evacuation Time Estimator Tool produces several outputs that together provide a comprehensive picture of evacuation feasibility for the Oregon coast study area.<br>
+									        p><span class="image left">
+        <img
+            style="width: 20em !important;"
+			class="lightbox-thumb"
+		src="../images/maps/evac/path.png"
+        data-full="../images/maps/evac/path.png"
+        data-caption="Optimal Evacuation Routes from Critical Facilities. Least cost path polylines showing the optimal pedestrian evacuation routes from critical facilities, including police stations, schools, hospitals, and fire stations, to the nearest assembly points. These routes represent the most efficient paths through the terrain and land cover of the Oregon coast study area and are intended to guide evacuation signage and public education planning."
+        alt="Optimal Evacuation Routes from Critical Facilities."
+        />
+    </span>
+									&emsp;&emsp;&emsp;The Pedestrian Evacuation Time Estimator Tool produces several outputs that together provide a comprehensive picture of evacuation feasibility for the Oregon coast study area.<br>
 												&emsp;&emsp;&emsp;The Tobler speed and land cover speed rasters reveal how dramatically terrain and land cover affect walking speed across the study area. The Oregon coast's steep topography creates significant variation in travel speed, with flat developed areas allowing much faster movement than forested hillsides or beach terrain.<br>
 												&emsp;&emsp;&emsp;The final classification raster is the primary output of the tool, combining the isochrone travel time bands with the tsunami hazard zone boundary into a single integrated map. Areas scored 9 represent locations within 5 minutes of an assembly point, the safest evacuees. Areas scored 0 represent locations where reaching an assembly point within two hours is unlikely, representing the highest-risk population. Areas scored 10 are already within the tsunami-free zone and require no evacuation.<br>
 												&emsp;&emsp;&emsp;The least cost path polylines show the optimal evacuation routes from critical facilities, police stations, schools, hospitals, and fire stations to the nearest assembly points. These routes are particularly valuable for emergency planners developing evacuation signage and public education materials, as they identify the paths most likely to be used during an actual event.<br>
 												&emsp;&emsp;&emsp;Together, these outputs allow emergency managers to assess whether current assembly point locations provide adequate coverage for the coastal population, and to identify specific areas where additional assembly points, improved signage, or targeted public education would have the greatest impact on evacuation outcomes.
 											</p>
+									 <div class="image fit">
+            <img
+                class="lightbox-thumb"
+                src="../images/maps/evac/Final.png"
+                data-full="../images/maps/evac/Final.png"
+                data-caption="Pedestrian Evacuation Feasibility: Oregon Coast. Final evacuation feasibility classification combining isochrone travel time bands with the tsunami hazard zone boundary. Areas scored 9 (dark green) are within 5 minutes of an assembly point. Areas scored 0 (red) represent locations where reaching an assembly point within two hours is unlikely. Areas scored 10 (bright green) are already within the tsunami-free zone and require no evacuation. This map is the primary planning output of the tool."
+                alt="Pedestrian Evacuation Feasibility: Oregon Coast."
+            />
+        </div>
 								</div>
 							</section>
 						
@@ -374,7 +403,42 @@ arcpy.AddMessage("Step 8 complete: Final tsunami impact classification saved.")<
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+<!-- Lightbox Overlay -->
+<div class="lightbox-overlay" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="" />
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+		<script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
 
+    document.querySelectorAll('.lightbox-thumb').forEach(function(thumb) {
+        thumb.addEventListener('click', function() {
+            lightboxImg.src = this.dataset.full;
+            lightboxCaption.textContent = this.dataset.caption || '';
+            lightbox.classList.add('active');
+        });
+    });
+
+    lightboxClose.addEventListener('click', function() {
+        lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            lightbox.classList.remove('active');
+        }
+    });
+</script>
 	</body>
 
 </html>
