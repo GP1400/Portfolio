@@ -67,10 +67,10 @@
 								<div class="container">
 									<h3>Project Overview</h3>
                   <h4>What is the problem?</h4>
-									<p>Estimating travel time from different locations in the event of a tsunami to assembly points along the coast or to areas of high elevation.
+									<p>The Pacific Northwest coast faces a well-documented and overdue threat from the Cascadia Subduction Zone, a megathrust fault capable of generating a magnitude 9.0+ earthquake and devastating tsunami. When that event occurs, coastal communities will have minutes to evacuate. Understanding how long it will actually take pedestrians to reach assembly points or high ground, accounting for terrain, land cover, and distance, is a critical need in emergency planning tools.
 </p>
                   <h4>Why does it need to be solved?</h4>
-									<p>Tsunamis are a threat to millions of people living near the coast, and understanding the travel time they need to make it to assembly points or areas of high elevation could help in determining if more assembly points are needed for the population of an area or if the assembly points are well distributed for the area in question.
+									<p>Existing evacuation planning often relies on simplified assumptions about travel time that do not account for slope, land cover type, or the specific distribution of assembly points relative to the population. A tool that models realistic pedestrian travel times allows emergency managers and planners to identify where assembly points are well-positioned, where coverage gaps exist, and which areas of a community face the greatest risk of failing to reach safety within the evacuation window. This information is essential for making evidence-based decisions about where to invest in new assembly points, signage, and evacuation infrastructure.
 </p>
 									<a href="#" class="image"><img src="../images/pic01.jpg" alt="" /></a>
 								</div>
@@ -84,20 +84,20 @@
 											<div class="col-6 col-12-xsmall">
 									<h5>Tools</h5>
 									<ul>
-                    <li>Python</li>
-                    <li>ArcGIS Pro</li>
-                    <li>Tool Creation in ArcGIS Pro</li>
+                    <li>Python (arcpy, arcpy.sa, pandas)</li>
+                    <li>ArcGIS Pro: Spatial Analyst Extension</li>
+                    <li>Custom Geoprocessing Tool (ArcGIS Pro Toolbox)</li>
 									</ul>
 											</div>
 												<div class="col-6 col-12-xsmall">
 									<h5>Data Sources</h5>
 									<ul>
-                				        <li>Land Cover</li>
-                				        <li>DEM at 10m</li>
-                                <li>Speed through Land Covers</li>
-                                <li>Assembly Points</li>
-                                <li>Critical Facilities</li>
-                                <li>Areas Deemed Free of Tsunami Risk</li>
+                				        <li>Digital Elevation Model at 10m resolution (used to derive slope)</li>
+                				        <li>NLCD 2016 Land Cover Raster for Oregon coast study area</li>
+                                <li>Land Cover Walking Speed Table (CSV) originally from US Army Corps of Engineers, DOGAMI, and transportation studies</li>
+                                <li>Assembly Points (shapefile)</li>
+                                <li>Critical Facilities including: police stations, schools, hospitals, fire stations (shapefile)</li>
+                                <li>Tsunami Hazard Zone boundary: areas deemed free of tsunami risk (shapefile)</li>
      				               </ul>
 									</div>
 									</div>
@@ -108,12 +108,155 @@
 							<section id="four">
 								<div class="container">
 									<h3>Methodology</h3>
-									<p>
-The problem was solved through the creation of an original Tool for ArcGIS Pro using Python.
+									<p>This tool was developed as a custom Python geoprocessing tool integrated into ArcGIS Pro, allowing users to run the full evacuation time analysis through a single interface by providing the required inputs. The tool processes data through eight sequential steps:
 									</p>
+									 <div class="features">
+            <article>
+                <div class="image">
+                    <img 
+                        class="lightbox-thumb"
+                        src="../images/maps/wind/binary.png"
+                        data-full="../images/maps/wind/binary.png"
+                        data-caption="Binary Exclusion Criteria. (A) Bird areas, (B) parks, (C) water bodies, and (D) airports were all weighted binarily. These maps show areas that were binary in their weights, with areas to be included weighted 100 and areas excluded weighted 0."
+                        alt="Binary Exclusion Criteria."
+                    />
+                </div>
+                <div class="inner">
+                    <h4>Step 1: Slope and Tobler Speed</h4>
+                    <p>Slope is calculated from the input DEM in percent rise and converted to a fraction. The fraction is then applied to Tobler's Hiking Function, a well-established formula that models how walking speed varies with slope, peaking at a -5% downhill gradient. The result is a raster showing estimated walking speed in meters per minute across the entire study area.
+</div>
+            </article>
+
+            <article>
+                <div class="image">
+                    <img 
+                        class="lightbox-thumb"
+                        src="../images/maps/wind/urban.png"
+                        data-full="../images/maps/wind/urban.png"
+                        data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
+                        alt="Human Acceptability: Urban Buffer Weighting."
+                    />
+                </div>
+                <div class="inner">
+                    <h4>Step 2: Land Cover Speed Reclassification</h4>
+                    <p>The land cover raster is reclassified to walking speeds using a user-provided CSV table. Walking speeds for each land cover type were given by the US Army Corps of Engineers, DOGAMI, and transportation studies, reflecting how the average person moves through different terrain types during an emergency, recognizing that evacuees will take any path available to reach safety.
+</p>
+                </div>
+            </article>
+										             <article>
+                <div class="image">
+                    <img 
+                        class="lightbox-thumb"
+                        src="../images/maps/wind/urban.png"
+                        data-full="../images/maps/wind/urban.png"
+                        data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
+                        alt="Human Acceptability: Urban Buffer Weighting."
+                    />
+                </div>
+                <div class="inner">
+                    <h4>Step 2: Land Cover Speed Reclassification</h4>
+                    <p>The land cover raster is reclassified to walking speeds using a user-provided CSV table. Walking speeds for each land cover type were given by the US Army Corps of Engineers, DOGAMI, and transportation studies, reflecting how the average person moves through different terrain types during an emergency, recognizing that evacuees will take any path available to reach safety.
+</p>
+                </div>
+            </article>
+										             <article>
+                <div class="image">
+                    <img 
+                        class="lightbox-thumb"
+                        src="../images/maps/wind/urban.png"
+                        data-full="../images/maps/wind/urban.png"
+                        data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
+                        alt="Human Acceptability: Urban Buffer Weighting."
+                    />
+                </div>
+                <div class="inner">
+                    <h4>Step 2: Land Cover Speed Reclassification</h4>
+                    <p>The land cover raster is reclassified to walking speeds using a user-provided CSV table. Walking speeds for each land cover type were given by the US Army Corps of Engineers, DOGAMI, and transportation studies, reflecting how the average person moves through different terrain types during an emergency, recognizing that evacuees will take any path available to reach safety.
+</p>
+                </div>
+            </article>
+										             <article>
+                <div class="image">
+                    <img 
+                        class="lightbox-thumb"
+                        src="../images/maps/wind/urban.png"
+                        data-full="../images/maps/wind/urban.png"
+                        data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
+                        alt="Human Acceptability: Urban Buffer Weighting."
+                    />
+                </div>
+                <div class="inner">
+                    <h4>Step 2: Land Cover Speed Reclassification</h4>
+                    <p>The land cover raster is reclassified to walking speeds using a user-provided CSV table. Walking speeds for each land cover type were given by the US Army Corps of Engineers, DOGAMI, and transportation studies, reflecting how the average person moves through different terrain types during an emergency, recognizing that evacuees will take any path available to reach safety.
+</p>
+                </div>
+            </article>
+										             <article>
+                <div class="image">
+                    <img 
+                        class="lightbox-thumb"
+                        src="../images/maps/wind/urban.png"
+                        data-full="../images/maps/wind/urban.png"
+                        data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
+                        alt="Human Acceptability: Urban Buffer Weighting."
+                    />
+                </div>
+                <div class="inner">
+                    <h4>Step 2: Land Cover Speed Reclassification</h4>
+                    <p>The land cover raster is reclassified to walking speeds using a user-provided CSV table. Walking speeds for each land cover type were given by the US Army Corps of Engineers, DOGAMI, and transportation studies, reflecting how the average person moves through different terrain types during an emergency, recognizing that evacuees will take any path available to reach safety.
+</p>
+                </div>
+            </article>
+										             <article>
+                <div class="image">
+                    <img 
+                        class="lightbox-thumb"
+                        src="../images/maps/wind/urban.png"
+                        data-full="../images/maps/wind/urban.png"
+                        data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
+                        alt="Human Acceptability: Urban Buffer Weighting."
+                    />
+                </div>
+                <div class="inner">
+                    <h4>Step 2: Land Cover Speed Reclassification</h4>
+                    <p>The land cover raster is reclassified to walking speeds using a user-provided CSV table. Walking speeds for each land cover type were given by the US Army Corps of Engineers, DOGAMI, and transportation studies, reflecting how the average person moves through different terrain types during an emergency, recognizing that evacuees will take any path available to reach safety.
+</p>
+                </div>
+            </article>
+										             <article>
+                <div class="image">
+                    <img 
+                        class="lightbox-thumb"
+                        src="../images/maps/wind/urban.png"
+                        data-full="../images/maps/wind/urban.png"
+                        data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
+                        alt="Human Acceptability: Urban Buffer Weighting."
+                    />
+                </div>
+                <div class="inner">
+                    <h4>Step 2: Land Cover Speed Reclassification</h4>
+                    <p>The land cover raster is reclassified to walking speeds using a user-provided CSV table. Walking speeds for each land cover type were given by the US Army Corps of Engineers, DOGAMI, and transportation studies, reflecting how the average person moves through different terrain types during an emergency, recognizing that evacuees will take any path available to reach safety.
+</p>
+                </div>
+            </article>
+										             <article>
+                <div class="image">
+                    <img 
+                        class="lightbox-thumb"
+                        src="../images/maps/wind/urban.png"
+                        data-full="../images/maps/wind/urban.png"
+                        data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
+                        alt="Human Acceptability: Urban Buffer Weighting."
+                    />
+                </div>
+                <div class="inner">
+                    <h4>Step 2: Land Cover Speed Reclassification</h4>
+                    <p>The land cover raster is reclassified to walking speeds using a user-provided CSV table. Walking speeds for each land cover type were given by the US Army Corps of Engineers, DOGAMI, and transportation studies, reflecting how the average person moves through different terrain types during an emergency, recognizing that evacuees will take any path available to reach safety.
+</p>
+                </div>
+            </article>
 <details>
-    <summary style="cursor:pointer; color:#F08000; font-weight:700; font-size:1.1em; margin-top:2em;">
-        &#9654; View Python Source Code
+    <summary style="cursor:pointer; color:#F08000; font-weight:700; font-size:1.1em; margin-top:2em;"> View Python Source Code
     </summary>
     <pre><code>import arcpy
 from arcpy import sa
