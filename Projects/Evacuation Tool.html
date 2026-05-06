@@ -51,7 +51,7 @@
 						<!-- One -->
 							<section id="one">
 								<div class="image main" data-position="center">
-									<img src="../images/banner.jpg" alt="" />
+									<img src="../images/maps/evac/Tob.png" alt="" />
 								</div>
 								<div class="container">
 									<header class="major">
@@ -115,8 +115,8 @@
                 <div class="image">
                     <img 
                         class="lightbox-thumb"
-                        src="../images/maps/wind/binary.png"
-                        data-full="../images/maps/wind/binary.png"
+                        src="../images/maps/evac/Tob.png"
+                        data-full="../images/maps/evac/Tob.png"
                         data-caption="Binary Exclusion Criteria. (A) Bird areas, (B) parks, (C) water bodies, and (D) airports were all weighted binarily. These maps show areas that were binary in their weights, with areas to be included weighted 100 and areas excluded weighted 0."
                         alt="Binary Exclusion Criteria."
                     />
@@ -131,8 +131,8 @@
                 <div class="image">
                     <img 
                         class="lightbox-thumb"
-                        src="../images/maps/wind/urban.png"
-                        data-full="../images/maps/wind/urban.png"
+                        src="../images/maps/evac/lc.png"
+                        data-full="../images/maps/evac/lc.png"
                         data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
                         alt="Human Acceptability: Urban Buffer Weighting."
                     />
@@ -147,113 +147,53 @@
                 <div class="image">
                     <img 
                         class="lightbox-thumb"
-                        src="../images/maps/wind/urban.png"
-                        data-full="../images/maps/wind/urban.png"
+                        src="../images/maps/evac/Combined.png"
+                        data-full="../images/maps/evac/Combined.png"
                         data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
                         alt="Human Acceptability: Urban Buffer Weighting."
                     />
                 </div>
                 <div class="inner">
-                    <h4>Step 2: Land Cover Speed Reclassification</h4>
-                    <p>The land cover raster is reclassified to walking speeds using a user-provided CSV table. Walking speeds for each land cover type were given by the US Army Corps of Engineers, DOGAMI, and transportation studies, reflecting how the average person moves through different terrain types during an emergency, recognizing that evacuees will take any path available to reach safety.
+                    <h4>Step 3: Combined Speed Raster</h4>
+                    <p>The Tobler speed and land cover speed rasters are combined by keeping only the slower of the two values at each cell. This conservative approach ensures the analysis reflects realistic worst-case travel conditions rather than optimistic assumptions.
 </p>
                 </div>
+            </article>
+										             <article>
+                    <h4>Step 4: Cost Raster</h4>
+                    <p>The combined speed raster is inverted from meters per minute to minutes per meter, creating a cost raster where each cell value represents the time cost of traversing that cell. This is the foundation for all the following travel time calculations.
+</p>
             </article>
 										             <article>
                 <div class="image">
                     <img 
                         class="lightbox-thumb"
-                        src="../images/maps/wind/urban.png"
-                        data-full="../images/maps/wind/urban.png"
+                        src="../images/maps/evac/traveltime.png"
+                        data-full="../images/maps/evac/traveltime.png"
                         data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
                         alt="Human Acceptability: Urban Buffer Weighting."
                     />
                 </div>
                 <div class="inner">
-                    <h4>Step 2: Land Cover Speed Reclassification</h4>
-                    <p>The land cover raster is reclassified to walking speeds using a user-provided CSV table. Walking speeds for each land cover type were given by the US Army Corps of Engineers, DOGAMI, and transportation studies, reflecting how the average person moves through different terrain types during an emergency, recognizing that evacuees will take any path available to reach safety.
+                    <h4>Step 5: Cost Distance and Travel Time</h4>
+                    <p>Cost distance analysis accumulates travel time from every cell in the study area to the nearest assembly point. Results are restricted to a 0–120 minute window, reflecting the realistic evacuation timeframe. A backlink raster recording directionality toward assembly points is also created for use in the next step.
 </p>
                 </div>
             </article>
 										             <article>
-                <div class="image">
-                    <img 
-                        class="lightbox-thumb"
-                        src="../images/maps/wind/urban.png"
-                        data-full="../images/maps/wind/urban.png"
-                        data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
-                        alt="Human Acceptability: Urban Buffer Weighting."
-                    />
-                </div>
-                <div class="inner">
-                    <h4>Step 2: Land Cover Speed Reclassification</h4>
-                    <p>The land cover raster is reclassified to walking speeds using a user-provided CSV table. Walking speeds for each land cover type were given by the US Army Corps of Engineers, DOGAMI, and transportation studies, reflecting how the average person moves through different terrain types during an emergency, recognizing that evacuees will take any path available to reach safety.
+                    <h4>Step 6: Least Cost Path</h4>
+                    <p>Least cost paths are calculated from critical facilities, police stations, schools, hospitals, and fire stations to the nearest assembly points. These paths represent the optimal evacuation routes from locations where people are likely to gather during an emergency and are saved as polylines for use in evacuation planning and signage.
 </p>
-                </div>
             </article>
 										             <article>
-                <div class="image">
-                    <img 
-                        class="lightbox-thumb"
-                        src="../images/maps/wind/urban.png"
-                        data-full="../images/maps/wind/urban.png"
-                        data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
-                        alt="Human Acceptability: Urban Buffer Weighting."
-                    />
-                </div>
-                <div class="inner">
-                    <h4>Step 2: Land Cover Speed Reclassification</h4>
-                    <p>The land cover raster is reclassified to walking speeds using a user-provided CSV table. Walking speeds for each land cover type were given by the US Army Corps of Engineers, DOGAMI, and transportation studies, reflecting how the average person moves through different terrain types during an emergency, recognizing that evacuees will take any path available to reach safety.
+                    <h4>Step 7: Isochrone Generation</h4>
+                    <p>Travel time values are reclassified into isochrone bands at 5-minute intervals, scored on a descending scale from 9 (0–5 minutes) to 2 (60–120 minutes). These bands visually communicate the urgency of evacuation from different locations relative to the assembly points.
 </p>
-                </div>
             </article>
 										             <article>
-                <div class="image">
-                    <img 
-                        class="lightbox-thumb"
-                        src="../images/maps/wind/urban.png"
-                        data-full="../images/maps/wind/urban.png"
-                        data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
-                        alt="Human Acceptability: Urban Buffer Weighting."
-                    />
-                </div>
-                <div class="inner">
-                    <h4>Step 2: Land Cover Speed Reclassification</h4>
-                    <p>The land cover raster is reclassified to walking speeds using a user-provided CSV table. Walking speeds for each land cover type were given by the US Army Corps of Engineers, DOGAMI, and transportation studies, reflecting how the average person moves through different terrain types during an emergency, recognizing that evacuees will take any path available to reach safety.
+                    <h4>Step 8: Final Classification</h4>
+                    <p>The isochrone raster is combined with the tsunami hazard zone boundary. Areas outside the isochrone range, those where reaching an assembly point within two hours is unlikely, are scored 0, while areas already within the tsunami-free zone are scored 10. The final raster provides a single integrated view of evacuation feasibility across the entire study area.
 </p>
-                </div>
-            </article>
-										             <article>
-                <div class="image">
-                    <img 
-                        class="lightbox-thumb"
-                        src="../images/maps/wind/urban.png"
-                        data-full="../images/maps/wind/urban.png"
-                        data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
-                        alt="Human Acceptability: Urban Buffer Weighting."
-                    />
-                </div>
-                <div class="inner">
-                    <h4>Step 2: Land Cover Speed Reclassification</h4>
-                    <p>The land cover raster is reclassified to walking speeds using a user-provided CSV table. Walking speeds for each land cover type were given by the US Army Corps of Engineers, DOGAMI, and transportation studies, reflecting how the average person moves through different terrain types during an emergency, recognizing that evacuees will take any path available to reach safety.
-</p>
-                </div>
-            </article>
-										             <article>
-                <div class="image">
-                    <img 
-                        class="lightbox-thumb"
-                        src="../images/maps/wind/urban.png"
-                        data-full="../images/maps/wind/urban.png"
-                        data-caption="Human Acceptability: Urban Buffer Weighting. (A) Urban areas were selected from NAIP LULC 2016 Map. (B) Then, a buffer followed by a linear weighted buffer around the urban areas was performed."
-                        alt="Human Acceptability: Urban Buffer Weighting."
-                    />
-                </div>
-                <div class="inner">
-                    <h4>Step 2: Land Cover Speed Reclassification</h4>
-                    <p>The land cover raster is reclassified to walking speeds using a user-provided CSV table. Walking speeds for each land cover type were given by the US Army Corps of Engineers, DOGAMI, and transportation studies, reflecting how the average person moves through different terrain types during an emergency, recognizing that evacuees will take any path available to reach safety.
-</p>
-                </div>
             </article>
 <details>
     <summary style="cursor:pointer; color:#F08000; font-weight:700; font-size:1.1em; margin-top:2em;"> View Python Source Code
@@ -367,43 +307,12 @@ arcpy.AddMessage("Step 8 complete: Final tsunami impact classification saved.")<
 							<section id="five">
 								<div class="container">
 									<h3>Results</h3>
-									                    <div class="features">
-										<article>
-											<a href="#" class="image"><img src="../images/pic02.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Rainfall</h4>
-												<p>&emsp;&emsp;&emsp;Rainfall shows a strong correlation to the elevation of the terrain. The overall rainfall in one study area along the Reedy River shows that while rainfall varies, a linear trend shows an increase in the amount of rainfall the area will receive in the future.<br>
-												&emsp;&emsp;&emsp;Studying the projected flood rates shows a clear trend of increasing rates at 1.5, 10, and 20-year flood rates, with the jump from 2020 to 2040 being a small increase, and the largest jumps being between 2040 and 2080.<br>
-												&emsp;&emsp;&emsp;Climate change has made the one-day rainfall amounts show a clear increase, which will only continue to be a problem. In 2005, for example, the rainfall of over 4 inches in one day for 2005 accounted for 10% of the total rainfall for that year. Heavy rainfall is a trend that is expected to continue to increase in frequency and pose a risk regarding flooding with the large volume of water falling over a short period of time.
-</p>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="../images/pic03.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Temperature</h4>
-												<p>&emsp;&emsp;&emsp;One of the reasons that precipitation will increase, rainfall intensity will increase, and flow rate will increase stems from an increase in temperature.<br>
-												&emsp;&emsp;&emsp;A rate of linear increase of 1°F every 7 years is seen using data from 2000 to 2023.<br>
-												&emsp;&emsp;&emsp;The number of days spent above 90°F on average went from about 40 days in the early 2000s to around 60 in the early 2020s. This is a jump of almost a week and a half, dealing with temperatures over 90°F. The same trend is also seen in the number of days seen above 70°F, from around 205 days in the early 2000s to 230 days in the early 2020s; this is almost a full month of warmth.
-					  </p>
-											</div>
-										</article>
-																									<article>
-											<a href="#" class="image"><img src="../images/pic03.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Land Cover</h4>
-												<p>&emsp;&emsp;&emsp;The land cover within the watershed shows that forest went from being tied with developed land to now being 10% behind developed land in terms of acres. This change in land cover shows the growth and urban development that is occurring within Greenville County, which can be seen in the maps below, as being mostly in the form of suburban expansion. 
-</p>
-											</div>
-										</article>
-																									<article>
-												<h4>Riparian Areas</h4>
-												<p><span class="image left"><img src="../images/pic01.jpg" alt="" /></span>&emsp;&emsp;&emsp;Riparian areas were the last items explored as they are those areas around a river that impact the river the most in their contributions to runoff, especially when flooding occurs. Riparian areas are critical in helping understand the health of a river and helping improve the water quality of the river.
-<br>&emsp;&emsp;&emsp;Forests and other vegetation types should be prioritized when looking at the land cover types within the riparian areas. These land cover types provide shade and habitats for fish and other animals that need to rely on the river. Shade is very important for rivers, especially in this watershed, which shows that temperatures are rising, as providing shade helps lower the temperatures of the river. High temperatures can be deadly for animals that live in the Reedy River.
-<br>&emsp;&emsp;&emsp;The actual riparian areas downstream of the city of Greenville show mostly “good” riparian land use, being mostly vegetation and forested. The suburban expansion in the south of the watershed should be limited to continue to help support the river. These good riparian areas downstream of the Greenville help by also providing natural filtering, especially areas like Conestee Nature Preserve, where nature is prioritized, and wetlands were created and are thriving.
-</p>
-										</article>
-									</div>
+									        <p>&emsp;&emsp;&emsp;The Pedestrian Evacuation Time Estimator Tool produces several outputs that together provide a comprehensive picture of evacuation feasibility for the Oregon coast study area.<br>
+												&emsp;&emsp;&emsp;The Tobler speed and land cover speed rasters reveal how dramatically terrain and land cover affect walking speed across the study area. The Oregon coast's steep topography creates significant variation in travel speed, with flat developed areas allowing much faster movement than forested hillsides or beach terrain.<br>
+												&emsp;&emsp;&emsp;The final classification raster is the primary output of the tool, combining the isochrone travel time bands with the tsunami hazard zone boundary into a single integrated map. Areas scored 9 represent locations within 5 minutes of an assembly point, the safest evacuees. Areas scored 0 represent locations where reaching an assembly point within two hours is unlikely, representing the highest-risk population. Areas scored 10 are already within the tsunami-free zone and require no evacuation.<br>
+												&emsp;&emsp;&emsp;The least cost path polylines show the optimal evacuation routes from critical facilities, police stations, schools, hospitals, and fire stations to the nearest assembly points. These routes are particularly valuable for emergency planners developing evacuation signage and public education materials, as they identify the paths most likely to be used during an actual event.<br>
+												&emsp;&emsp;&emsp;Together, these outputs allow emergency managers to assess whether current assembly point locations provide adequate coverage for the coastal population, and to identify specific areas where additional assembly points, improved signage, or targeted public education would have the greatest impact on evacuation outcomes.
+											</p>
 								</div>
 							</section>
 						
@@ -412,12 +321,14 @@ arcpy.AddMessage("Step 8 complete: Final tsunami impact classification saved.")<
 								<div class="container">
 									<h3>Limitations and Conclusions</h3>
 									<h4>Limitations</h4>
-																					<p>&emsp;&emsp;&emsp;One of the limitations of the tool is that it assumes that everyone will be walking rather than using any other form of transport, and that everyone will know which direction safety is located.<br>
-												&emsp;&emsp;&emsp;The tool also currently has no way to account for travel time assumptions for obstacles, such as cars on the roads, nor the delay with a mass of people moving in the same direction.<br>
-												&emsp;&emsp;&emsp;The tool would also benefit from on-ground timing validation to verify that specific travel times, such as the use of Tobler’s Hiking Function and the speeds used going through different land cover types, are accurate.
-					  </p>
+											<p>&emsp;&emsp;&emsp;The tool currently assumes that all evacuees are on foot and that everyone knows which direction safety is located,  two assumptions that may not reflect reality during an actual tsunami event. Many evacuees will attempt to use vehicles, particularly those with mobility limitations or those trying to assist others, and the resulting road congestion could dramatically alter actual evacuation times.<br>
+												&emsp;&emsp;&emsp;The tool also has no way to account for obstacles that slow pedestrian movement, such as vehicles blocking roads, crowds moving in the same direction, or debris from the earthquake that typically precedes a tsunami. These factors could significantly increase actual travel times beyond what the tool estimates.<br>
+												&emsp;&emsp;&emsp;Finally, the travel time assumptions in both Tobler's Hiking Function and the land cover walking speeds derived from US Army Corps of Engineers and DOGAMI data would benefit from on-ground validation against observed evacuation times. Field validation would strengthen confidence in the tool's outputs and identify any systematic over- or under- estimation of travel times in specific terrain types.
+</p>
 								<h4>Conclusions</h4>
-								<p>This tool is not perfect, but it is a basic foundation that could be built upon and expanded. One way the tool could be expanded upon would be through creating different versions of the tool where only vehicle travel times are taken into account, or one that looks into travel time with the use of transit. A final master tool could then use the resulting analysis of all these tools to get a regional average for travel times for a region. This would be a good way to use this tool’s concept for planning for tsunami evacuations. 
+											<p>&emsp;&emsp;&emsp;The Pedestrian Evacuation Time Estimator provides a foundation for evidence-based tsunami evacuation planning along the Oregon coast and beyond. By combining terrain analysis, land cover walking speeds, and cost distance modeling into a single integrated geoprocessing tool, it offers emergency managers a practical and repeatable method for assessing pedestrian evacuation feasibility that goes well beyond simplified distance-based approaches.<br>
+												&emsp;&emsp;&emsp;The tool's modular design makes it well-suited for expansion. Future versions could incorporate vehicle travel times, transit routing, or crowd density modeling to build a more complete picture of community-wide evacuation capacity. A master tool combining pedestrian, vehicle, and transit analyses could then generate regional travel time estimates that account for the full range of evacuation behaviors, providing a powerful planning resource for coastal communities facing tsunami risk anywhere in the world.<br>
+												&emsp;&emsp;&emsp;The Cascadia Subduction Zone event is not a question of if, but when. Tools like this one represent a meaningful step toward ensuring that coastal communities have the spatial intelligence they need to plan effectively, position assembly points strategically, and ultimately save lives when that event occurs.
 </p>
 						</div>	
 							</section>
